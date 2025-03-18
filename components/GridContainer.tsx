@@ -13,7 +13,7 @@ const Grid: React.FC<GridProps> = ({ children, className = '' }) => {
         `
         grid 
         grid-cols-6 md:grid-cols-8 lg:grid-cols-12
-        mx-[10] md:mx-[20px] lg:mx-[120px] 
+        mx-[10px] md:mx-[20px] lg:mx-[120px] 
         gap-x-[13px] md:gap-x-[24px] lg:gap-x-[24px]
         items-center justify-items-center min-h-screen ${className}
       `
