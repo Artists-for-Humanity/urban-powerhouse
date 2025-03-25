@@ -3,7 +3,6 @@ import Grid from "../components/GridContainer";
 
 export default function Home() {
   return (
-  
         <Grid>
           <div className="bg-blue-50 p-4"> 1</div>
           <div className="bg-blue-100 p-4"> 2</div>
@@ -18,8 +17,6 @@ export default function Home() {
           <div className="bg-blue-950 p-4"> 11</div>
           <div className="bg-blue-50 p-4"> 12</div>
         </Grid>
-
-        
 
   );
 }
