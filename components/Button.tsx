@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       <Link href={href || '#'} passHref>
         <div
           className={`
-            text-var(--urban-white) text-base font-normal hover:underline
+            text-var(--urban-white) text-base font-normal px-3 whitespace-nowrap hover:underline
             ${isActive ? 'text-blue-500 underline' : ''}
             ${className}
           `}
@@ -44,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={isDisabled}
       className={
         `
-        relative px-4 py-3 rounded-lg text-white font-bold bg-(--urban-blue) transition-all
+        relative px-4 py-3 rounded-lg text-white  whitespace-nowrap font-bold bg-(--urban-blue) transition-all
         ${isDisabled ? 'bg-gray-400 cursor-not-allowed' : ''}
         ${!isDisabled ? 'shadow-[8px_8px_0_0_var(--urban-orange)]' : ''}  
         ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[8px_8px_0_0_var(--urban-blue)]' : ''}
