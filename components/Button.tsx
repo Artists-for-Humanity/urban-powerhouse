@@ -5,10 +5,10 @@ type ButtonProps = {
   label: string;
   onClick?: () => void;
   href?: string;
-  variant?: 'nav' | 'default'; 
+  variant?: 'nav' | 'default';
   isActive?: boolean;
-  isDisabled?: boolean; 
-  className?: string; 
+  isDisabled?: boolean;
+  className?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
 }) => {
 
-//nav buttons
+  //nav buttons
   if (variant === 'nav') {
     return (
       <Link href={href || '#'} passHref>
@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
       </Link>
     );
   }
-//default button
+  //default button
   return (
     <button
       onClick={onClick}
@@ -47,10 +47,10 @@ const Button: React.FC<ButtonProps> = ({
         relative px-4 py-3 rounded-lg text-white  whitespace-nowrap font-bold bg-(--urban-blue) transition-all
         ${isDisabled ? 'bg-gray-400 cursor-not-allowed' : ''}
         ${!isDisabled ? 'shadow-[8px_8px_0_0_var(--urban-orange)]' : ''}  
-        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[8px_8px_0_0_var(--urban-blue)]' : ''}
+        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[0px_0px_0_0_var(--urban-blue)] hover:translate-x-[5px] hover:translate-y-[5px]' : ''}
         ${className}
       `
-    }
+      }
     >
       {label}
     </button>
