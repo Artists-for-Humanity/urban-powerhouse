@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       <Link href={href || '#'} passHref>
         <div
           className={`
-            text-var(--urban-white) text-base font-normal px-3 whitespace-nowrap hover:underline
+            text-(--urban-white) text-base font-normal px-3 whitespace-nowrap hover:underline
             ${isActive ? 'text-blue-500 underline' : ''}
             ${className}
           `}

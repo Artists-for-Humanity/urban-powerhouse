@@ -6,7 +6,7 @@ import Logo from './Logo';
 
 const Navigation: React.FC = () => {
     return (
-        <nav className="flex justify-between items-center p-4 col-span-12 w-full max-w-[1200px] max-h-[200px] overflow-hidden scale-[calc(1)]">
+        <nav className="flex justify-between items-center bg-gray-900 p-4 col-span-12 w-full max-w-[1200px] max-h-[200px] overflow-hidden scale-[calc(1)]">
             <Logo size="small" />
             <Button label="Home" href="/" variant="nav" isActive={true} />
             <Button label="News" href="/" variant="nav" isActive={false} />
