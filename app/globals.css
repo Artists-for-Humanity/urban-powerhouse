@@ -16,7 +16,7 @@
   --font-sans: var(--font-geist-sans);  
   --font-mono: var(--font-geist-mono);
   /* new breakpoints */
-  --breakpoint-md: 800x;
+  --breakpoint-md: 800px;
   --breakpoint-lg: 1024px;
 
 }
