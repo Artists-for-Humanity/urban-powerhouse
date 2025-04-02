@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 // import Video from "../components/Video";
 import VideoBlock from "../components/VideoBlock";
+import QuoteBlock from "../components/QuoteBlock";
 
 export default function Home() {
   return (
@@ -20,6 +21,11 @@ export default function Home() {
                 description="We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!"
                 buttonText="Read More →"
                 onButtonClick={() => console.log("Button clicked!")}              />
+                 <QuoteBlock
+                  quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis  "
+                  author="FIRST LASTNAME, TITLE HERE"
+                  authorImageSrc="/authorImg.png"
+                />
             </Container>
 
           <Footer />
