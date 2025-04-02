@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="md:absolute bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 md:col-span-8 lg:col-span-12 md:max-h-[400px] overflow-hidden scale-[calc(1)]">
+        <footer className=" bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 md:col-span-8 lg:col-span-12 md:max-h-[400px] min-w-[99vw]">
             <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row justify-between px-4">
                 {/* About Section */}
                 <div className="flex flex-col mb-10 md:mb-0">
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto md:items-center mt-8 px-4">
-                <p className="pr-6">© 2020 by Urban PowerHouse</p>
+                <p className="pr-6">© 2025 by Urban PowerHouse</p>
                 <p className="pr-2">Urban PowerHouse is a 501(c)3 Non-Profit Organization</p>
             </div>
         </footer>
