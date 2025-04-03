@@ -25,11 +25,11 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
       </div>
 
       {/* Tablet Layout */}
-      <div className="hidden md:grid col-start-2 grid-cols-subgrid col-span-6 md:gap-4 lg:hidden">
+      <div className="hidden md:grid col-start-2 col-span-6 grid-cols-subgrid md:grid-cols-2 md:gap-4 lg:hidden">
         {images.slice(0, 9).map((src, index) => (
           <div
             key={index}
-            className={index === 0 ? 'col-span-full' : 'col-span-3'} // First image spans full width
+            className={index === 0 ? 'col-span-full' : 'col-span-1'} // First image spans full width
           >
             <Image
               src={src}
@@ -43,9 +43,12 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
+      <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-6 mb-[32px]">
         {images.map((src, index) => (
-          <div key={index} className="col-span-1">
+          <div 
+          key={index}
+          className={index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'} // First image spans full width
+          >
             <Image
               src={src}
               alt={`Image ${index + 1}`}
