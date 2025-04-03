@@ -1,17 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface ImageBlockProps {
-  images: string[];
-  className?: string; 
+interface PartnerBlockProps {
+   header?: string;
+  images: string[]; // Array of image sources
+  className?: string; // Optional additional class names
 }
 
-const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
+const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className = '' }) => {
   return (
-    <div className={`grid grid-cols-subgrid col-span-full ${className}`}>
+    <div className={`grid grid-cols-subgrid col-span-full ${className} mb-10`}>
+        <div className="text-center text-[32px] font-semibold mb-4 col-span-full">
+          {header}
+        </div>
       {/* Mobile Layout */}
-      <div className="grid col-span-full gap-y-[4px] md:hidden">
-        {images.slice(0, 4).map((src, index) => (
+      <div className="grid col-start-2 col-span-4 gap-y-[25px] md:hidden">
+        {images.slice(0, 8).map((src, index) => (
           <div key={index} className="col-span-full">
             <Image
               src={src}
@@ -29,7 +33,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
         {images.slice(0, 9).map((src, index) => (
           <div
             key={index}
-            className={index === 0 ? 'col-span-full' : 'col-span-1'} // first image spans full width
+            className='col-span-1'
           >
             <Image
               src={src}
@@ -43,11 +47,11 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-6 mb-[32px]">
+      <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-4 lg:gap-6 mb-[32px]">
         {images.map((src, index) => (
           <div 
           key={index}
-          className={index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'} // first image spans 2/2
+          className='col-span-1 row-span-1'
           >
             <Image
               src={src}
@@ -63,4 +67,4 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
   );
 };
 
-export default ImageBlock;
+export default PartnerBlock;

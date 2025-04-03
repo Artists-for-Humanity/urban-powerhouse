@@ -10,7 +10,7 @@ import Container from "../components/Container";
 import VideoBlock from "../components/VideoBlock";
 import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";
-
+import PartnerBlock from "../components/PartnerBlock";
 export default function Home() {
   return (
         <Grid>
@@ -49,6 +49,19 @@ export default function Home() {
               ]}
               className="bg-urban-grey"
             />
+            <PartnerBlock
+              header="Our Partners"
+              images={[
+                '/partner.svg',
+                '/partner.svg',
+                '/partner.svg',  
+                '/partner.svg',  
+                '/partner.svg',  
+                '/partner.svg',  
+                '/partner.svg',  
+                '/partner.svg',  
+              ]}
+              ></PartnerBlock>
             </Container>
 
           <Footer />
