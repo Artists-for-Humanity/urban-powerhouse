@@ -37,6 +37,8 @@ const Navigation: React.FC = () => {
           <Button label="FAQ" href="/" variant="nav" isActive={false} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+          <Button label="Donate" className='text-(--urban-orange)' href="/" variant="nav" isActive={false} />
+          <Button label="Sign Up" className='text-(--urban-blue)' href="/" variant="nav" isActive={false} />
         </div>
       </div>
 
