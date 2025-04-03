@@ -10,12 +10,12 @@ const Container: React.FC<ContainerProps> = ({ children, className = '', header 
   return (
     <div 
       className={
-        `w-full col-span-6 md:col-span-8 lg:col-span-12 bg-(--urban-black) min-h-[100vh] mt-10 md:mt-30 ${className} max-w-[1200px]`
+           ` grid grid-cols-subgrid w-full col-span-full gap-y-[60px] items-start bg-(--urban-black) min-h-[100vh] mt-[20vh] ${className} `
       }
     >
       {/* Header Section */}
       {header && (
-        <div className="text-left mb-4">
+        <div className="text-left mb-4 col-span-full">
           {header}
         </div>
       )}

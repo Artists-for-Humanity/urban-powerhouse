@@ -3,6 +3,7 @@ import Button from './Button';
 import Video from './Video'; // Assuming this is your custom Video component
 
 interface VideoBlockProps {
+  className?: string;
   videoFilePath: string;
   title: string;
   description: string;
@@ -10,28 +11,27 @@ interface VideoBlockProps {
   onButtonClick: () => void;
 }
 
-const VideoBlock: React.FC<VideoBlockProps> = ({ videoFilePath, title, description, buttonText, onButtonClick }) => {
+const VideoBlock: React.FC<VideoBlockProps> = ({ className = '', videoFilePath, title, description, buttonText, onButtonClick }) => {
   return (
-    <div className="flex flex-col gap-4">
-      <div>
-        <Video src={videoFilePath} isBackground={false} />
-      </div>
+    <div className={` grid grid-cols-subgrid col-span-full ${className}`}>
+        <Video className="col-span-full mb-[42px]" src={videoFilePath} isBackground={false} />
 
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4  w-[80%] md:w-full m-auto">
-        <div className='md:pr-40'>
-          <h2 className="text-white text-2xl font-semibold leading-[1.125] m-0 mb-6">{title}</h2>
-          <p className="m-0 text-sm font-semibold leading-6 text-white mb-6">{description}</p>
+        <div className=' col-span-full g:col-span-10 mx-[32px] md:mx-[83px] lg:mx-0 lg:col-span-10'>
+          <h2 className="text-white text-[32px] font-semibold leading-[1.125] m-0 mb-[13px]">{title}</h2>
+          <p className="m-0 text-white text-[16px] font-semibold leading-6 mb-[42px] lg:mb-0">{description}</p>
         </div>
 
+        <div className='col-start-4 col-span-2 md:col-start-7 lg:col-start-11 lg:flex lg:justify-end lg:items-end'>
         <Button
-          label={buttonText}
-          className="text-urban-blue ml-auto"
-          href="#"
-          variant="default"
-          isActive={false}
-          onClick={onButtonClick}
-        />
-      </div>
+              label={buttonText}
+              className=" text-urban-blue"
+              href="#"
+              variant="default"
+              isActive={false}
+              onClick={onButtonClick}
+            />
+        </div>
+       
     </div>
   );
 };
