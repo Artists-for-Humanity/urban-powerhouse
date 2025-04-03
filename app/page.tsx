@@ -35,6 +35,11 @@ export default function Home() {
                 '/placeholder.svg',
                 '/placeholder.svg',
                 '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
               ]}
               className="bg-urban-grey"
             />
