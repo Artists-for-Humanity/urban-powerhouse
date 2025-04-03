@@ -9,6 +9,7 @@ import Container from "../components/Container";
 // import Video from "../components/Video";
 import VideoBlock from "../components/VideoBlock";
 import QuoteBlock from "../components/QuoteBlock";
+import ImageBlock from "../components/ImageBlock";
 
 export default function Home() {
   return (
@@ -28,6 +29,15 @@ export default function Home() {
                   author="FIRST LASTNAME, TITLE HERE"
                   authorImageSrc="/authorImg.png"
                 />
+              <ImageBlock
+              images={[
+                '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
+                '/placeholder.svg',
+              ]}
+              className="bg-urban-grey"
+            />
             </Container>
 
           <Footer />
