@@ -10,7 +10,7 @@ const Container: React.FC<ContainerProps> = ({ children, className = '', header 
   return (
     <div 
       className={
-        `w-full col-span-6 md:col-span-8 lg:col-span-12 bg-(--urban-black) min-h-[100vh] mt-30 ${className} max-w-[1200px]`
+        `w-full col-span-6 md:col-span-8 lg:col-span-12 bg-(--urban-black) min-h-[100vh] mt-10 md:mt-30 ${className} max-w-[1200px]`
       }
     >
       {/* Header Section */}

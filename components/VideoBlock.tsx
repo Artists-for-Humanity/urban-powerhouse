@@ -17,8 +17,8 @@ const VideoBlock: React.FC<VideoBlockProps> = ({ videoFilePath, title, descripti
         <Video src={videoFilePath} isBackground={false} />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-[80%] m-auto">
-        <div>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4  w-[80%] md:w-full m-auto">
+        <div className='md:pr-40'>
           <h2 className="text-white text-2xl font-semibold leading-[1.125] m-0 mb-6">{title}</h2>
           <p className="m-0 text-sm font-semibold leading-6 text-white mb-6">{description}</p>
         </div>
