@@ -21,7 +21,7 @@ const Video: React.FC<VideoProps> = ({
         <div
             className={`${
                 isBackground
-                    ? "absolute inset-0 z-[-1] w-full h-3/4 overflow-hidden"
+                    ? "absolute inset-0 z-[0] w-full h-3/4 overflow-hidden"
                     : "relative w-full h-auto]"
             } ${className}`}
         >

@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ size, className }) => {
     return (
         <Image 
             src={logoSrc}
-            className={className} // Pass the className prop to the Image component
+            className={`z-[1] ${className}`} // Pass the className prop to the Image component
             alt="Logo" 
             width={size === 'small' ? 144 : 100} 
             height={size === 'small' ? 111 : 100} 

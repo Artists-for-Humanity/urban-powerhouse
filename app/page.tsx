@@ -11,6 +11,8 @@ import VideoBlock from "../components/VideoBlock";
 import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
+import StatBlock from "../components/StatBlock";
+
 export default function Home() {
   return (
         <Grid>
@@ -62,6 +64,18 @@ export default function Home() {
                 '/partner.svg',  
               ]}
               ></PartnerBlock>
+
+              <StatBlock
+                header="Our Stats"
+                stats={[
+                  { number: "500", description: "Members" },
+                  { number: "5", description: "Championiships" },
+                  { number: "200", description: "Equipments" },
+                  { number: "20000$", description: "Donated" },
+                ]}
+                className="bg-urban-grey p-8 rounded-lg"
+              />
+
             </Container>
 
           <Footer />

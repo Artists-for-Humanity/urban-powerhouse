@@ -15,7 +15,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between items-start md:items-center md:justify-center p-4 col-span-6 md:col-span-8 lg:col-span-12 w-full mt-4">
+    <nav className="flex justify-between items-start z-[1] md:items-center md:justify-center p-4 col-span-6 md:col-span-8 lg:col-span-12 w-full mt-4">
       {/* Mobile Logo and Hamburger Menu */}
       <Logo className="block md:hidden" size="small" />
       <Button className="text-3xl md:hidden" label="☰" onClick={toggleMenu} variant="default" />
