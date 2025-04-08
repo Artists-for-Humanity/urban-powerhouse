@@ -6,7 +6,7 @@ interface VideoProps {
     muted?: boolean; 
     loop?: boolean;
     isBackground?: boolean; 
-    className?: string; // to add aditional styles
+    className?: string; 
 }
 
 const Video: React.FC<VideoProps> = ({
@@ -33,7 +33,7 @@ const Video: React.FC<VideoProps> = ({
                 className={`${
                     isBackground
                         ? "w-full h-full object-cover brightness-35"
-                        : "w-full h-auto"
+                        : "w-full h-auto "
                 }`}
             />
         </div>

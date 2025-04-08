@@ -7,6 +7,8 @@ interface ImageBlockProps {
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
+
+  
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className}`}>
       {/* Mobile Layout */}
@@ -29,32 +31,33 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
         {images.slice(0, 9).map((src, index) => (
           <div
             key={index}
-            className={index === 0 ? 'col-span-full' : 'col-span-1'} // first image spans full width
+            className={index === 0 ? 'col-span-full' : 'col-span-1'} 
           >
             <Image
               src={src}
               alt={`Image ${index + 1}`}
               width={400}
               height={300}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-6 mb-[32px]">
+      
+      <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-2 mb-[32px] " style={{ gridAutoRows: '300px' }}>
         {images.map((src, index) => (
           <div 
           key={index}
-          className={index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'} // first image spans 2/2
+          className={index === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'} 
           >
             <Image
               src={src}
               alt={`Image ${index + 1}`}
               width={400}
               height={300}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
