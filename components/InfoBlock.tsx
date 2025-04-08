@@ -15,7 +15,7 @@ interface InfoBlockProps {
 
 const InfoBlock: React.FC<InfoBlockProps> = ({ variant, fields = [], businessHours = [], title = 'Information', className = '' }) => {
   return (
-    <div className={`flex flex-col col-start-2 col-span-4 w-full ${className}`}>
+    <div className={`flex flex-col col-start-2 col-span-4 lg:col-start-1 lg:col-span-3 w-full ${className}`}>
       {variant === 'contact' && (
         <div className="space-y-4 ">
           <h2 className="text-[32px] font-bold text-(--urban-white) mb-6">{title}</h2>
