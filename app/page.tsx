@@ -69,9 +69,9 @@ export default function Home() {
                   { number: "500", description: "Members" },
                   { number: "5", description: "Championiships" },
                   { number: "200", description: "Equipments" },
-                  { number: "20000$", description: "Donated" },
+                  { number: "$20000", description: "Donated" },
                 ]}
-                className="bg-urban-grey md:p-8 rounded-lg"
+                className="bg-urban-grey md:p-8 lg:p-0 rounded-lg"
               />
               <InfoBlock 
                 variant="contact"
