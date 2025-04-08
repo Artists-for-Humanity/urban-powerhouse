@@ -12,11 +12,11 @@ import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
 import StatBlock from "../components/StatBlock";
+import InfoBlock from "../components/InfoBlock";
 
 export default function Home() {
   return (
         <Grid>
-          {/* <Navigation /> */}
           <Hero />
           <Container>
               <VideoBlock
@@ -73,7 +73,26 @@ export default function Home() {
                   { number: "200", description: "Equipments" },
                   { number: "20000$", description: "Donated" },
                 ]}
-                className="bg-urban-grey p-8 rounded-lg"
+                className="bg-urban-grey md:p-8 rounded-lg"
+              />
+              <InfoBlock 
+                variant="contact"
+                title="Reach Us"
+                fields={[
+                  { label: "Phone", value: "123-888-3434" },
+                  { label: "Email", value: "contact@urbanpowerhouse.com" },
+                ]}
+              />
+
+              <InfoBlock 
+                variant="hours"
+                title="Operating Hours"
+                businessHours={[
+                  { day: "Monday - Friday", hours: "5am - 10pm" },
+                  { day: "Saturday", hours: "8am - 5pm" },
+                  { day: "Sunday", hours: "8am - 3pm" },
+                  { day: "Holidays", hours: "Closed" }
+                ]}
               />
 
             </Container>
