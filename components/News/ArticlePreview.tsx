@@ -19,8 +19,8 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({ title, paragraphs, link
           {paragraph}
         </p>
       ))}
-      <span className="pl-0  text-base lg:col-start-2 col-span-full group-hover:underline  font-semibold">
-        Read More
+      <span className="italic transition-colors duration-300 underline  text-[var(--urban-blue)] text-base lg:col-start-2 col-span-full font-semibold hover:text-[var(--urban-orange)]">
+        Read More....
       </span>
     </Link>
   );

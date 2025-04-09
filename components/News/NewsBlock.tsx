@@ -27,7 +27,7 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
         />
       ))}
 
-<Button className='pl-0 text-[14px] mb-10 col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
+<Button className=' text-[14px] col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
     </div>
   );
 };
