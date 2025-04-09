@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Logo from './Logo';
+import { usePathname } from 'next/navigation';
 
 const Navigation: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // For mobile menu
-  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); // For tablet menu
+  const pathname = usePathname(); // Get the current route
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,8 +33,8 @@ const Navigation: React.FC = () => {
           <Button className="text-3xl" label="x" onClick={toggleMenu} variant="default" />
         </div>
         <div className="flex flex-col items-start p-4 space-y-4">
-          <Button label="Home" href="/" variant="nav" isActive={true} />
-          <Button label="News" href="/" variant="nav" isActive={false} />
+          <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
+          <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
           <Button label="About Us" href="/" variant="nav" isActive={false} />
           <Button label="FAQ" href="/" variant="nav" isActive={false} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
@@ -60,8 +62,8 @@ const Navigation: React.FC = () => {
                 <Button className="text-3xl" label="x" onClick={toggleTabletMenu} variant="default" />
               </div>
               <div className="flex flex-col items-start p-4 space-y-4 ">
-                <Button label="Home" href="/" variant="nav" isActive={true} />
-                <Button label="News" href="/" variant="nav" isActive={false} />
+                <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
+                <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
                 <Button label="About Us" href="/" variant="nav" isActive={false} />
                 <Button label="FAQ" href="/" variant="nav" isActive={false} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
@@ -75,8 +77,8 @@ const Navigation: React.FC = () => {
       {/* DESKTOP MENU */}
       <div className="hidden lg:flex justify-between items-center p-4 w-full max-w-[1200px]">
         <Logo size="small" />
-        <Button label="Home" href="/" variant="nav" isActive={true} />
-        <Button label="News" href="/" variant="nav" isActive={false} />
+        <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
+        <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
         <Button label="About Us" href="/" variant="nav" isActive={false} />
         <Button label="FAQ" href="/" variant="nav" isActive={false} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />

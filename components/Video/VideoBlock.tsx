@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from '../Button';
 import Video from './Video'; // Assuming this is your custom Video component
 
 interface VideoBlockProps {
