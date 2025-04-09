@@ -14,7 +14,7 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
           {header}
         </div>
       {/* Mobile Layout */}
-      <div className="grid col-start-2 col-span-4 gap-y-[25px] md:hidden">
+      <div className="grid col-start-2 col-span-4 gap-y-[25px] sm:hidden">
         {images.slice(0, 8).map((src, index) => (
           <div key={index} className="col-span-full">
             <Image
@@ -29,7 +29,7 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
       </div>
 
       {/* Tablet Layout */}
-      <div className="hidden md:grid col-start-2 col-span-6 grid-cols-subgrid md:grid-cols-2 md:gap-4 lg:hidden">
+      <div className="hidden sm:grid col-start-2 col-span-6 grid-cols-subgrid sm:grid-cols-2 sm:gap-4 lg:hidden">
         {images.slice(0, 9).map((src, index) => (
           <div
             key={index}

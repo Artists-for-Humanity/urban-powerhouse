@@ -31,7 +31,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({ images, className = '' }) => {
           alt={`Image ${index + 1}`}
           width={376} 
           height={282} 
-          className="w-[376px] md:w-[793px] md:h-[596px] h-[282px] object-cover mx-auto"
+          className="w-[376px] sm:w-[793px] sm:h-[596px] h-[282px] object-cover mx-auto"
         />
           </SwiperSlide>
         ))}

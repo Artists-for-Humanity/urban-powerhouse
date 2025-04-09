@@ -27,13 +27,13 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
       </div> */}
         <div className="col-span-full mb-[42px] aspect-w-16 aspect-h-9 max-h-[700px]">
           <Video
-            className="w-full h-full overflow-hidden object-cover object-center bg-black"
+            className="w-full h-full overflow-hidden object-scale-down object-center bg-black"
             src={videoFilePath}
             isBackground={false}
           />
         </div>
 
-      <div className="col-span-full g:col-span-10 mx-[32px] md:mx-[83px] lg:mx-0 lg:col-span-10">
+      <div className="col-span-full g:col-span-10 mx-[32px] sm:mx-[83px] lg:mx-0 lg:col-span-10">
         <h2 className="text-white text-[32px] font-semibold leading-[1.125] m-0 mb-[13px]">
           {title}
         </h2>
@@ -42,7 +42,7 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
         </p>
       </div>
 
-      <div className="col-start-4 col-span-2 md:col-start-7 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+      <div className="col-start-4 col-span-2 sm:col-start-7 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
         <Button
           label={buttonText}
           className="text-urban-blue"

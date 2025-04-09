@@ -3,10 +3,10 @@ import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (
-        <footer className=" bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 md:col-span-8 lg:col-span-12 md:max-h-[400px] min-w-[99vw]">
-            <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row justify-between px-4">
+        <footer className=" bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 sm:col-span-8 lg:col-span-12 sm:max-h-[400px] min-w-[99vw] overflow-hidden">
+            <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row justify-between px-4">
                 {/* About Section */}
-                <div className="flex flex-col mb-10 md:mb-0">
+                <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">About</h2>
                     <ul className="space-y-2">
                         <li>Our Mission</li>
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Membership Section */}
-                <div className="flex flex-col mb-10 md:mb-0">
+                <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Membership</h2>
                     <ul className="space-y-2">
                         <li>Login</li>
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Contact Section */}
-                <div className="flex flex-col mb-10 md:mb-0">
+                <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Contact Us</h2>
                     <ul className="space-y-2">
                         <li>Contact@UrbanPowerHouse.com</li>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Subscribe Section */}
-                <div className="flex flex-col mb-10 md:mb-0">
+                <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Subscribe</h2>
                     <div className="flex items-center space-x-2 bg-gray-200">
                         <input
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Social Media Section */}
-                <div className="flex flex-col mb-10 md:mb-0">
+                <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Follow Us</h2>
                     <div className="flex space-x-4">
                         <FaFacebookF className="w-6 h-6 cursor-pointer" />
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row max-w-[1200px] mx-auto md:items-center mt-8 px-4">
+            <div className="flex flex-col sm:flex-row max-w-[1200px] mx-auto sm:items-center mt-8 px-4">
                 <p className="pr-6">© 2025 by Urban PowerHouse</p>
                 <p className="pr-2">Urban PowerHouse is a 501(c)3 Non-Profit Organization</p>
             </div>

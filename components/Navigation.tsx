@@ -15,16 +15,16 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between items-start z-[1] md:items-center md:justify-center p-4 col-span-6 md:col-span-8 lg:col-span-12 w-full mt-4">
+    <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center p-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4">
       {/* Mobile Logo and Hamburger Menu */}
-      <Logo className="block md:hidden" size="small" />
-      <Button className="text-3xl md:hidden" label="☰" onClick={toggleMenu} variant="default" />
+      <Logo className="block sm:hidden" size="small" />
+      <Button className="text-3xl sm:hidden" label="☰" onClick={toggleMenu} variant="default" />
 
       {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 h-full bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } w-full z-50 md:hidden`}
+        } w-full z-50 sm:hidden`}
       >
         <div className="flex justify-between items-start p-4">
           <Logo size="small" />
@@ -43,7 +43,7 @@ const Navigation: React.FC = () => {
       </div>
 
       {/* TABLET MENU */}
-      <div className="hidden md:flex lg:hidden justify-between items-center w-full max-w-[1200px]">
+      <div className="hidden sm:flex lg:hidden justify-between items-center w-full max-w-[1200px]">
         <Logo size="small" />
         <div className="flex gap-4 items-center">
           <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" />
