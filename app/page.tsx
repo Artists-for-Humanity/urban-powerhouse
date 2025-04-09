@@ -96,7 +96,7 @@ export default function Home() {
             </Container>
 
           <Footer />
-       
+
         </Grid>
 
   );
