@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     return (
-        <footer className=" bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 sm:col-span-8 lg:col-span-12 sm:max-h-[400px] min-w-[99vw] overflow-hidden">
+        <footer className=" bottom-0 w-full bg-(--urban-blue) text-white py-8 col-span-6 sm:col-span-8 lg:col-span-12 sm:max-h-[400px] min-w-[98vw] overflow-hidden">
             <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row justify-between px-4">
                 {/* About Section */}
                 <div className="flex flex-col mb-10 sm:mb-0">
