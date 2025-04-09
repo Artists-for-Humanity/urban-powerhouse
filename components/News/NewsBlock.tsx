@@ -1,29 +1,33 @@
 import React from 'react';
 import ArticlePreview from './ArticlePreview';
+import Button from '../Button';
 
 interface Article {
-  title: string; // Title of the article
-  paragraphs: string[]; // Array of paragraphs for the article
-  link: string; // Link to the full article
+  title: string; 
+  paragraphs: string[]; 
+  link: string;
 }
 
 interface NewsBlockProps {
-  header: string; // Header for the NewsBlock
-  articles: Article[]; // Array of articles to be displayed
+  header: string; 
+  articles: Article[];
 }
 
 const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
   return (
-    <div className="col-span-full">
-      <h1 className="text-[32px] font-semibold mb-[40px]">{header}</h1>
+    <div className="grid grid-cols-subgrid col-span-full mb-20">
+      <h1 className="text-[32px] font-semibold mb-[40px] col-span-full ">{header}</h1>
       {articles.map((article, index) => (
         <ArticlePreview
           key={index}
           title={article.title}
           paragraphs={article.paragraphs}
           link={article.link}
+          className='col-span-full2'
         />
       ))}
+
+<Button className='pl-0 text-[14px] mb-10 col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
     </div>
   );
 };
