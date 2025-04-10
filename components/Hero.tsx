@@ -1,17 +1,15 @@
-import React from 'react';
-import Navigation from './Navigation';
-import HeroText from './HeroText';
-import Video from './Video';
+import React from "react";
+import Button from "./Button";
 
-const Hero: React.FC = () => {
+const Hero : React.FC = () => {
     return (
-      <div className='col-span-full w-full'>
-             <Video src="/file.mp4" isBackground={true}/>
-
-        <Navigation/>
-        <HeroText  />
-      </div>
-    );
-};
+        <div>
+            <h1>Making Strength</h1>
+            <h1>Urban Powerhouse Logo</h1>
+            <h1>Accessible for All</h1>
+            <Button label="Join"/>
+        </div>
+    )
+}
 
 export default Hero;

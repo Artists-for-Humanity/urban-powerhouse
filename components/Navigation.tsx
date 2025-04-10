@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Logo from './Logo';
+import { usePathname } from 'next/navigation';
 
 const Navigation: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // For mobile menu
-  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); // For tablet menu
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const toggleTabletMenu = () => {
     setIsTabletMenuOpen(!isTabletMenuOpen);
   };
 
   return (
-    <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center p-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4">
+    <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center py-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4">
       {/* Mobile Logo and Hamburger Menu */}
       <Logo className="block sm:hidden" size="small" />
       <Button className="text-3xl sm:hidden" label="☰" onClick={toggleMenu} variant="default" />
@@ -31,14 +32,14 @@ const Navigation: React.FC = () => {
           <Button className="text-3xl" label="x" onClick={toggleMenu} variant="default" />
         </div>
         <div className="flex flex-col items-start p-4 space-y-4">
-          <Button label="Home" href="/" variant="nav" isActive={true} />
-          <Button label="News" href="/" variant="nav" isActive={false} />
-          <Button label="About Us" href="/" variant="nav" isActive={false} />
+          <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
+          <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
+          <Button label="About Us" href="/About" variant="nav" isActive={false} />
           <Button label="FAQ" href="/" variant="nav" isActive={false} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
-          <Button label="Donate" className='text-(--urban-orange)' href="/" variant="nav" isActive={false} />
-          <Button label="Sign Up" className='text-(--urban-blue)' href="/" variant="nav" isActive={false} />
+          <Button label="Donate" className='text-[var(--urban-orange)]' href="/" variant="nav" isActive={false} />
+          <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
         </div>
       </div>
 
@@ -60,9 +61,9 @@ const Navigation: React.FC = () => {
                 <Button className="text-3xl" label="x" onClick={toggleTabletMenu} variant="default" />
               </div>
               <div className="flex flex-col items-start p-4 space-y-4 ">
-                <Button label="Home" href="/" variant="nav" isActive={true} />
-                <Button label="News" href="/" variant="nav" isActive={false} />
-                <Button label="About Us" href="/" variant="nav" isActive={false} />
+                <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
+                <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
+                <Button label="About Us" href="/About" variant="nav" isActive={false} />
                 <Button label="FAQ" href="/" variant="nav" isActive={false} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
                 <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
@@ -73,11 +74,11 @@ const Navigation: React.FC = () => {
       </div>
 
       {/* DESKTOP MENU */}
-      <div className="hidden lg:flex justify-between items-center p-4 w-full max-w-[1200px]">
+      <div className="hidden lg:flex justify-between items-center py-4 w-full max-w-[1200px]">
         <Logo size="small" />
-        <Button label="Home" href="/" variant="nav" isActive={true} />
-        <Button label="News" href="/" variant="nav" isActive={false} />
-        <Button label="About Us" href="/" variant="nav" isActive={false} />
+        <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
+        <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
+        <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} />
         <Button label="FAQ" href="/" variant="nav" isActive={false} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />

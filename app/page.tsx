@@ -3,22 +3,25 @@ import React from "react";
 import Grid from "../components/GridContainer";
 // import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero/Hero";
 // import HeroText from "../components/HeroText";
 import Container from "../components/Container";
 // import Video from "../components/Video";
-import VideoBlock from "../components/VideoBlock";
+import VideoBlock from "../components/Video/VideoBlock";
 import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
-import StatBlock from "../components/StatBlock";
+import StatBlock from "../components/Stat/StatBlock";
 import InfoBlock from "../components/InfoBlock";
 
 export default function Home() {
   return (
         <Grid>
-          <Hero />
-          <Container>
+          <Hero 
+           title= "Making Strength" 
+           subtitle= "Accessible for All"
+          />
+          <Container className=" mt-[20vh] min-h-[100vh]">
               <VideoBlock
                 videoFilePath="file.mp4"
                 title="About Urban Powerhouse"
@@ -39,8 +42,8 @@ export default function Home() {
                 '/gymshots/DSC01572.jpg',
                 '/gymshots/IMG_8611.jpg',
                 '/gymshots/IMG_8613.jpg',
-                '/gymshots/P1040542.jpg',
-                '/gymshots/P1040569.jpg',
+                '/gymshots/DejenaeMachinePress.jpg',
+                '/gymshots/DSC01572.jpg',
                 '/gymshots/RenaudBench.jpg',
                 '/gymshots/SofiaLegExtension.jpg',
                 '/gymshots/Championship2025.jpg',
@@ -94,7 +97,6 @@ export default function Home() {
               />
 
             </Container>
-
           <Footer />
 
         </Grid>
