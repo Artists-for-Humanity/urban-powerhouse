@@ -17,7 +17,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center py-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4">
+    <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center py-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4 max-h-[150px]">
       {/* Mobile Logo and Hamburger Menu */}
       <Logo className="block sm:hidden" size="small" />
       <Button className="text-3xl sm:hidden" label="☰" onClick={toggleMenu} variant="default" />
@@ -35,8 +35,8 @@ const Navigation: React.FC = () => {
         <div className="flex flex-col items-start p-4 space-y-4">
           <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-          <Button label="About Us" href="/About" variant="nav" isActive={false} />
-          <Button label="FAQ" href="/" variant="nav" isActive={false} />
+          <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} />
+          <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/" variant="nav" isActive={false} />
@@ -64,8 +64,8 @@ const Navigation: React.FC = () => {
               <div className="flex flex-col items-start p-4 space-y-4 ">
                 <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
                 <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-                <Button label="About Us" href="/About" variant="nav" isActive={false} />
-                <Button label="FAQ" href="/" variant="nav" isActive={false} />
+                <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} />
+                <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
                 <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
               </div>
@@ -80,7 +80,7 @@ const Navigation: React.FC = () => {
         <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
         <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
         <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} />
-        <Button label="FAQ" href="/" variant="nav" isActive={false} />
+      <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" />
