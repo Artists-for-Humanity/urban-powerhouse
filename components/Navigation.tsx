@@ -11,7 +11,6 @@ const Navigation: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const toggleTabletMenu = () => {
     setIsTabletMenuOpen(!isTabletMenuOpen);
   };
