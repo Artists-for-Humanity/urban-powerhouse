@@ -21,7 +21,7 @@ export default function Home() {
            title= "Making Strength" 
            subtitle= "Accessible for All"
           />
-          <Container className=" mt-[20vh]">
+          <Container className=" mt-[20vh] min-h-[100vh]">
               <VideoBlock
                 videoFilePath="file.mp4"
                 title="About Urban Powerhouse"

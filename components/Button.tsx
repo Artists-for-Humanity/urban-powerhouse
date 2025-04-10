@@ -46,8 +46,8 @@ const Button: React.FC<ButtonProps> = ({
         `
         relative pl-4 pr-4 py-3 rounded-lg text-(--urban-white)  whitespace-nowrap font-bold bg-(--urban-blue) transition-all
         ${isDisabled ? 'bg-gray-400 cursor-not-allowed' : ''}
-        ${!isDisabled ? 'shadow-[8px_8px_0_0_var(--urban-orange)]' : ''}  
-        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[0px_0px_0_0_var(--urban-blue)] hover:translate-x-[5px] hover:translate-y-[5px] hover:cursor-pointer' : ''}
+        ${!isDisabled ? 'shadow-[4px_4px_0_0_var(--urban-orange)]' : ''}  
+        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[0px_0px_0_0_var(--urban-blue)] hover:translate-x-[4px] hover:translate-y-[4px] hover:cursor-pointer' : ''}
         ${className}
       `
       }

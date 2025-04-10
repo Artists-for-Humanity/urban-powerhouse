@@ -6,10 +6,11 @@ interface Article {
   title: string; 
   paragraphs: string[]; 
   link: string;
+variant: 'pinned' | 'title-only'
 }
 
 interface NewsBlockProps {
-  header: string; 
+  header: string;  
   articles: Article[];
 }
 
@@ -23,11 +24,12 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
           title={article.title}
           paragraphs={article.paragraphs}
           link={article.link}
-          className='col-span-full2'
+          variant={article.variant}
+          className='col-span-full'
         />
       ))}
 
-<Button className=' text-[14px] col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
+<Button className=' col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
     </div>
   );
 };
