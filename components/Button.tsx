@@ -5,10 +5,10 @@ type ButtonProps = {
   label: string;
   onClick?: () => void;
   href?: string;
-  variant?: 'nav' | 'default'; 
+  variant?: 'nav' | 'default';
   isActive?: boolean;
-  isDisabled?: boolean; 
-  className?: string; 
+  isDisabled?: boolean;
+  className?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,13 +21,13 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
 }) => {
 
-//nav buttons
+  //nav buttons
   if (variant === 'nav') {
     return (
-      <Link href={href || '#'} passHref>
+      <Link href={href || '#'} passHref className='z-[1]'>
         <div
           className={`
-            text-(--urban-white) text-base font-normal px-3 whitespace-nowrap hover:underline
+            text-(--urban-white) text-2xl lg:text-base font-semibold  px-3 whitespace-nowrap hover:underline
             ${isActive ? 'text-blue-500 underline' : ''}
             ${className}
           `}
@@ -37,20 +37,20 @@ const Button: React.FC<ButtonProps> = ({
       </Link>
     );
   }
-//default button
+  //default button
   return (
     <button
       onClick={onClick}
       disabled={isDisabled}
       className={
         `
-        relative px-4 py-3 rounded-lg text-white  whitespace-nowrap font-bold bg-(--urban-blue) transition-all
+        relative pl-4 pr-4 py-3 rounded-lg text-(--urban-white)  whitespace-nowrap font-bold bg-(--urban-blue) transition-all
         ${isDisabled ? 'bg-gray-400 cursor-not-allowed' : ''}
-        ${!isDisabled ? 'shadow-[8px_8px_0_0_var(--urban-orange)]' : ''}  
-        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[8px_8px_0_0_var(--urban-blue)]' : ''}
+        ${!isDisabled ? 'shadow-[4px_4px_0_0_var(--urban-orange)]' : ''}  
+        ${!isDisabled ? 'hover:bg-[var(--urban-orange)] hover:shadow-[0px_0px_0_0_var(--urban-blue)] hover:translate-x-[4px] hover:translate-y-[4px] hover:cursor-pointer' : ''}
         ${className}
       `
-    }
+      }
     >
       {label}
     </button>
