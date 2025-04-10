@@ -4,7 +4,7 @@ import Logo from './Logo';
 import { usePathname } from 'next/navigation';
 
 const Navigation: React.FC = () => {
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
 
@@ -35,12 +35,12 @@ const Navigation: React.FC = () => {
         <div className="flex flex-col items-start p-4 space-y-4">
           <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-          <Button label="About Us" href="/" variant="nav" isActive={false} />
+          <Button label="About Us" href="/About" variant="nav" isActive={false} />
           <Button label="FAQ" href="/" variant="nav" isActive={false} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
-          <Button label="Donate" className='text-(--urban-orange)' href="/" variant="nav" isActive={false} />
-          <Button label="Sign Up" className='text-(--urban-blue)' href="/" variant="nav" isActive={false} />
+          <Button label="Donate" className='text-[var(--urban-orange)]' href="/" variant="nav" isActive={false} />
+          <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
         </div>
       </div>
 
@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
               <div className="flex flex-col items-start p-4 space-y-4 ">
                 <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
                 <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-                <Button label="About Us" href="/" variant="nav" isActive={false} />
+                <Button label="About Us" href="/About" variant="nav" isActive={false} />
                 <Button label="FAQ" href="/" variant="nav" isActive={false} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
                 <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
         <Logo size="small" />
         <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
         <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-        <Button label="About Us" href="/" variant="nav" isActive={false} />
+        <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} />
         <Button label="FAQ" href="/" variant="nav" isActive={false} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
