@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
@@ -10,35 +10,30 @@ body {
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --urban-black: #0A0A0A;
   --urban-grey: #231F20;
-  --urban-white: #FFFFFF;
+  --urban-white: #ffffff;
   --urban-orange: #F47321;
   --urban-blue: #1D42E1;
 }
 
 :root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  /* --font-sans: var(--font-geist-sans);  */
+  --color-background: var(--urban-white);
+  --color-foreground:  var(--urban-black);
   --font-sans: 'Poppins', sans-serif;
-  /* --font-mono: var(--font-geist-mono); */
-  /* new breakpoints */
   --breakpoint-sm: 300px;
   --breakpoint-lg: 1024px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--urban-black);
+    --foreground:  var(--urban-white);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--urban-black);
+  color: var(--urban-white);
   font-family: Arial, Helvetica, sans-serif;
 }
