@@ -1,6 +1,5 @@
 import React from 'react';
 import ArticlePreview from './ArticlePreview';
-import Button from '../Button';
 
 interface Article {
   title: string; 
@@ -29,7 +28,6 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
         />
       ))}
 
-<Button className=' col-span-2 sm:col-start-4 lg:col-start-6 text-center' label="Show More →" href="/news" variant="default" isActive={false} />
     </div>
   );
 };
