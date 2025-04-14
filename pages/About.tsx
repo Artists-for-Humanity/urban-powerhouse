@@ -9,7 +9,7 @@ import Leadership from "../components/Leadership";
 
 
 
-export default function News() {
+export default function About() {
 
 
 
