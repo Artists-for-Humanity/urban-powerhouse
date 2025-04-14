@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
-          <Button label="Donate" className='text-[var(--urban-orange)]' href="/" variant="nav" isActive={false} />
+          <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
           <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
         </div>
       </div>
@@ -48,7 +48,7 @@ const Navigation: React.FC = () => {
       <div className="hidden sm:flex lg:hidden justify-between items-center w-full max-w-[1200px]">
         <Logo size="small" />
         <div className="flex gap-4 items-center">
-          <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" />
+          <Button label="Donation" onClick={() => console.log('Donation clicked')} href='/Donation' variant="default" />
           <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
              <div className="relative">
             <Button className="text-3xl" label="☰" onClick={toggleTabletMenu} variant="default" />
@@ -83,7 +83,7 @@ const Navigation: React.FC = () => {
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
-        <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" />
+        <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
         <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
       </div>
     </nav>
