@@ -6,6 +6,8 @@ import Container from "../components/Container";
 import Navigation from "../components/Navigation";
 import TextBlock from "../components/Donation/TextBlock";
 import DonationWeight from "../components/Donation/DonationWeight";
+import Button from "../components/Button";
+
 import '../app/globals.css';
 
 
@@ -29,9 +31,11 @@ export default function Donation() {
                     { amount: "$1000", description: "Helps cover travel cost associated with larger scale competitions." },
                     { amount: "$2500", description: "Helps us open the doors to our first brick and mortar facility" },
                     { amount: "$__", description: "Make a gift. Every donation, no matter the size, will help us make Boston strong  together" },
+                    
                     ]}
-                    className="bg-urban-grey"
                 />
+                
+                <Button label="Donation" variant="default" href='/Donation' className="col-start-6" />
               </Container>
             <Footer />
           </Grid>
