@@ -33,7 +33,7 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
                 alt="Weight Background"
                 className="absolute inset-0 w-full h-full object-contain rounded-lg"
               />
-              <span className="relative text-xl font-bold z-10 mt-12">
+              <span className="relative text-xl font-bold z-10 mt-12 mr-4">
                 {donation.amount}
               </span>
             </div>
