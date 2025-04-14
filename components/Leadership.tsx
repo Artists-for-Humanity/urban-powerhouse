@@ -9,7 +9,7 @@ interface LeadershipProps {
 
 const Leadership: React.FC<LeadershipProps> = ({ imageSrc, name, description }) => {
   return (
-    <div className=" col-span-full grid grid-cols-subgrid last:mb-10">
+    <div className=" col-span-full grid grid-cols-subgrid mb-20">
       <Image
         src={imageSrc}
         alt={`${name}'s headshot`}

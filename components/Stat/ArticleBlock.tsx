@@ -1,0 +1,121 @@
+import React from 'react';
+import Image from 'next/image';
+import Button from '../Button';
+import Link from 'next/link';
+
+interface ArticleBlockProps {
+  variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'go-back';
+  title?: string;
+  paragraphs?: string[];
+  quote?: string;
+  imageSrc?: string;
+  description?: string;
+  onBackClick?: () => void;
+  href?: string;
+}
+
+const ArticleBlock: React.FC<ArticleBlockProps> = ({
+  variant,
+  title,
+  paragraphs = [],
+  quote,
+  imageSrc,
+  description,
+  onBackClick,
+  href,
+}) => {
+  switch (variant) {
+    case 'title':
+      return (
+        <h1 className="text-[20px] sm:text-[28px] lg:text-[32px] font-bold mb-[24px] col-span-full lg:col-start-2 border-l-10 border-[var(--urban-blue)] group-hover:border-[var(--urban-orange)] transition-colors duration-300 pl-2">
+        {title}
+      </h1>
+      );
+
+    case 'paragraph':
+      return (
+        <div className="space-y-4 col-span-full grid grid-cols-subgrid">
+          {paragraphs.map((paragraph, index) => (
+             <p key={index} className="col-span-full sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10 mb-6 text-base font-normal leading-relaxed">
+             {paragraph}
+           </p>
+          ))}
+        </div>
+      );
+
+    case 'quote':
+      return (
+        <div className="col-span-full flex flex-col items-start text-left sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10">
+          <Image src="/quote.svg" alt="Quote Symbol" width={63} height={50} />
+          <p className="text-[24px] lg:text-[32px] text-(--urban-white) italic font-bold my-4">
+            {quote}
+          </p>
+        </div>
+      );
+
+    case 'image-description':
+      return (
+        <div className="col-span-full grid grid-cols-subgrid items-center sm:col-start-2 sm:col-span-6  lg:col-start-2 lg:col-span-10">
+          <p className="col-span-full sm:col-span-3 lg:col-start-1 lg:col-span-6 mb-6 text-base font-normal leading-relaxed">
+             {description}
+           </p>
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt="Image"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover mb-4 col-span-full sm:col-start-4 sm:col-span-3 lg:col-start-7 lg:col-span-4"
+            />
+          )}
+        </div>
+      );
+
+    case 'center-image':
+      return (
+        <div className="col-span-full flex flex-col items-center justify-center sm:grid sm:grid-cols-subgrid mb-4 lg:col-start-2 lg:col-span-10">
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt="Centered Image"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover sm:col-start-3 sm:col-span-4 lg:col-start-4"
+            />
+          )}
+          {description && (
+            <p className="mt-4 text-base font-normal w-3/4 leading-relaxed text-center sm:col-start-3 sm:col-span-4 lg:col-start-4 sm:w-full">
+            {description}
+            </p>
+        )}
+        </div>
+      );
+
+      case 'go-back':
+        return (
+            <div className="col-span-full flex justify-center">
+            {href ? (
+              <Link href={href} passHref>
+                <div className="text-urban-blue font-medium hover:underline">
+                  <Button label="Go Back" variant="default" className="" />
+                </div>
+              </Link>
+            ) : (
+              onBackClick && (
+                <Button
+                  label="Go Back"
+                  onClick={onBackClick}
+                  variant="default"
+                  className=""
+                />
+              )
+            )}
+          </div>
+        );
+
+    default:
+      return null;
+  }
+};
+
+export default ArticleBlock;

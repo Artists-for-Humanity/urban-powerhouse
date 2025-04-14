@@ -10,7 +10,7 @@ const Container: React.FC<ContainerProps> = ({ children, className = '', header 
   return (
     <div 
       className={
-           ` grid grid-cols-subgrid w-full col-span-full gap-y-[60px] items-start bg-(--urban-black) h-100% pb-10 mt-[2vh] ${className} `
+           ` grid grid-cols-subgrid w-full col-span-full gap-y-[0px] items-start bg-(--urban-black) h-100% pb-10 mt-[2vh] ${className} `
       }
     >
       {/* Header Section */}
