@@ -34,8 +34,9 @@ export default function Donation() {
                     
                     ]}
                 />
-                
-                <Button label="Donation" variant="default" href='/Donation' className="col-start-6" />
+               <div className=" col-span-2 col-start-3  sm:col-start-4 lg:col-start-6 flex justify-center items-center">
+    <Button label="Donate" variant="default" href='/Donation' />
+</div>
               </Container>
             <Footer />
           </Grid>
