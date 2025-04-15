@@ -66,7 +66,7 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
                 selectedIndex === index
                   ? 'fill-[var(--urban-orange)]'
                   : index === donations.length - 1
-                  ? 'fill-[var(--urban-grey)]'
+                  ? 'fill-[var(--urban-grey)] group-hover:fill-[var(--urban-orange)]'
                   : 'fill-[var(--urban-blue)] group-hover:fill-[var(--urban-orange)]'
               } transition-colors duration-300`}
             />
