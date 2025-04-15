@@ -18,8 +18,7 @@ export default function Donation() {
             <Navigation/>
               <Container>
                 <h1 className="text-[32px] font-semibold col-span-full ">Why Give to UPH?</h1>
-                <TextBlock text="Lorem ipsum dolor sit amet consectetur. Cras eget urna pellentesque diam tincidunt diam. Elementum imperdiet vitae sit consectetur pharetra. Platea phasellus cursus sed praesent eget scelerisque. Pretium leo vulputate facilisis elit rhoncus. Venenatis urna imperdiet velit at ultrices ultrices porttitor integer. Fringilla fames ultrices odio egestas dui etiam. Arcu fermentum mauris sit maecenas eu dolor justo ut ut. Tellus nam velit vitae vulputate nec vestibulum sed massa nibh. Hendrerit cras elementum volutpat magna in lorem enim." />
-                <TextBlock text="Lorem ipsum dolor sit amet consectetur. Cras eget urna pellentesque diam tincidunt diam. Elementum imperdiet vitae sit consectetur pharetra. Platea phasellus cursus sed praesent eget scelerisque. Pretium leo vulputate facilisis elit rhoncus. Venenatis urna imperdiet velit at ultrices ultrices porttitor integer. Fringilla fames ultrices odio egestas dui etiam. Arcu fermentum mauris sit maecenas eu dolor justo ut ut. Tellus nam velit vitae vulputate nec vestibulum sed massa nibh. Hendrerit cras elementum volutpat magna in lorem enim." />
+                <TextBlock text="Urban PowerHouse will create the first nonprofit strength-training facility supporting underserved populations in Boston and neighboring areas. Help us make powerlifting and weightlifting attainable for everyone by making a gift today. Your donation will help us provide training, information access and financial support to youth and adult athletes." />
                 <DonationWeight
                     title="Your Donation Counts Help under represented teens access the world of strength training!"
                     donations={[
