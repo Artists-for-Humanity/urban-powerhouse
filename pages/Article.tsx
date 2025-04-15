@@ -31,6 +31,8 @@ export default function News() {
                 <ArticleBlock 
                 variant="quote" 
                 quote="Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate." 
+                cite="FIRST LASTNAME, TITLE HERE
+"
                 />
                  <ArticleBlock 
                 variant="center-image" 

@@ -8,6 +8,7 @@ interface ArticleBlockProps {
   title?: string;
   paragraphs?: string[];
   quote?: string;
+  cite?: string;
   imageSrc?: string;
   description?: string;
   onBackClick?: () => void;
@@ -19,6 +20,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   title,
   paragraphs = [],
   quote,
+  cite,
   imageSrc,
   description,
   onBackClick,
@@ -45,10 +47,13 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
 
     case 'quote':
       return (
-        <div className="col-span-full flex flex-col items-start text-left sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10">
+        <div className="col-span-full flex flex-col items-start text-left sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10 lg:my-10">
           <Image src="/quote.svg" alt="Quote Symbol" width={63} height={50} />
-          <p className="text-[24px] lg:text-[32px] text-(--urban-white) italic font-bold my-4">
+          <p className="text-[24px] lg:text-[32px] text-(--urban-white) italic font-bold mt-4 mb-2">
             {quote}
+          </p>
+          <p className="text-[16px] lg:text-[16px] text-(--urban-white) italic font-bold mb-4">
+            {cite}
           </p>
         </div>
       );
@@ -73,7 +78,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
 
     case 'center-image':
       return (
-        <div className="col-span-full flex flex-col items-center justify-center sm:grid sm:grid-cols-subgrid mb-4 lg:col-start-2 lg:col-span-10">
+        <div className="col-span-full flex flex-col items-center justify-center sm:grid sm:grid-cols-subgrid mb-10 lg:col-start-2 lg:col-span-10">
           {imageSrc && (
             <Image
               src={imageSrc}
