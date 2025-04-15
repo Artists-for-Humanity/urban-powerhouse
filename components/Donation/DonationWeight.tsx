@@ -45,7 +45,10 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
      
             <div
               className={`relative w-full h-[150px] flex justify-center items-center group`}
-              onClick={() => setSelectedIndex(index)} // Set the selected index on click
+              onClick={() => {
+                setSelectedIndex(index);
+                localStorage.setItem('donateAmount', donation.amount); 
+              }}
             >
           <svg
             width="143"
