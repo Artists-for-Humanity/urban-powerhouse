@@ -34,7 +34,7 @@ export default function Donation() {
                     ]}
                 />
                <div className=" col-span-2 col-start-3  sm:col-start-4 lg:col-start-6 flex justify-center items-center">
-    <Button label="Donate" variant="default" href='/Donation' />
+    <Button label="Donate" variant="default" href='https://www.paypal.com/us/home' />
 </div>
               </Container>
             <Footer />
