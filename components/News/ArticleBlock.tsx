@@ -27,7 +27,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   switch (variant) {
     case 'title':
       return (
-        <h1 className="text-[20px] sm:text-[28px] lg:text-[32px] font-bold mb-[24px] col-span-full lg:col-start-2 border-l-10 border-[var(--urban-blue)] group-hover:border-[var(--urban-orange)] transition-colors duration-300 pl-2">
+        <h1 className="text-[20px] sm:text-[28px] lg:text-[32px] font-bold mb-[24px] col-span-full lg:col-start-2 border-l-10 border-[var(--urban-orange)] group-hover:border-[var(--urban-orange)] transition-colors duration-300 pl-2">
         {title}
       </h1>
       );

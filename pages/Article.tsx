@@ -4,7 +4,7 @@ import Grid from "../components/GridContainer";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Navigation from "../components/Navigation";
-import ArticleBlock from "../components/Stat/ArticleBlock";
+import ArticleBlock from "../components/News/ArticleBlock";
 import '../app/globals.css';
 
 
@@ -32,12 +32,15 @@ export default function News() {
                 variant="quote" 
                 quote="Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate." 
                 />
-           
-
-                <ArticleBlock 
-                variant="image-description" 
+                 <ArticleBlock 
+                variant="center-image" 
                 imageSrc="/gymshots/Championship2025.jpg" 
-                description="Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.. Lorem elementum eget nunc risus sed at mauris sit.. Integer in tortor volutpat dui. Id eget cras euismod sit nulla morbi etiam.. Ut pellentesque nibh quam vitae ut mi sed sem.. Placerat tincidunt varius at felis congue imperdiet.. Enim a elit risus amet tortor facilisi.. Faucibus eget quis pharetra quis metus enim imperdiet scelerisque sagittis.." 
+  
+                />
+                     <ArticleBlock 
+                variant="paragraph" 
+                paragraphs={["Urban PowerHouse is proud to be a Summer 2024 SuccessLink Employment partner with the City of Boston.",
+                  "The Office of Youth Employment and Opportunity is supporting Boston-area 501(c)(3) nonprofits interested in providing funding for employment opportunities to youth participants between the ages of 14-18, and young adults between the ages of 19-24.",]} 
                 />
                 <ArticleBlock 
                 variant="paragraph" 
@@ -47,7 +50,6 @@ export default function News() {
                 <ArticleBlock 
                 variant="center-image" 
                 imageSrc="/gymshots/DejenaeMachinePress.jpg"   
-                description="This is a centered image with a short description." 
                 />
                       <ArticleBlock 
                 variant="paragraph" 
