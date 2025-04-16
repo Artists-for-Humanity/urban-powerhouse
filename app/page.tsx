@@ -1,13 +1,11 @@
 "use client";
 import React from "react";
 import Grid from "../components/GridContainer";
-// import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero/Hero";
-// import HeroText from "../components/HeroText";
+import Hero from "../components/Hero";
 import Container from "../components/Container";
-// import Video from "../components/Video";
-import VideoBlock from "../components/Video/VideoBlock";
+import VideoBlock from "../components/VideoBlock";
+
 import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
@@ -15,6 +13,20 @@ import StatBlock from "../components/Stat/StatBlock";
 import InfoBlock from "../components/InfoBlock";
 
 export default function Home() {
+  const partners = {
+    header: 'Our Partners',
+    images: [
+      { src: '/logos/A7.png', link: 'https://a7.co/' },
+      { src: '/logos/Eleiko.png', link: 'https://eleiko.com/en-us' },
+      { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
+      { src: '/logos/BOS.png', link: 'https://bellsofsteel.us//' },
+      { src: '/logos/placeholder.png', link: 'https://example.com/' },
+      { src: '/logos/placeholder.png', link: 'https://example.com/' },
+      { src: '/logos/placeholder.png', link: 'https://example.com/' },
+      { src: '/logos/placeholder.png', link: 'https://example.com/' },
+    ],
+  };
+
   return (
         <Grid>
           <Hero 
@@ -52,19 +64,11 @@ export default function Home() {
               ]}
               className="bg-urban-grey"
             />
-            <PartnerBlock
-              header="Our Partners"
-              images={[
-                '/partner.svg',
-                '/partner.svg',
-                '/partner.svg',  
-                '/partner.svg',  
-                '/partner.svg',  
-                '/partner.svg',  
-                '/partner.svg',  
-                '/partner.svg',  
-              ]}
-              ></PartnerBlock>
+                <PartnerBlock
+                  header={partners.header}
+                  images={partners.images}
+                  className=""
+                />
 
               <StatBlock
                 header="Our Stats"
