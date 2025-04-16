@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from '../Button';
 import Video from './Video'; // Assuming this is your custom Video component
 
 interface VideoBlockProps {
@@ -34,10 +34,10 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
         </div>
 
       <div className="col-span-full g:col-span-10 mx-[32px] sm:mx-[83px] lg:mx-0 lg:col-span-10">
-        <h2 className="text-white text-[32px] font-semibold leading-[1.125] m-0 mb-[13px]">
+        <h2 className="text-(--urban-white) text-[32px] font-semibold leading-[1.125] m-0 mb-[13px]">
           {title}
         </h2>
-        <p className="m-0 text-white text-[16px] font-semibold leading-6 mb-[42px] lg:mb-0">
+        <p className="m-0 text-(--urban-white) text-[16px] font-semibold leading-6 mb-[42px] lg:mb-0">
           {description}
         </p>
       </div>

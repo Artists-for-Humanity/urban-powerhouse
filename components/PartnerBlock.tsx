@@ -10,10 +10,10 @@ interface PartnerBlockProps {
 const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className = '' }) => {
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className} mb-10`}>
-      <div className="text-center text-[32px] font-semibold mb-4 col-span-full">
-        {header}
-      </div>
 
+        <div className="text-left text-[32px] font-semibold mb-4 col-span-full sm:col-start-2 sm:col-span-2 lg:col-start-1 lg:col-span-4">
+          {header}
+        </div>
       {/* Mobile Layout */}
       <div className="grid col-start-2 col-span-4 gap-y-[25px] sm:hidden justify-center items-center">
         {images.slice(0, 8).map(({ src, link }, index) => (

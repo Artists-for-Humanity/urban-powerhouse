@@ -11,7 +11,7 @@ const StatBlock: React.FC<StatBlockProps> = ({ header, stats, className = '' }) 
   return (
     <div
       className={`flex flex-col col-start-2 col-span-4 sm:col-start-2 sm:col-span-6 lg:col-span-full ${className} ${
-        stats.length > 1 ? 'items-start sm:items-start lg:items-center' : ''
+        stats.length > 1 ? 'items-start sm:items-start' : ''
       }`}
     >
       {/* Header */}
