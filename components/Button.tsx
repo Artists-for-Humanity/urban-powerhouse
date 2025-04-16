@@ -39,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({
   }
   //default button
   return (
+    <Link href={href || '#'} passHref className='z-[1]'>
     <button
       onClick={onClick}
       disabled={isDisabled}
@@ -52,8 +53,10 @@ const Button: React.FC<ButtonProps> = ({
       `
       }
     >
+      
       {label}
     </button>
+    </Link>
   );
 };
 

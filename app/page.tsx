@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
 import Grid from "../components/GridContainer";
-// import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero/Hero";
-// import HeroText from "../components/HeroText";
 import Container from "../components/Container";
-// import Video from "../components/Video";
 import VideoBlock from "../components/Video/VideoBlock";
 import QuoteBlock from "../components/QuoteBlock";
 import ImageBlock from "../components/ImageBlock";

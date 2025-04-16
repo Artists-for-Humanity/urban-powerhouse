@@ -14,14 +14,6 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // const toggleDropdown = (index: number) => {
-  //   setOpenIndices((prevIndices) =>
-  //     prevIndices.includes(index)
-  //       ? prevIndices.filter((i) => i !== index)
-  //       : [...prevIndices, index] 
-  //   );
-  // }
-
   const toggleDropdown = (index) => {
     setOpenIndices((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
