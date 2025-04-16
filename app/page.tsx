@@ -18,7 +18,7 @@ export default function Home() {
       { src: '/logos/A7.png', link: 'https://a7.co/' },
       { src: '/logos/Eleiko.png', link: 'https://eleiko.com/en-us' },
       { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
-      { src: '/logos/BOS.png', link: 'https://bellsofsteel.us//' },
+      { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
       // { src: '/logos/placeholder.png', link: 'https://example.com/' },
       // { src: '/logos/placeholder.png', link: 'https://example.com/' },
       // { src: '/logos/placeholder.png', link: 'https://example.com/' },
