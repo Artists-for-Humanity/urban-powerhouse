@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '../Button';
-import Link from 'next/link';
 
 interface ArticleBlockProps {
   variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'go-back';
@@ -14,7 +13,6 @@ interface ArticleBlockProps {
   onBackClick?: () => void;
   href?: string;
 }
-
 const ArticleBlock: React.FC<ArticleBlockProps> = ({
   variant,
   title,
@@ -23,8 +21,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   cite,
   imageSrc,
   description,
-  onBackClick,
-  href,
+
 }) => {
   switch (variant) {
     case 'title':
@@ -96,27 +93,14 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
         </div>
       );
 
+
       case 'go-back':
         return (
-            <div className="col-span-full flex justify-center">
-            {href ? (
-              <Link href={href} passHref>
-                <div className="text-urban-blue font-medium hover:underline">
-                  <Button label="Go Back" variant="default" className="" />
-                </div>
-              </Link>
-            ) : (
-              onBackClick && (
-                <Button
-                  label="Go Back"
-                  onClick={onBackClick}
-                  variant="default"
-                  className=""
-                />
-              )
-            )}
+          <div className="col-span-full flex justify-center">
+              <Button label="Go Back" onClick={() => console.log('Donation clicked')} href='/News' variant="default" />
           </div>
         );
+
 
     default:
       return null;
