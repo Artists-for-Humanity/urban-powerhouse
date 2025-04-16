@@ -52,10 +52,10 @@ export default function Home() {
             <PartnerBlock
               header="Our Partners"
               images={[
-                '/partner.svg',
-                '/partner.svg',
-                '/partner.svg',  
-                '/partner.svg',  
+                '/logos/Eleiko.png',
+                '/logos/BOS.png',
+                '/logos/A7.png',  
+                '/logos/AFH.png',  
                 '/partner.svg',  
                 '/partner.svg',  
                 '/partner.svg',  

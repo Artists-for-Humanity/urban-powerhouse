@@ -14,35 +14,35 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
           {header}
         </div>
       {/* Mobile Layout */}
-      <div className="grid col-start-2 col-span-4 gap-y-[25px] sm:hidden">
-        {images.slice(0, 8).map((src, index) => (
-          <div key={index} className="col-span-full">
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        ))}
-      </div>
+      <div className="grid col-start-2 col-span-4 gap-y-[25px] sm:hidden justify-center items-center">
+  {images.slice(0, 8).map((src, index) => (
+    <div key={index} className="col-span-full max-w-[261px] max-h-[75px] overflow-hidden flex justify-center items-center">
+      <Image
+        src={src}
+        alt={`Image ${index + 1}`}
+        width={400}
+        height={300}
+        className="w-full h-full object-contain"
+      />
+    </div>
+  ))}
+</div>
 
       {/* Tablet Layout */}
       <div className="hidden sm:grid col-start-2 col-span-6 grid-cols-subgrid sm:grid-cols-2 sm:gap-4 lg:hidden">
         {images.slice(0, 9).map((src, index) => (
-          <div
-            key={index}
-            className='col-span-1'
-          >
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+        <div
+          key={index}
+          className="col-span-1 max-h-[80px] overflow-hidden"
+        >
+          <Image
+            src={src}
+            alt={`Image ${index + 1}`}
+            width={400}
+            height={300}
+            className="w-full h-full object-contain"
+          />
+        </div>
         ))}
       </div>
 
@@ -51,16 +51,16 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
         {images.map((src, index) => (
           <div 
           key={index}
-          className='col-span-1 row-span-1'
-          >
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+          className="col-span-1 row-span-1 flex justify-center items-center max-w-[350px] max-h-[80px] overflow-hidden"
+        >
+          <Image
+            src={src}
+            alt={`Image ${index + 1}`}
+            width={400}
+            height={300}
+            className="w-full h-full object-contain"
+          />
+        </div>
         ))}
       </div>
     </div>
