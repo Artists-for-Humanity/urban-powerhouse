@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import Image from 'next/image';
+import Button from '../Button';
 
 interface DonationItem {
   amount: string;
@@ -47,7 +47,8 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
               className={`relative w-full h-[150px] flex justify-center items-center group`}
               onClick={() => {
                 setSelectedIndex(index);
-                localStorage.setItem('donateAmount', donation.amount); 
+                const numberAmount = donation.amount.replace(/^\$/, '');
+                localStorage.setItem('donateAmount', numberAmount); 
               }}
             >
           <svg
@@ -89,7 +90,13 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
           );
         })}
       </div>
-      
+      <div className=" col-span-2 col-start-3  sm:col-start-4 lg:col-start-6 flex justify-center items-center">
+    <Button 
+    label="Donate" 
+    variant="default"
+     href="https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=2500&no_recurring=0&item_name=gym&currency_code=USD"
+     />
+</div> 
     </div>
   );
 };
