@@ -154,7 +154,11 @@ const handleDonate = () => {
           variant="default"
           onClick={() => {
             setIsPopupVisible(false);
+            setCustomAmount('');
             setCustomError('');
+            setIsPopupVisible(false);
+            setSelectedIndex(null);
+            localStorage.removeItem('donateAmount');
           }}
         />
         <Button
