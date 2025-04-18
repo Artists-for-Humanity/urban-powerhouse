@@ -16,12 +16,28 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [customAmount, setCustomAmount] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+const [customError, setCustomError] = useState('');
 
-  const handleDonate = () => {
-    const numberAmount = customAmount || localStorage.getItem('donateAmount') || '2500';
-    const paypalUrl = `https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=${numberAmount}&no_recurring=0&item_name=gym&currency_code=USD`;
-    window.location.href = paypalUrl;
-  };
+const handleDonate = () => {
+  const numberAmount = customAmount || localStorage.getItem('donateAmount');
+
+  if (!numberAmount) {
+    setErrorMessage('Please select a donation amount.');
+    return;
+  }
+
+  const parsedAmount = parseFloat(numberAmount);
+  if (isNaN(parsedAmount) || parsedAmount <= 0) {
+    setErrorMessage('Invalid donation amount. Please enter a valid number.');
+    return;
+  }
+
+  setErrorMessage('');
+  const paypalUrl = `https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=${parsedAmount}&no_recurring=0&item_name=gym&currency_code=USD`;
+  window.location.href = paypalUrl;
+};
+
 
   return (
     <div className={`col-span-full ${className} grid grid-cols-subgrid`}>
@@ -104,36 +120,6 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
         })}
       </div>
 
-  {/* {isPopupVisible && (
-  <div className="fixed inset-0 bg-black/20 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-xl font-bold mb-4">Enter Custom Donation Amount</h2>
-        <input
-        type="number"
-        className="border border-gray-300 rounded-lg p-2 w-full mb-4 text-black bg-white placeholder-gray-500"
-        placeholder="Enter amount in USD"
-        value={customAmount}
-        onChange={(e) => setCustomAmount(e.target.value)}
-        min="0"
-      />
-      <div className="flex justify-end space-x-4">
-        <Button
-          label="Cancel"
-          variant="default"
-          onClick={() => setIsPopupVisible(false)}
-        />
-        <Button
-          label="Donate"
-          variant="default"
-          onClick={() => {
-            localStorage.setItem('donateAmount', customAmount);
-            handleDonate();
-          }}
-        />
-      </div>
-    </div>
-  </div>
-)} */}
 {isPopupVisible && (
   <div className="fixed inset-0 bg-black/20 flex justify-center items-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
@@ -142,7 +128,7 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
         Enter Custom Donation Amount
       </h2>
 
-      <div className="relative mb-4">
+      <div className="relative mb-2">
         <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-lg font-semibold">
           $
         </span>
@@ -151,21 +137,34 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
           className="border border-gray-300 rounded-lg p-2 pl-8 w-full text-black bg-white placeholder-gray-500"
           placeholder="0.00"
           value={customAmount}
-          onChange={(e) => setCustomAmount(e.target.value)}
+          onChange={(e) => {
+            setCustomAmount(e.target.value);
+            setCustomError('');
+          }}
           min="0"
         />
       </div>
+      {customError && (
+        <p className="text-red-600 text-sm mb-2">{customError}</p>
+      )}
 
       <div className="flex justify-end space-x-4">
         <Button
           label="Cancel"
           variant="default"
-          onClick={() => setIsPopupVisible(false)}
+          onClick={() => {
+            setIsPopupVisible(false);
+            setCustomError('');
+          }}
         />
         <Button
           label="Donate"
           variant="default"
           onClick={() => {
+            if (!customAmount || isNaN(Number(customAmount)) || Number(customAmount) <= 0) {
+              setCustomError('Please enter a valid number greater than 0.');
+              return;
+            }
             localStorage.setItem('donateAmount', customAmount);
             handleDonate();
           }}
@@ -176,9 +175,14 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
 )}
 
 
-      <div className="col-span-2 col-start-3 sm:col-start-4 lg:col-start-6 flex justify-center items-center">
+
+      <div className="col-span-2 col-start-3 sm:col-start-4 lg:col-start-6 flex justify-center items-center pt-6">
         <Button label="Donate" variant="default" onClick={handleDonate} />
       </div>
+      {errorMessage && (
+  <p className="text-red-600 text-sm text-center mt-2 col-span-full pt-2">{errorMessage}</p>
+)}
+
     </div>
   );
 };
