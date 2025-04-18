@@ -41,13 +41,7 @@ const Button: React.FC<ButtonProps> = ({
   if (href) {
     return (
       <Link href={href} passHref className="z-[1]">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            onClick?.(e);
-          }}
-          disabled={isDisabled}
+        <div
           className={`
             relative pl-4 pr-4 py-3 rounded-lg text-[--urban-white] whitespace-nowrap font-bold bg-[var(--urban-blue)] transition-all
             ${isDisabled ? 'bg-gray-400 cursor-not-allowed' : ''}
@@ -57,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
           `}
         >
           {label}
-        </button>
+        </div>
       </Link>
     );
   }
