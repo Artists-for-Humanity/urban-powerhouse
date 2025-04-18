@@ -48,7 +48,8 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
               onClick={() => {
                 setSelectedIndex(index);
                 const numberAmount = donation.amount.replace(/^\$/, '');
-                localStorage.setItem('donateAmount', numberAmount); 
+                localStorage.setItem('donateAmount', numberAmount);
+                console.log('Donation amount set to:', numberAmount);
               }}
             >
           <svg
@@ -91,11 +92,20 @@ const DonationWeight: React.FC<DonationWeightProps> = ({ title, donations, class
         })}
       </div>
       <div className=" col-span-2 col-start-3  sm:col-start-4 lg:col-start-6 flex justify-center items-center">
-    <Button 
+    {/* <Button 
     label="Donate" 
     variant="default"
      href="https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=2500&no_recurring=0&item_name=gym&currency_code=USD"
-     />
+     /> */}
+     <Button
+    label="Donate"
+    variant="default"
+    onClick={() => {
+      const numberAmount = localStorage.getItem('donateAmount') || '2500';
+      const paypalUrl = `https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=${numberAmount}&no_recurring=0&item_name=gym&currency_code=USD`;
+      window.location.href = paypalUrl;
+    }}
+  />
 </div> 
     </div>
   );
