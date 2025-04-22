@@ -8,12 +8,16 @@ import TextBlock from "../components/Donation/TextBlock";
 import DonationWeight from "../components/Donation/DonationWeight";
 // import Button from "../components/Button";
 
+// import Head from 'next/head';
+
+
 import '../app/globals.css';
 
 
 export default function Donation() {
 
     return (
+      
           <Grid className="gap-y-4">
             <Navigation/>
               <Container>
