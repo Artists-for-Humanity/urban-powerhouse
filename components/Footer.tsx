@@ -51,9 +51,15 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Follow Us</h2>
                     <div className="flex space-x-4">
-                        <FaFacebookF className="w-6 h-6 cursor-pointer" />
-                        <FaYoutube className="w-6 h-6 cursor-pointer" />
-                        <FaInstagram className="w-6 h-6 cursor-pointer" />
+                        <a href="https://www.facebook.com/UrbanPowerHouse/" target="_blank" rel="noopener noreferrer">
+                            <FaFacebookF className="w-6 h-6 cursor-pointer" />
+                        </a>
+                        <a href="https://www.youtube.com/@urbanpowerhouse3700" target="_blank" rel="noopener noreferrer">
+                            <FaYoutube className="w-6 h-6 cursor-pointer" />
+                        </a>
+                        <a href="https://www.instagram.com/urbanpowerhouse" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram className="w-6 h-6 cursor-pointer" />
+                        </a>
                     </div>
                 </div>
             </div>

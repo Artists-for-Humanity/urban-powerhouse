@@ -13,52 +13,89 @@ export default function FAQ() {
 
     const faqs = [
             { 
-              question: 'What is your return policy?', 
-              answer: 'We want you to be fully satisfied with your gear. If something’s not working out, you can return unused items within 30 days of purchase. Just make sure the original tags are intact and bring your receipt or order confirmation.' 
+              question: 'About Urban PowerHouse',
+              answer: `Urban PowerHouse aims to empower those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve.
+
+              Urban PowerHouse is a 501c3 nonprofit organization. We choose this structure so that we can ensure that our programs and services remain accessible and attainable for individuals living in and around Boston’s urban neighborhoods.
+              `
             },
             { 
-              question: 'How do I track my order?', 
-              answer: 'After your order ships, you’ll receive an email with a tracking link. You can also check your account dashboard under "My Orders" to see real-time updates.' 
+              question: 'Individualized Coaching', 
+              answer: 'If you are interested in our individualized coaching for powerlifting, weightlifting, other health, wellness or sport goals, or nutrition coaching, please contact us to set up an initial meeting and you can determine if UPH is a good fit for you. ' 
             },
             { 
-              question: 'Do you ship internationally?', 
-              answer: 'Yes! We currently ship to over 40 countries. International shipping rates and delivery times vary by location and are calculated at checkout.' 
+              question: 'Facility & Access', 
+              answer: `We purposely do not list our address to protect our community space. Please contact us for directions and parking information.
+
+              Gym hours are Monday through Friday, 5am to 11pm, Saturday 8am to 8pm, and Sunday 8am to 6pm. During unstaffed hours members gain access to the facility via an app.
+
+              We sell day passes for $15 and week passes for $35. Contact us at least 24 hours in advance via Instagram or email, teamurbanpowerhouse@gmail.com. Passes can then be purchased on our website.
+
+              If you are coming in with a UPH member, we still need to know at least 24 hours in advance.
+
+              If you are interested in learning more about our student membership, please reach out. We meet parents or guardians for those under the age of 18 in person or via video call.
+              ` 
             },
             { 
-              question: 'Can I return supplements or nutrition products?', 
-              answer: 'For safety reasons, we can’t accept returns on opened supplement or nutrition items. If the product is sealed and unused, you may return it within 30 days.' 
-            },
-            { 
-              question: 'How long does delivery take?', 
-              answer: 'Standard shipping within the U.S. typically takes 3–7 business days. Express options are available at checkout if you need your gear faster.' 
-            },
-            { 
-              question: 'Do you offer student or military discounts?', 
-              answer: 'Yes! We’re proud to support students and military members with exclusive discounts. Just verify your status during checkout to unlock your special rate.' 
-            },
-            { 
-              question: 'What should I do if my order is missing an item?', 
-              answer: 'If you’re missing part of your order, contact our support team right away. We’ll either ship out the missing item or issue a refund, depending on availability.' 
-            },
-            { 
-              question: 'Can I cancel or change my order after placing it?', 
-              answer: 'We process orders quickly, but if you contact us within an hour of placing your order, we’ll do our best to update or cancel it before it ships.' 
-            },
-            { 
-              question: 'Do you sell gift cards?', 
-              answer: 'Absolutely! Digital gift cards are available in various amounts and can be sent instantly or scheduled for a special day. Great for fitness lovers!' 
-            },
-            { 
-              question: 'Are your products eco-friendly?', 
-              answer: 'We’re committed to sustainability. Many of our workout apparel lines use recycled fabrics and eco-conscious manufacturing processes. Look for the green leaf icon on eligible items.' 
-            },
-            { 
-              question: 'Do you offer gym memberships?', 
-              answer: 'Not directly—but we partner with local gyms and studios in select cities. Check our community page to see if there’s a partner facility near you offering exclusive member perks.' 
-            },
-            { 
-              question: 'How do I join your rewards program?', 
-              answer: 'Sign up is free and easy! Create an account, and you’ll start earning points right away on purchases, reviews, and more. Points can be redeemed for discounts and freebies.' 
+              question: 'Equipment', 
+              answer: `Our facility has high quality equipment for powerlifting, weightlifting, and general strength training including: 
+
+                          -3 deadlift platforms
+
+                          -1 Eleiko IPF Competition Platform
+
+                          -1 Eleiko weightlifting platform
+
+                          -3 combo racks
+
+                          -3 power racks
+
+                          -calibrated kilo plates
+
+                          -kilo bumper plates
+
+                          -metal pound plates
+
+                          -urethane pound plates
+
+                          -10 power bars (20 kg)
+
+                          -2 olympic weightlifting bars (20 kg)
+
+                          -1 women’s weightlifting bar (15 kg)
+
+                          -specialty bars (closed and open trap bars, squat bar, deadlift bars, safety squat bars, multi grip bars)
+
+                          -1 chest press machine
+
+                          -1 hamstring curl/ leg extension machine
+
+                          -1 lat pulldown/ row machine
+
+                          -1 belt squat machine
+
+                          -1 plate loaded pulley tower
+
+                          -1 reverse hyper ghd combo
+
+                          -1 back hyper extension
+
+                          -1 iso leg press/ hack squat
+
+                          -4 adjustable benches 
+
+                          -1 flat bench
+
+                          -dumbbells (5-100 lbs, increments of 5 lbs)
+
+                          -2 loadable dumbbell handles
+
+                          -4 kettlebells
+
+                          -1 stationary bike 
+
+                          -1 ski/ row machine
+                          ` 
             }
           
       ];

@@ -11,7 +11,7 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className} mb-10`}>
 
-        <div className="text-left text-[32px] font-semibold mb-4 col-span-full sm:col-start-2 sm:col-span-2 lg:col-start-1 lg:col-span-4">
+        <div className="text-left text-[32px] font-semibold mb-4 col-span-full sm:col-start-2 lg:col-span-2 lg:col-start-1 lg:col-span-4">
           {header}
         </div>
       {/* Mobile Layout */}

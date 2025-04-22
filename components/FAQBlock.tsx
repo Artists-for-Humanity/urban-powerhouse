@@ -54,7 +54,9 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
           {openIndices.includes(index) && (
             <div className="mt-2 pl-6">
               <ul className="list-disc text-base font-light text-(--urban-white)">
-                <li>{faq.answer}</li>
+              {faq.answer.split('\n\n').map((paragraph, i) => (
+      <p key={i} className="mb-2">{paragraph}</p>
+    ))}
               </ul>
             </div>
           )}
