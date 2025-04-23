@@ -37,7 +37,8 @@ export default function Home() {
               <VideoBlock
                 videoFilePath="file.mp4"
                 title="About Urban Powerhouse"
-                description="We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!"
+                description="Urban PowerHouse is a nonprofit organization bringing empowerment and self-growth to those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve.
+"
                 buttonText="Learn More →"
                 onButtonClick={() => console.log("Button clicked!")}
                 />
@@ -73,10 +74,13 @@ export default function Home() {
               <StatBlock
                 header="Our Stats"
                 stats={[
-                  { number: "500", description: "Members" },
-                  { number: "5", description: "Championiships" },
-                  { number: "200", description: "Equipments" },
-                  { number: "$20000", description: "Donated" },
+                  { number: "500", description: "Number of Athletes who have received individualized coaching" },
+                  { number: "54", description: "Athletes who have received financial assistance" },
+                  { number: "250", description: "Unique Visitors" },
+                  { number: "1000", description: "Community Event Attendees" },
+                  { number: "60", description: "sanctioned competitions UPH athletes have participated in" },
+                  { number: "22", description: "Number of state, regional, and national competitions" },
+                  { number: "19", description: "Number of first place wins" },
                 ]}
                 className="bg-urban-grey rounded-lg"
               />
@@ -84,8 +88,8 @@ export default function Home() {
                 variant="contact"
                 title="Reach Us"
                 fields={[
-                  { label: "Phone", value: "123-888-3434" },
-                  { label: "Email", value: "contact@urbanpowerhouse.com" },
+                  // { label: "Phone", value: "123-888-3434" },
+                  { label: "Email:", value: "teamurbanpowerhouse@gmail.com" },
                 ]}
               />
 
@@ -93,13 +97,12 @@ export default function Home() {
                 variant="hours"
                 title="Operating Hours"
                 businessHours={[
-                  { day: "Monday - Friday", hours: "5am - 10pm" },
-                  { day: "Saturday", hours: "8am - 5pm" },
-                  { day: "Sunday", hours: "8am - 3pm" },
-                  { day: "Holidays", hours: "Closed" }
+                  { day: "Monday - Friday", hours: "5am - 11pm" },
+                  { day: "Saturday", hours: "8am -8pm" },
+                  { day: "Sunday", hours: "8am - 6pm" },
+                  // { day: "Holidays", hours: "Closed" }
                 ]}
               />
-
             </Container>
 
           <Footer />
