@@ -71,6 +71,7 @@ const handleDonate = () => {
                 className={`relative w-full h-[150px] flex justify-center items-center group`}
                 onClick={() => {
                   if (isLast) {
+                    setSelectedIndex(index); 
                     setIsPopupVisible(true);
                   } else {
                     setSelectedIndex(index);
