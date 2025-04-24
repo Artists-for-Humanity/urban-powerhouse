@@ -103,7 +103,7 @@ export default function FAQ() {
     return (
           <Grid className="gap-y-4">
             <Navigation/>
-              <Container className="">
+              <Container className="min-h-[60vh]">
               <FAQDropdown faqs={faqs} />
               </Container>
             <Footer />
