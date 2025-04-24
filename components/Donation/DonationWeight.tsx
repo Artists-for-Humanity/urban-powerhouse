@@ -124,9 +124,9 @@ const handleDonate = () => {
 {isPopupVisible && (
   <div className="fixed inset-0 bg-black/20 flex justify-center items-center z-50">
     <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
-      <h1 className="text-2xl font-bold text-center mb-2">Custom Amount</h1>
+      <h1 className="text-2xl font-bold text-black text-center mb-2">Custom Amount</h1>
       <h2 className="text-base text-gray-600 text-center mb-4">
-        Enter Custom Donation Amount
+        Enter Custom Donation Amounts
       </h2>
 
       <div className="relative mb-2">
