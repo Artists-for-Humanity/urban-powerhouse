@@ -16,7 +16,7 @@ interface NewsBlockProps {
 const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
   return (
     <div className="grid grid-cols-subgrid col-span-full mb-20">
-      <h1 className="text-[32px] font-semibold mb-[40px] col-span-full ">{header}</h1>
+      <h1 className="text-[32px] font-semibold mb-[50px] col-span-full ">{header}</h1>
       {articles.map((article, index) => (
         <ArticlePreview
           key={index}
