@@ -21,7 +21,7 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ variant, fields = [], businessHou
           <h2 className="text-[32px] font-bold text-(--urban-white) mb-6">{title}</h2>
           <div className='lg:ml-10'>
             {fields.map((field, index) => (
-              <p key={index} className="text-[16px] font-light mb-4">
+              <p key={index} className="text-[16px] font-light mb-4 flex flex-col sm:block">
                   <span className="mr-2">{field.label}</span>
                   {field.value}
                 </p>            
