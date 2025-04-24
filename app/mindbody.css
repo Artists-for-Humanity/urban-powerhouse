@@ -1,0 +1,89 @@
+/* Registration Form */
+
+body {
+	background-color: transparent;
+}
+
+#registrations_notification_email_opt_in,
+#registrations_scheduling_email_opt_in,
+#registrations_promotion_email_opt_in,
+#registrations_notification_sms_opt_in,
+#registrations_scheduling_sms_opt_in,
+#registrations_promotion_sms_opt_in {
+	width: auto;
+}
+
+.hc-registration-field {
+	padding-right: 25px;
+}
+
+input,
+select {
+	border: none;
+	border-bottom: 1px solid white;
+	width: 200px;
+}
+
+select {
+	background-color: #d9d9d9;
+	color: black;
+}
+
+.note {
+	display: none;
+}
+
+td.label,
+th,
+.label {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	text-align: left !important;
+	font-size: 1rem;
+	padding: 1rem 0px !important;
+}
+
+.label {
+	max-width: 150px !important;
+}
+
+#hc-register {
+	padding: 10px;
+	border-radius: 5px;
+    border: none;
+    cursor: pointer;
+	box-shadow: 5px 5px #ff7200;
+}
+
+div.healcode #hc-register {
+    background-color: #1D42E1 !important;
+}
+
+#hc-register:hover {
+    box-shadow: none;
+    transition: .3s ease-in-out;
+    background-color: #ff7200 !important;
+    transform: translate(5px, 5px);
+}
+
+/* Scheduler Form */
+
+.bw-fullcal-button, .bw-widget__signup-now {
+    font-family: Poppins, sans-serif !important;
+    padding: 15px !important;
+    background-color: #1D42E1 !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 5px 5px #ff7200;
+    border-radius: 5px;
+    text-decoration: none !important;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+    display: inline-block;
+}
+
+.bw-fullcal-button:hover, .bw-widget__signup-now:hover {
+    transform: translate(5px, 5px);
+    background-color: #ff7200 !important;
+    box-shadow: none !important;
+}
