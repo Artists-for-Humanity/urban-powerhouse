@@ -6,7 +6,10 @@ import Container from "../components/Container";
 import Navigation from "../components/Navigation";
 import TextBlock from "../components/Donation/TextBlock";
 import DonationWeight from "../components/Donation/DonationWeight";
-import Button from "../components/Button";
+// import Button from "../components/Button";
+
+// import Head from 'next/head';
+
 
 import '../app/globals.css';
 
@@ -14,6 +17,7 @@ import '../app/globals.css';
 export default function Donation() {
 
     return (
+      
           <Grid className="gap-y-4">
             <Navigation/>
               <Container>
@@ -33,9 +37,7 @@ export default function Donation() {
                     
                     ]}
                 />
-               <div className=" col-span-2 col-start-3  sm:col-start-4 lg:col-start-6 flex justify-center items-center">
-    <Button label="Donate" variant="default" href='https://www.paypal.com/us/home' />
-</div>
+
               </Container>
             <Footer />
           </Grid>
