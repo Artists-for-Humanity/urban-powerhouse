@@ -56,14 +56,14 @@ const handleDonate = () => {
             <div
               key={index}
               className={`flex flex-col col-start-2 col-span-4 sm:col-span-2 lg:col-span-3 items-center rounded-lg ${
-                isLastRowSingle
-                  ? 'sm:col-start-3'
-                  : isLastRowEven
-                  ? isSecondToLast
-                    ? 'sm:col-start-2'
-                    : isLast
-                    ? 'sm:col-start-4'
-                    : ''
+              isLastRowSingle
+                ? 'sm:col-start-3'
+                : isLastRowEven
+                ? isSecondToLast
+                  ? 'sm:col-start-2'
+                  : isLast
+                  ? 'sm:col-start-4'
+                  : ''
                   : ''
               }`}
             >
