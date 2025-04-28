@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Button from '../Button';
 
 interface ArticleBlockProps {
-  variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'go-back';
+  variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'bullet-points' | 'go-back';
   title?: string;
   paragraphs?: string[];
   quote?: string;
@@ -90,6 +90,21 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
             {description}
             </p>
         )}
+        </div>
+      );
+      case 'bullet-points':
+      return (
+        <div className="col-span-full grid grid-cols-subgrid">
+          <ul className="list-disc list-inside space-y-2 col-span-full sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10 mb-10">
+            {paragraphs.map((point, index) => (
+              <li
+                key={index}
+                className="text-base font-normal leading-relaxed pl-4"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
         </div>
       );
 
