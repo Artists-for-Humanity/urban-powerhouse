@@ -16,9 +16,7 @@ export default function FAQ() {
               question: 'About Urban PowerHouse',
               answer: `Urban PowerHouse aims to empower those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve.
 
-              Urban PowerHouse is a 501c3 nonprofit organization. We choose this structure so that we can ensure that our programs and services remain accessible and attainable for individuals living in and around Boston’s urban neighborhoods.
-              `
-            },
+              Urban PowerHouse is a 501c3 nonprofit organization. We choose this structure so that we can ensure that our programs and services remain accessible and attainable for individuals living in and around Boston’s urban neighborhoods.`},
             { 
               question: 'Individualized Coaching', 
               answer: 'If you are interested in our individualized coaching for powerlifting, weightlifting, other health, wellness or sport goals, or nutrition coaching, please contact us to set up an initial meeting and you can determine if UPH is a good fit for you. ' 
@@ -33,70 +31,69 @@ export default function FAQ() {
 
               If you are coming in with a UPH member, we still need to know at least 24 hours in advance.
 
-              If you are interested in learning more about our student membership, please reach out. We meet parents or guardians for those under the age of 18 in person or via video call.
-              ` 
+              If you are interested in learning more about our student membership, please reach out. We meet parents or guardians for those under the age of 18 in person or via video call.`
             },
             { 
               question: 'Equipment', 
-              answer: `Our facility has high quality equipment for powerlifting, weightlifting, and general strength training including: 
-
-                          -3 deadlift platforms
-
-                          -1 Eleiko IPF Competition Platform
-
-                          -1 Eleiko weightlifting platform
-
-                          -3 combo racks
-
-                          -3 power racks
-
-                          -calibrated kilo plates
-
-                          -kilo bumper plates
-
-                          -metal pound plates
-
-                          -urethane pound plates
-
-                          -10 power bars (20 kg)
-
-                          -2 olympic weightlifting bars (20 kg)
-
-                          -1 women’s weightlifting bar (15 kg)
-
-                          -specialty bars (closed and open trap bars, squat bar, deadlift bars, safety squat bars, multi grip bars)
-
-                          -1 chest press machine
-
-                          -1 hamstring curl/ leg extension machine
-
-                          -1 lat pulldown/ row machine
-
-                          -1 belt squat machine
-
-                          -1 plate loaded pulley tower
-
-                          -1 reverse hyper ghd combo
-
-                          -1 back hyper extension
-
-                          -1 iso leg press/ hack squat
-
-                          -4 adjustable benches 
-
-                          -1 flat bench
-
-                          -dumbbells (5-100 lbs, increments of 5 lbs)
-
-                          -2 loadable dumbbell handles
-
-                          -4 kettlebells
-
-                          -1 stationary bike 
-
-                          -1 ski/ row machine
-                          ` 
+              answer: `Our facility has high quality equipment for Powerlifting, Weightlifting, and General Strength Training including: 
+            
+                      3 Deadlift Platforms
+            
+                      1 Eleiko IPF Competition Platform
+            
+                      1 Eleiko Weightlifting Platform
+            
+                      3 Combo Racks
+            
+                      3 Power Racks
+            
+                      Calibrated Kilo Plates
+            
+                      Kilo Bumper Plates
+            
+                      Metal Pound Plates
+            
+                      Urethane Pound Plates
+            
+                      10 Power Bars (20 kg)
+            
+                      2 Olympic Weightlifting Bars (20 kg)
+            
+                      1 Women’s Weightlifting Bar (15 kg)
+            
+                      Specialty Bars (Closed and Open Trap Bars, Squat Bar, Deadlift Bars, Safety Squat Bars, Multi Grip Bars)
+            
+                      1 Chest Press Machine
+            
+                      1 Hamstring Curl/Leg Extension Machine
+            
+                      1 Lat Pulldown/Row Machine
+            
+                      1 Belt Squat Machine
+            
+                      1 Plate Loaded Pulley Tower
+            
+                      1 Reverse Hyper GHD Combo
+            
+                      1 Back Hyper Extension
+            
+                      1 ISO Leg Press/Hack Squat
+            
+                      4 Adjustable Benches 
+            
+                      1 Flat Bench
+            
+                      Dumbbells (5–100 lbs, increments of 5 lbs)
+            
+                      2 Loadable Dumbbell Handles
+            
+                      4 Kettlebells
+            
+                      1 Stationary Bike 
+            
+                      1 Ski/Row Machine` 
             }
+            
           
       ];
 
