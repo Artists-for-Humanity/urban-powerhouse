@@ -48,6 +48,7 @@ export default function Home() {
                   authorImageSrc="/authorImg.png"
                 />
               <ImageBlock
+              header="Our GYM"
               images={[
                 '/gymshots/Championship2025.jpg',
                 '/gymshots/DejenaeMachinePress.jpg',
@@ -63,6 +64,27 @@ export default function Home() {
                 '/gymshots/P1040529.jpg',
           
               ]}
+              className="bg-urban-grey"
+            />
+              <ImageBlock
+              header="Our Equitment"
+              images={[
+                '/gymshots/Championship2025.jpg',
+                '/gymshots/DejenaeMachinePress.jpg',
+                '/gymshots/DSC01530.jpg',
+                '/gymshots/DSC01572.jpg',
+                '/gymshots/IMG_8611.jpg',
+                '/gymshots/IMG_8613.jpg',
+                // '/gymshots/DejenaeMachinePress.jpg',
+                // '/gymshots/DSC01572.jpg',
+                // '/gymshots/RenaudBench.jpg',
+                // '/gymshots/SofiaLegExtension.jpg',
+                // '/gymshots/Championship2025.jpg',
+                // '/gymshots/P1040529.jpg',
+          
+              ]}
+               variant="simple"
+               buttonText="See All  →"
               className="bg-urban-grey"
             />
                 <PartnerBlock

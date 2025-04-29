@@ -52,7 +52,7 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
           </div>
 
              {openIndices.includes(index) && (
-            <div className="mt-2 pl-6">
+            <div className="mt-8 pl-6">
               <ul className="text-base font-light text-[var(--urban-white)]">
                 {faq.answer.split(/\n\s*\n?/).map((paragraph, i) => {
                   const isSubBullet = paragraph.startsWith('-');  // Check for subheading
