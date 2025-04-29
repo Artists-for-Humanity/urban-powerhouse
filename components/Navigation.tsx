@@ -102,7 +102,7 @@ const Navigation: React.FC = () => {
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
-                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/HumbleBeginnings' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
