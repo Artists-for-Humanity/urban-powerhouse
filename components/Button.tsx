@@ -1,14 +1,21 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
+
+type DropdownOption = {
+  label: string;
+  href: string;
+};
 
 type ButtonProps = {
   label: string;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   href?: string;
-  variant?: 'nav' | 'default';
+  variant?: 'nav' | 'default' | 'nav-dropdown';
   isActive?: boolean;
   isDisabled?: boolean;
   className?: string;
+  dropdownOptions?: DropdownOption[]; // Only used for nav-dropdown
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,16 +26,35 @@ const Button: React.FC<ButtonProps> = ({
   isActive = false,
   isDisabled = false,
   className = '',
+  dropdownOptions = [],
 }) => {
-  // Nav links should use Link
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 768) { // Desktop
+      setIsDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 768) { // Desktop
+      setIsDropdownOpen(false);
+    }
+  };
+
+  const handleToggleMobile = () => {
+    if (window.innerWidth < 768) { // Mobile
+      setIsDropdownOpen(!isDropdownOpen);
+    }
+  };
+
   if (variant === 'nav' && href) {
     return (
       <Link href={href} passHref className="z-[1]">
         <div
           className={`
-
-            text-(--urban-white) text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
-            ${isActive ? 'text-blue-500 underline' : ''}
+            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
+            ${isActive ? 'text-[--urban-blue] ' : ''}
             ${className}
           `}
         >
@@ -38,7 +64,63 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  // Button with optional link behavior
+
+  if (variant === 'nav-dropdown') {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  
+    return (
+      <div
+        className={`relative ${isMobile ? '' : 'inline-block text-left'} z-[2]`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Parent button */}
+        <button
+          type="button"
+          onClick={handleToggleMobile}
+          className={`
+            flex items-center gap-1 w-full
+            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
+            ${className}
+          `}
+        >
+          {label}
+          <span className="transform transition-transform scale-[.6]"  style={{
+      transform: isMobile && isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+    }}>
+            ▼
+          </span>
+        </button>
+  
+        {/* Dropdown panel */}
+        {isDropdownOpen && (
+          <div
+            className={`${
+              isMobile ? 'w-full pl-4 space-y-2 mt-2' : 'absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md shadow-lg ring-1 ring-black ring-opacity-10'
+            }`}
+          >
+            <div className={`${isMobile ? 'flex flex-col' : 'py-1'}`}>
+              {dropdownOptions.map((option, index) => (
+                <Link key={index} href={option.href} passHref>
+                  <div
+                    className={`block font-normal cursor-pointer ${
+                      isMobile
+                        ? 'text-nuetral-700 text-l'
+                        : 'px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900'
+                    }`}
+                  >
+                    • {option.label}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  
+
   if (href) {
     return (
       <Link href={href} passHref className="z-[1]">
@@ -57,7 +139,6 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  // Plain button
   return (
     <button
       type="button"
