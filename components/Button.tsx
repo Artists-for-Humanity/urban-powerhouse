@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type DropdownOption = {
   label: string;
@@ -29,7 +30,11 @@ const Button: React.FC<ButtonProps> = ({
   dropdownOptions = [],
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
 
   if (variant === 'nav' && href) {
     return (
@@ -37,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
         <div
           className={`
             text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
-            ${isActive ? 'text-[--urban-blue] ' : ''}
+            ${isActive ? 'text-[--urban-blue]' : ''}
             ${className}
           `}
         >
@@ -47,7 +52,6 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-
   if (variant === 'nav-dropdown') {
     return (
       <div className="relative inline-block text-left z-[2]">
@@ -56,7 +60,7 @@ const Button: React.FC<ButtonProps> = ({
           type="button"
           onClick={(e) => {
             e.preventDefault();
-            setIsDropdownOpen((prev) => !prev);
+            toggleDropdown();
           }}
           className={`
             flex items-center gap-1 w-full
@@ -65,24 +69,31 @@ const Button: React.FC<ButtonProps> = ({
           `}
         >
           {label}
-          <span
-            className="transform transition-transform scale-[.6]"
-            style={{
-              transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            }}
-          >
-            ▼
-          </span>
+          <Image
+            src={
+              isDropdownOpen || hoveredIndex !== null
+                ? "/icons/orange-chevron.png"
+                : "/icons/blue-chevron.png"
+            }
+            alt="Chevron"
+            width={25}
+            height={25}
+            className={`transition-transform duration-300 ${
+              isDropdownOpen ? '-rotate-90' : ''
+            }`}
+            onMouseEnter={() => setHoveredIndex(0)} // Adjust if you have multiple items
+            onMouseLeave={() => setHoveredIndex(null)}
+          />
         </button>
-  
+
         {/* Dropdown panel */}
         {isDropdownOpen && (
-          <div className="lg:absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md bg-[--urban-black]">
+          <div className="lg:absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md">
             <div className="py-1">
               {dropdownOptions.map((option, index) => (
                 <Link key={index} href={option.href} passHref>
                   <div className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 cursor-pointer">
-                     {option.label}
+                    {option.label}
                   </div>
                 </Link>
               ))}
@@ -92,7 +103,6 @@ const Button: React.FC<ButtonProps> = ({
       </div>
     );
   }
-   
 
   if (href) {
     return (

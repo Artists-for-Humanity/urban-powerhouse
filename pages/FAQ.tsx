@@ -37,61 +37,34 @@ export default function FAQ() {
               question: 'Equipment', 
               answer: `Our facility has high quality equipment for Powerlifting, Weightlifting, and General Strength Training including: 
             
-                      3 Deadlift Platforms
-            
-                      1 Eleiko IPF Competition Platform
-            
-                      1 Eleiko Weightlifting Platform
-            
-                      3 Combo Racks
-            
-                      3 Power Racks
-            
-                      Calibrated Kilo Plates
-            
-                      Kilo Bumper Plates
-            
-                      Metal Pound Plates
-            
-                      Urethane Pound Plates
-            
-                      10 Power Bars (20 kg)
-            
-                      2 Olympic Weightlifting Bars (20 kg)
-            
-                      1 Women’s Weightlifting Bar (15 kg)
-            
-                      Specialty Bars (Closed and Open Trap Bars, Squat Bar, Deadlift Bars, Safety Squat Bars, Multi Grip Bars)
-            
-                      1 Chest Press Machine
-            
-                      1 Hamstring Curl/Leg Extension Machine
-            
-                      1 Lat Pulldown/Row Machine
-            
-                      1 Belt Squat Machine
-            
-                      1 Plate Loaded Pulley Tower
-            
-                      1 Reverse Hyper GHD Combo
-            
-                      1 Back Hyper Extension
-            
-                      1 ISO Leg Press/Hack Squat
-            
-                      4 Adjustable Benches 
-            
-                      1 Flat Bench
-            
-                      Dumbbells (5–100 lbs, increments of 5 lbs)
-            
-                      2 Loadable Dumbbell Handles
-            
-                      4 Kettlebells
-            
-                      1 Stationary Bike 
-            
-                      1 Ski/Row Machine` 
+                      - 3 Deadlift Platforms
+                      - 1 Eleiko IPF Competition Platform
+                      - 1 Eleiko Weightlifting Platform
+                      - 3 Combo Racks
+                      - 3 Power Racks
+                      - Calibrated Kilo Plates
+                      - Kilo Bumper Plates
+                      - Metal Pound Plates
+                      - Urethane Pound Plates
+                      - 10 Power Bars (20 kg)
+                      - 2 Olympic Weightlifting Bars (20 kg)
+                      - 1 Women’s Weightlifting Bar (15 kg)
+                      - Specialty Bars (Closed and Open Trap Bars, Squat Bar, Deadlift Bars, Safety Squat Bars, Multi Grip Bars)
+                      - 1 Chest Press Machine
+                      - 1 Hamstring Curl/Leg Extension Machine
+                      - 1 Lat Pulldown/Row Machine
+                      - 1 Belt Squat Machine
+                      - 1 Plate Loaded Pulley Tower
+                      - 1 Reverse Hyper GHD Combo
+                      - 1 Back Hyper Extension
+                      - 1 ISO Leg Press/Hack Squat
+                      - 4 Adjustable Benches 
+                      - 1 Flat Bench
+                      - Dumbbells (5–100 lbs, increments of 5 lbs)
+                      - 2 Loadable Dumbbell Handles
+                      - 4 Kettlebells
+                      - 1 Stationary Bike 
+                      - 1 Ski/Row Machine` 
             }
             
           
