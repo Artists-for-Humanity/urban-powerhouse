@@ -30,23 +30,6 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleMouseEnter = () => {
-    if (window.innerWidth >= 768) { // Desktop
-      setIsDropdownOpen(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) { // Desktop
-      setIsDropdownOpen(false);
-    }
-  };
-
-  const handleToggleMobile = () => {
-    if (window.innerWidth < 768) { // Mobile
-      setIsDropdownOpen(!isDropdownOpen);
-    }
-  };
 
   if (variant === 'nav' && href) {
     return (
@@ -66,50 +49,40 @@ const Button: React.FC<ButtonProps> = ({
 
 
   if (variant === 'nav-dropdown') {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  
     return (
-      <div
-        className={`relative ${isMobile ? '' : 'inline-block text-left'} z-[2]`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="relative inline-block text-left z-[2]">
         {/* Parent button */}
         <button
           type="button"
-          onClick={handleToggleMobile}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsDropdownOpen((prev) => !prev);
+          }}
           className={`
             flex items-center gap-1 w-full
-            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
+            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap
             ${className}
           `}
         >
           {label}
-          <span className="transform transition-transform scale-[.6]"  style={{
-      transform: isMobile && isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-    }}>
+          <span
+            className="transform transition-transform scale-[.6]"
+            style={{
+              transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            }}
+          >
             ▼
           </span>
         </button>
   
         {/* Dropdown panel */}
         {isDropdownOpen && (
-          <div
-            className={`${
-              isMobile ? 'w-full pl-4 space-y-2 mt-2' : 'absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md shadow-lg ring-1 ring-black ring-opacity-10'
-            }`}
-          >
-            <div className={`${isMobile ? 'flex flex-col' : 'py-1'}`}>
+          <div className="lg:absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md bg-[--urban-black]">
+            <div className="py-1">
               {dropdownOptions.map((option, index) => (
                 <Link key={index} href={option.href} passHref>
-                  <div
-                    className={`block font-normal cursor-pointer ${
-                      isMobile
-                        ? 'text-stone-300 text-l my-1'
-                        : 'px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900'
-                    }`}
-                  >
-                    • {option.label}
+                  <div className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 cursor-pointer">
+                     {option.label}
                   </div>
                 </Link>
               ))}
@@ -119,7 +92,7 @@ const Button: React.FC<ButtonProps> = ({
       </div>
     );
   }
-  
+   
 
   if (href) {
     return (

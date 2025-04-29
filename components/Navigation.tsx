@@ -37,14 +37,13 @@ const Navigation: React.FC = () => {
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
           {/* <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} /> */}
           <Button
-          label="About"
-          variant="nav-dropdown"
-          dropdownOptions={[
-          { label: 'Our Mission', href: '/mission' },
-          { label: 'Team', href: '/team' },
-          { label: 'Careers', href: '/careers' },
-          ]}
-/>
+                  label="About"
+                  variant="nav-dropdown"
+                  dropdownOptions={[
+                  { label: 'Meet the Founders', href: '/About/Founders' },
+                  { label: 'Teen Story', href: '/About/TeenStories' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  ]}/>
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
@@ -77,9 +76,9 @@ const Navigation: React.FC = () => {
                   label="About"
                   variant="nav-dropdown"
                   dropdownOptions={[
-                  { label: 'Meet the Founders', href: '/Founders' },
-                  { label: 'Teen Story', href: '/TeenStories' },
-                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/HumbleBeginnings' },
+                  { label: 'Meet the Founders', href: '/About/Founders' },
+                  { label: 'Teen Story', href: '/About/TeenStories' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
                 <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
