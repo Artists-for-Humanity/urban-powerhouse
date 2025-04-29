@@ -15,7 +15,7 @@ type ButtonProps = {
   isActive?: boolean;
   isDisabled?: boolean;
   className?: string;
-  dropdownOptions?: DropdownOption[]; // Only used for nav-dropdown
+  dropdownOptions?: DropdownOption[];
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -105,7 +105,7 @@ const Button: React.FC<ButtonProps> = ({
                   <div
                     className={`block font-normal cursor-pointer ${
                       isMobile
-                        ? 'text-nuetral-700 text-l'
+                        ? 'text-stone-300 text-l my-1'
                         : 'px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900'
                     }`}
                   >
