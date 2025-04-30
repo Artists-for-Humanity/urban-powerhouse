@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
       <div
         className={`fixed top-0 right-0 h-full bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } w-full z-50 sm:hidden`}
+        } w-full z-2 sm:hidden`}
       >
         <div className="flex justify-between items-start p-4">
           <Logo size="small" />
@@ -35,7 +35,15 @@ const Navigation: React.FC = () => {
         <div className="flex flex-col items-start p-4 space-y-4">
           <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-          <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} />
+          {/* <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} /> */}
+          <Button
+                  label="About"
+                  variant="nav-dropdown"
+                  dropdownOptions={[
+                  { label: 'Meet the Founders', href: '/About/Founders' },
+                  { label: 'Teen Story', href: '/About/TeenStories' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  ]}/>
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
@@ -55,7 +63,7 @@ const Navigation: React.FC = () => {
             <div
               className={`fixed top-0 right-0 h-full bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
                 isTabletMenuOpen ? 'translate-x-0' : 'translate-x-full'
-              } w-full z-50`}
+              } w-full z-2`}
             >
               <div className="flex justify-between items-start p-4">
                 <Logo size="small" />
@@ -64,7 +72,14 @@ const Navigation: React.FC = () => {
               <div className="flex flex-col items-start p-4 space-y-4 ">
                 <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
                 <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-                <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} />
+                <Button
+                  label="About"
+                  variant="nav-dropdown"
+                  dropdownOptions={[
+                  { label: 'Meet the Founders', href: '/About/Founders' },
+                  { label: 'Teen Story', href: '/About/TeenStories' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  ]}/>
                 <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
                 <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
                 <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
@@ -79,7 +94,15 @@ const Navigation: React.FC = () => {
         <Logo size="small" />
         <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
         <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-        <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} />
+        {/* <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} /> */}
+        <Button
+                  label="About"
+                  variant="nav-dropdown"
+                  dropdownOptions={[
+                  { label: 'Meet the Founders', href: '/About/Founders' },
+                  { label: 'Teen Story', href: '/About/TeenStories' },
+                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  ]}/>
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />

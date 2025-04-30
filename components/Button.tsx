@@ -1,14 +1,22 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+type DropdownOption = {
+  label: string;
+  href: string;
+};
 
 type ButtonProps = {
   label: string;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   href?: string;
-  variant?: 'nav' | 'default';
+  variant?: 'nav' | 'default' | 'nav-dropdown';
   isActive?: boolean;
   isDisabled?: boolean;
   className?: string;
+  dropdownOptions?: DropdownOption[];
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,16 +27,22 @@ const Button: React.FC<ButtonProps> = ({
   isActive = false,
   isDisabled = false,
   className = '',
+  dropdownOptions = [],
 }) => {
-  // Nav links should use Link
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   if (variant === 'nav' && href) {
     return (
       <Link href={href} passHref className="z-[1]">
         <div
           className={`
-
-            text-(--urban-white) text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
-            ${isActive ? 'text-blue-500 underline' : ''}
+            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap hover:underline
+            ${isActive ? 'text-[--urban-blue]' : ''}
             ${className}
           `}
         >
@@ -38,7 +52,58 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  // Button with optional link behavior
+  if (variant === 'nav-dropdown') {
+    return (
+      <div className="relative inline-block text-left z-[2]">
+        {/* Parent button */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleDropdown();
+          }}
+          className={`
+            flex items-center gap-1 w-full
+            text-[--urban-white] text-2xl lg:text-base font-semibold whitespace-nowrap
+            ${className}
+          `}
+        >
+          {label}
+          <Image
+            src={
+              isDropdownOpen || hoveredIndex !== null
+                ? "/icons/orange-chevron.png"
+                : "/icons/blue-chevron.png"
+            }
+            alt="Chevron"
+            width={25}
+            height={25}
+            className={`transition-transform duration-300 ${
+              isDropdownOpen ? '-rotate-90' : ''
+            }`}
+            onMouseEnter={() => setHoveredIndex(0)} // Adjust if you have multiple items
+            onMouseLeave={() => setHoveredIndex(null)}
+          />
+        </button>
+
+        {/* Dropdown panel */}
+        {isDropdownOpen && (
+          <div className="lg:absolute left-0 top-full w-52 mt-1 z-50 bg-[--urban-black] rounded-md">
+            <div className="py-1">
+              {dropdownOptions.map((option, index) => (
+                <Link key={index} href={option.href} passHref>
+                  <div className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 cursor-pointer">
+                    {option.label}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   if (href) {
     return (
       <Link href={href} passHref className="z-[1]">
@@ -57,7 +122,6 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  // Plain button
   return (
     <button
       type="button"

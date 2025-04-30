@@ -3,7 +3,7 @@ import ArticlePreview from './ArticlePreview';
 
 interface Article {
   title: string; 
-  paragraphs: string[]; 
+  paragraphs?: string[]; 
   link: string;
 variant: 'pinned' | 'title-only'
 }
@@ -21,7 +21,7 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ header, articles }) => {
         <ArticlePreview
           key={index}
           title={article.title}
-          paragraphs={article.paragraphs}
+          paragraphs={article.paragraphs || []}
           link={article.link}
           variant={article.variant}
           className='col-span-full'

@@ -51,15 +51,28 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
             />
           </div>
 
-          {openIndices.includes(index) && (
-            <div className="mt-2 pl-6">
-              <ul className="list-disc text-base font-light text-(--urban-white)">
-              {faq.answer.split('\n\n').map((paragraph, i) => (
-      <p key={i} className="mb-2">{paragraph}</p>
-    ))}
+             {openIndices.includes(index) && (
+            <div className="mt-8 pl-6">
+              <ul className="text-base font-light text-[var(--urban-white)]">
+                {faq.answer.split(/\n\s*\n?/).map((paragraph, i) => {
+                  const isSubBullet = paragraph.startsWith('-');  // Check for subheading
+
+                  const cleanText = isSubBullet ? paragraph.slice(1).trim() : paragraph;  // Remove dash for subheading
+
+                  return isSubBullet ? (
+                    <li key={i} className="mb-2 pl-6 list-inside list-disc">
+                      {cleanText}
+                    </li>
+                  ) : (
+                    <li key={i} className="mb-2 list-inside list-disc">
+                      {cleanText}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
+          
         </div>
       ))}
     </div>
