@@ -23,7 +23,23 @@ export default function Registration() {
         `<healcode-widget data-type="registrations" data-widget-partner="object" data-widget-id="841598651f60" data-widget-version="0"></healcode-widget>`
       );
     }
+
+    const timeout = setTimeout(() => {
+      const styleTags = document.querySelectorAll('style');
+      styleTags.forEach((style) => {
+        if (
+          style.innerHTML.includes(
+            'div.healcode #hc-register { background-color: #1D42E1 !important;'
+          )
+        ) {
+          style.remove();
+        }
+      });
+    }, 1000);
+
+    return () => clearTimeout(timeout);
   }, []);
+  
 
   return (
     <Grid>
