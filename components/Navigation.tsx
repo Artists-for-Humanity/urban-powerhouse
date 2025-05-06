@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
                   ]}/>
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           <Button label="Registration & Membership" href="/Registration" variant="nav" isActive={pathname === '/Registration'} />
-          <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+          <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
           <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
         </div>
@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
                   ]}/>
                 <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
                 <Button label="Registration & Membership" href="/Registration" variant="nav" isActive={pathname === '/Registration'} />
-                <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+                <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ const Navigation: React.FC = () => {
                   ]}/>
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button label="Registration & Membership" href="/Registration" variant="nav" isActive={pathname === '/Registration'} />
-        <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+        <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
         <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
       </div>
