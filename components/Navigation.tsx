@@ -38,6 +38,7 @@ const Navigation: React.FC = () => {
           {/* <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} /> */}
           <Button
                   label="About"
+                  className='cursor-pointer'
                   variant="nav-dropdown"
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
@@ -74,6 +75,7 @@ const Navigation: React.FC = () => {
                 <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
                 <Button
                   label="About"
+                  className='cursor-pointer'
                   variant="nav-dropdown"
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
@@ -98,6 +100,7 @@ const Navigation: React.FC = () => {
         <Button
                   label="About"
                   variant="nav-dropdown"
+                  className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
