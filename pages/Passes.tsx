@@ -53,11 +53,12 @@ export default function Passes() {
         </h3><br />
 
 
-        <Pass variant-='default' options={pricingOptions}/>
-        <Pass variant-='custom' options={customOption}/>
+        <Pass variant='default' options={pricingOptions}/>
+     
         <div className="col-start-3 col-span-2 mt-10 sm:col-start-4 lg:col-start-6 ">
             <Button label="Buy Pass"  iconSrc="/icons/card.svg" href="/" variant="default" className="text-right"/>
         </div>
+        <Pass variant='custom' options={customOption}/>
         <div></div>
 
 
