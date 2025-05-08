@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
                   { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
-          <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
+          <Button label="Registration & Membership" href="/Membership" variant="nav" isActive={pathname ==="/Membership"} />
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
           <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
