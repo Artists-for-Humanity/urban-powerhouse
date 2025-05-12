@@ -40,7 +40,7 @@ const Pass: React.FC<PassProps> = ({
     const hoverBorder = isSelected ? '' : 'hover:border-[var(--urban-orange)]';
     const dotColor = isSelected
       ? 'bg-[var(--urban-orange)] border-[var(--urban-white)]'
-      : 'bg-[var(--urban-disabled-grey)]';
+      : 'bg-[var(--urban-white)]';
 
     return (
       <div
@@ -80,17 +80,17 @@ const Pass: React.FC<PassProps> = ({
       {variant === 'custom' && selected === 'Custom' && (
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-md bg-[var(--urban-black)] p-6 rounded-lg mt-6"
+          className="w-full col-span-full bg-[var(--urban-black)] p-6 rounded-lg mt-6"
         >
           <h3 className="text-lg font-semibold text-[var(--urban-white)] mb-4">
             Personal Information
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-row justify-between items-end">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-4">
+            <div className="flex flex-row justify-between md:justify-start items-end">
               <label
                 htmlFor="firstName"
-                className="text-m font-semibold text-[var(--urban-disabled-grey)]"
+                className="text-m font-semibold text-[var(--urban-disabled-grey)] sm:pr-6"
               >
                 First Name*
               </label>
@@ -101,10 +101,10 @@ const Pass: React.FC<PassProps> = ({
                 className="mt-1 bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
               />
             </div>
-            <div className="flex flex-row justify-between items-end">
+            <div className="flex flex-row justify-between md:justify-start items-end">
               <label
                 htmlFor="lastName"
-                className="text-sm font-medium text-[var(--urban-disabled-grey)]"
+                className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
               >
                 Last Name*
               </label>
@@ -117,10 +117,10 @@ const Pass: React.FC<PassProps> = ({
             </div>
           </div>
 
-          <div className="flex mt-4 flex-row justify-between items-end">
+          <div className="flex mt-4 flex-row justify-between md:justify-start items-end">
             <label
               htmlFor="phone"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)]"
+              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
             >
               Mobile Phone*
             </label>
@@ -133,10 +133,10 @@ const Pass: React.FC<PassProps> = ({
             />
           </div>
 
-          <div className="flex flex-row justify-between mt-4 items-end">
+          <div className="flex flex-row justify-between md:justify-start mt-4 items-end">
             <label
               htmlFor="email"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)]"
+              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
             >
               Email*
             </label>
@@ -152,7 +152,7 @@ const Pass: React.FC<PassProps> = ({
           <div className="flex flex-col mt-10">
             <label
               htmlFor="message"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)]"
+              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
             >
               Message
             </label>
@@ -172,7 +172,7 @@ const Pass: React.FC<PassProps> = ({
             Contact Us
           </button>
         </form>
-      )}
+     )} 
     </div>
   );
 };
