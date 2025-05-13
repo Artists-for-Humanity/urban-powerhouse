@@ -10,15 +10,17 @@ import Button from "../components/Button";
 
 import '../app/globals.css';
 
-function MembershipOptions({type, price, description, onButtonClick}) {
+function MembershipOptions({bgColor, dColor, type, price, description, onButtonClick}) {
     return (
-        <div className=" LOOKHERE bg-(--urban-grey)  col-span-6 rounded-3xl flex table-column border-(--urban-grey) border-25 mb-10" >
-            <div className="MemTextCon flex flex-row pb-3">
+        <div className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8" 
+        style={{ backgroundColor: `var(${bgColor})`, border: `2px solid var(${bgColor})` }}>
+            <div className="memTotCon h-full w-full">
+              <div className="MemTextCon flex flex-row pb-3">
               <div className="memSelCon justify-center items-center">
-                <button className="memSel size-px border-10 rounded-xl bg-(--urban-white) mr-4 " onClick = {onButtonClick}></button>
+                <button className="memSel size-px border-10 rounded-xl mr-4 " onClick = {onButtonClick}
+                style={{ backgroundColor: `var(${dColor})` }}
+                ></button>
               </div>
-
-
               <div className="type pr-4 text-xl">
                 {type}
               </div>
@@ -28,6 +30,7 @@ function MembershipOptions({type, price, description, onButtonClick}) {
             </div>
             <div className="description text-sm">
               {description}
+            </div>
             </div>
         </div>
     )
@@ -44,28 +47,39 @@ function MemInput({ Info }) {
   );
 }
 
+function setselectedOption(selectedOption) {
+
+}
+
+function handleClick(selectedOption) {
+    console.log("Button clicked for option:", selectedOption);
+    // You can also update the state or perform any other actions as needed
+    // setSelectedOption(selectedOption);
+  
+}
 
 
 export default function Membership() {
-  function handleClick() {
-    
-  }
     return (
           <Grid className="gap-y-4">
             <Navigation/>
               <Container>
                 <div className="membershipTitle col-start-2 col-end-6  text-2xl pb-8"> Membership Pricing Options</div>
                 <div className="membershipThanks col-start-2 col-end-6  text-lg pb-8"> <span className="text-(--urban-orange)">Thank you </span>for registering with Urban PowerHouse! We have a variety of membership options available</div>
-                <MembershipOptions type = {"DAY"} price = {"$15"} description = {"Day Pass: In town for a day or just want to check us out? Drop in for one day of training with our day pass option, $15."} onButtonClick={ () => handleClick()}/>
-                <MembershipOptions type = {"WEEK"} price = {"$35"} description = {"Week Pass: If you’re going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35."}  onButtonClick={ () => handleClick()}/>
-                <MembershipOptions type = {"MONTH"} price = {"$50"} description = {"Monthly Facility Membership: Join our community and access our facility 7 days/week for $50/month."}  onButtonClick={ () => handleClick()}/>
+                <MembershipOptions bgColor = {"--urban-grey"} dColor = {"--urban-white"} type = {"DAY"} price = {"$15"} description = {"Day Pass: In town for a day or just want to check us out? Drop in for one day of training with our day pass option, $15."} onButtonClick={ () => handleClick("Day")}/>
+                <MembershipOptions bgColor = {"--urban-grey"} dColor = {"--urban-white"} type = {"WEEK"} price = {"$35"} description = {"Week Pass: If you’re going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35."}  onButtonClick={ () => handleClick("Week")}/>
+                <MembershipOptions bgColor = {"--urban-grey"} dColor = {"--urban-white"} type = {"MONTH"} price = {"$50"} description = {"Monthly Facility Membership: Join our community and access our facility 7 days/week for $50/month."}  onButtonClick={ () => handleClick("Month")}/>
                 {/* <Button></Button> */}
                 <br/>
                 <div className="CUSTOM bg-(--urban-grey) py-8 col-span-full mx-[-20px]">
         <div className="CustomTextCon mx-15 text-xl">
-            <div className="type pb-4">
-                Custom
+              <div className="memSelCon flex flex-row">
+                <button className="memSel size-px border-10 rounded-xl bg-(--urban-white) mr-4 "  onClick={() => handleClick("Custom")}  ></button>
+              <div className="type pb-4">
+                  Custom
+              </div>
             </div>
+
             <div className="description text-base text-sm">
                 Coaching & Individualized Programming: Inquire for pricing. Financial Assistance available. Leave your information and we will get back to you ASAP!
             </div>
