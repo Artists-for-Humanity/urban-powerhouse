@@ -17,6 +17,7 @@ type ButtonProps = {
   isDisabled?: boolean;
   className?: string;
   dropdownOptions?: DropdownOption[];
+  iconSrc?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -28,6 +29,7 @@ const Button: React.FC<ButtonProps> = ({
   isDisabled = false,
   className = '',
   dropdownOptions = [],
+  iconSrc
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -116,7 +118,13 @@ const Button: React.FC<ButtonProps> = ({
             ${className}
           `}
         >
-          {label}
+                    <div className="flex items-center justify-center gap-2">
+        {iconSrc && (
+          <Image src={iconSrc} alt="icon" width={20} height={20} />
+        )}
+        <span>{label}</span>
+      </div>
+          {/* {label} */}
         </div>
       </Link>
     );
