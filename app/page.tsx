@@ -16,7 +16,7 @@ export default function Home() {
            subtitle= "Accessible for All"
           />
           <Container className=" mt-[20vh] min-h-[100vh]">
-           
+          <div>heyyyyyyyyyyyyyyyyyyyyyyyy</div>
             </Container>
 
           <Footer />
