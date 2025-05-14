@@ -10,6 +10,7 @@ import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
 import StatBlock from "../components/Stat/StatBlock";
 import InfoBlock from "../components/InfoBlock";
+import '../app/globals.css';
 
 export default function Home() {
   const partners = {

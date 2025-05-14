@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import Grid from "../components/GridContainer";
-import Footer from "../components/Footer";
-import Container from "../components/Container";
-import Navigation from "../components/Navigation";
-import Pass  from "../components/Pass";
+import Grid from "../../components/GridContainer";
+import Footer from "../../components/Footer";
+import Container from "../../components/Container";
+import Navigation from "../../components/Navigation";
+import Pass  from "../../components/Pass";
 // import { Pass } from "../components/Pass";
-import Button from "../components/Button";
-import '../app/globals.css';
-import '../app/mindbody.css';
+import Button from "../../components/Button";
+import '../../app/globals.css';
+import '../../app/mindbody.css';
 
 export default function Passes() {
 

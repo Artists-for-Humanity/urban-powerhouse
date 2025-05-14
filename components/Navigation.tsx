@@ -45,7 +45,14 @@ const Navigation: React.FC = () => {
                   { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
-          <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
+          {/* <Button label="Registration & Membership" href="/" variant="nav" isActive={false} /> */}
+          <Button
+          label="Registration & Membership"
+          variant="nav-dropdown"
+          dropdownOptions={[
+          { label: 'New Member Registration', href: '/Registration/Registration' },
+          { label: 'Passes', href: '/Registration/Pass' },
+          ]}/>
           <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
           <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
@@ -81,7 +88,13 @@ const Navigation: React.FC = () => {
                   { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
                 <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
-                <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
+                  <Button
+                  label="Registration & Membership"
+                  variant="nav-dropdown"
+                  dropdownOptions={[
+                  { label: 'New Member Registration', href: '/Registration/Registration' },
+                  { label: 'Passes', href: '/Registration/Pass' },
+                  ]}/>
                 <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
               </div>
             </div>
@@ -104,7 +117,13 @@ const Navigation: React.FC = () => {
                   { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
                   ]}/>
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
-        <Button label="Registration & Membership" href="/" variant="nav" isActive={false} />
+        <Button
+        label="Registration & Membership"
+        variant="nav-dropdown"
+        dropdownOptions={[
+        { label: 'New Member Registration', href: '/Registration/Registration' },
+        { label: 'Passes', href: '/Registration/Pass' },
+        ]}/>
         <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
         <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />

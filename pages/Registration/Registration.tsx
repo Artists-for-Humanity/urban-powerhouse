@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Grid from "../components/GridContainer";
-import Footer from "../components/Footer";
-import Container from "../components/Container";
-import Navigation from "../components/Navigation";
-import '../app/globals.css';
-import '../app/mindbody.css';
+import Grid from "../../components/GridContainer";
+import Footer from "../../components/Footer";
+import Container from "../../components/Container";
+import Navigation from "../../components/Navigation";
+import '../../app/globals.css';
+import '../../app/mindbody.css';
 
 export default function Registration() {
   const widgetRef = useRef<HTMLDivElement>(null);
