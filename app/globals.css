@@ -1,39 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-mint-500: oklch(0.72 0.11 178);
+	--color-mint-500: oklch(0.72 0.11 178);
 }
 body {
-  overflow-x: hidden;
-  font-family: Poppins, sans-serif !important;
+	overflow-x: hidden;
+	font-family: Poppins, sans-serif !important;
 }
 
 :root {
-  --urban-black: #0A0A0A;
-  --urban-grey: #404040;
-  --urban-white: #ffffff;
-  --urban-orange: #F47321;
-  --urban-blue: #1D42E1;
+	--urban-black: #0a0a0a;
+	--urban-grey: #404040;
+	--urban-white: #ffffff;
+	--urban-orange: #f47321;
+	--urban-blue: #1d42e1;
 }
 
 :root {
-  --color-background: var(--urban-white);
-  --color-foreground:  var(--urban-black);
-  --font-sans: 'Poppins', sans-serif;
-  --breakpoint-sm: 300px;
-  --breakpoint-lg: 1024px;
+	--color-background: var(--urban-white);
+	--color-foreground: var(--urban-black);
+	--font-sans: "Poppins", sans-serif;
+	--breakpoint-sm: 300px;
+	--breakpoint-lg: 1024px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--urban-black);
-    --foreground:  var(--urban-white);
-  }
+	:root {
+		--background: var(--urban-black);
+		--foreground: var(--urban-white);
+	}
 }
 
 body {
-  background: var(--urban-black);
-  color: var(--urban-white);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--urban-black);
+	color: var(--urban-white);
+	font-family: Arial, Helvetica, sans-serif;
 }
