@@ -39,6 +39,7 @@ const Navigation: React.FC = () => {
           <Button
                   label="About"
                   variant="nav-dropdown"
+                  className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
@@ -49,6 +50,7 @@ const Navigation: React.FC = () => {
           <Button
           label="Registration & Membership"
           variant="nav-dropdown"
+           className='cursor-pointer'
           dropdownOptions={[
           { label: 'New Member Registration', href: '/Registration/Registration' },
           { label: 'Passes', href: '/Registration/Pass' },
@@ -82,6 +84,7 @@ const Navigation: React.FC = () => {
                 <Button
                   label="About"
                   variant="nav-dropdown"
+                   className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
@@ -91,6 +94,7 @@ const Navigation: React.FC = () => {
                   <Button
                   label="Registration & Membership"
                   variant="nav-dropdown"
+                   className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'New Member Registration', href: '/Registration/Registration' },
                   { label: 'Passes', href: '/Registration/Pass' },
@@ -111,6 +115,7 @@ const Navigation: React.FC = () => {
         <Button
                   label="About"
                   variant="nav-dropdown"
+                   className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
@@ -120,6 +125,7 @@ const Navigation: React.FC = () => {
         <Button
         label="Registration & Membership"
         variant="nav-dropdown"
+         className='cursor-pointer'
         dropdownOptions={[
         { label: 'New Member Registration', href: '/Registration/Registration' },
         { label: 'Passes', href: '/Registration/Pass' },
