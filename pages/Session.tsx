@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Navigation from "../components/Navigation";
 import '../app/globals.css';
+import '../app/mindbody.css';
 
 export default function Registration() {
   const widgetRef = useRef<HTMLDivElement>(null);
