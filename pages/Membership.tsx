@@ -51,12 +51,19 @@ function MemInput({ Info }) {
 
 
 export default function Membership() {
-  const [selectedOption, setSelectedOption] = useState(null); // Track the selected option
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showPopup, setShowPopup] = useState(false); // Add this line
 
   function handleClick(option) {
-    console.log("Button clicked for option:", option);
-    setSelectedOption(option); // Update the selected option
+    console.log("Selected option:", option);
+    setSelectedOption(option);
   }
+
+  function checkout(option) {
+    console.log("Checkout for option:", option);
+    setShowPopup(true); // Show popup when Buy Pass is clicked
+  }
+
 
     return (
     <Grid className="gap-y-4">
@@ -100,6 +107,24 @@ export default function Membership() {
             }
             onButtonClick={() => handleClick("MONTH")}
           />
+          <div className="buttonLoco w-full h-full flex flex-row justify-center items-center col-start-2 col-end-6 pb-8">
+              <Button
+                className="text-xl w-50"
+                label=" Buy Pass"
+                onClick={() => checkout(selectedOption)}
+                variant="default"
+              />
+            </div>
+            <div
+              className="popupLoco w-full h-full absolute pt-200 pl-30 mx-[-20px]"
+              style={{ display: showPopup ? "block" : "none" }} 
+            >
+              <div className="popup bg-[#F47321] w-60 h-40 flex flex-col justify-center items-center border-5 border-black-100 rounded-3xl">
+                <div className="popupText decoration-black rounded-xl">
+                  Membership Selected: {selectedOption}
+                </div>
+              </div>
+            </div>
           <br />
           <button
             className={`CUSTOM py-8 col-span-full mx-[-20px] ${
@@ -129,7 +154,6 @@ export default function Membership() {
             <MemInput Info = {" Last Name"}/>
             <MemInput Info = {" Mobile Phone"}/>
             <MemInput Info = {" Email"}/>
-        {/* <Button>Submit</Button> */}
         <div className="Message text-lg">Message</div>
           <textarea
             placeholder="Optional"
