@@ -1,64 +1,136 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "../../components/GridContainer";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
-import Pass  from "../../components/Pass";
+import Pass from "../../components/Pass";
 // import { Pass } from "../components/Pass";
 import Button from "../../components/Button";
 import '../../app/globals.css';
 import '../../app/mindbody.css';
 
-export default function Passes() {
 
-    // const [selected, setSelected] = useState<'DAY' | 'WEEK' | 'MONTH'>('WEEK');
-    const pricingOptions = [
-        {
-          label: 'DAY',
-          price: '$15',
-          description:
-            'Day Pass: In town for a day or just want to check us out? Drop in for one day of training with our day pass option, $15.',
-        },
-        {
-          label: 'WEEK',
-          price: '$35',
-          description:
-            "Week Pass: If you're going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35.",
-        },
-        {
-          label: 'MONTH',
-          price: '$50',
-          description:
-            'Monthly Facility Membership: Join our community and access our facility 7 days/week for $50/month.',
-        },
-      ];
-      const customOption = [
-        {
-          label: 'Custom',
-          price: '$15',
-          description:
-            'YAHTA YAHTA YAHTA MINECRAFT IS DOPPEEEE YAHTA YAHTA DOCUEMTNS Yeda once she give us that it will give us the neccesary direct to do the necxt thing. Th ephase that we',
-        },
-      
-      ];
-      
+export default function Passes() {
+  const [selectedTier, setSelectedTier] = useState("DAY");
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+
+  // const [selected, setSelected] = useState<'DAY' | 'WEEK' | 'MONTH'>('WEEK');
+  const pricingOptions = [
+    {
+      label: 'DAY',
+      price: '$15',
+      description:
+        'Day Pass: In town for a day or just want to check us out? Drop in for one day of training with our day pass option, $15.',
+    },
+    {
+      label: 'WEEK',
+      price: '$35',
+      description:
+        "Week Pass: If you're going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35.",
+    },
+    {
+      label: 'MONTH',
+      price: '$50',
+      description:
+        'Monthly Facility Membership: Join our community and access our facility 7 days/week for $50/month.',
+    },
+  ];
+  const customOption = [
+    {
+      label: 'Custom',
+      price: '$15',
+      description:
+        'YAHTA YAHTA YAHTA MINECRAFT IS DOPPEEEE YAHTA YAHTA DOCUEMTNS Yeda once she give us that it will give us the neccesary direct to do the necxt thing. Th ephase that we',
+    },
+
+  ];
+
   return (
     <Grid>
       <Navigation />
       <Container>
         <h1 className="text-[32px] font-semibold col-span-full">Membership Pricing Options</h1><br /><br />
         <h3 className="font-semibold text-xl col-span-full lg:col-start-2 lg:col-span-10 sm:mt-10">
-        <span className="text-[var(--urban-orange)] ">Thank you</span> for registering with Urban PowerHouse! We have a variety of membership options available
+          <span className="text-[var(--urban-orange)] ">Thank you</span> for registering with Urban PowerHouse! We have a variety of membership options available
         </h3><br />
+        {/* <Pass variant='default' options={pricingOptions} /> */}
+        <Pass
+          variant='default'
+          options={pricingOptions}
+          onSelect={(label: string) => setSelectedTier(label)}
+        />
 
-
-        <Pass variant='default' options={pricingOptions}/>
-     
         <div className="col-start-3 col-span-2 mt-10 sm:col-start-4 lg:col-start-6 ">
-            <Button label="Buy Pass"  iconSrc="/icons/card.svg" href="/" variant="default" className="text-right"/>
+          {/* <Button label="Buy Pass" iconSrc="/icons/card.svg" href="/" variant="default" className="text-right" /> */}
+          <Button
+            label="Buy Pass"
+            iconSrc="/icons/card.svg"
+            variant="default"
+            className="text-right"
+            onClick={() => {
+              const classMap: Record<string, string> = {
+                DAY: "healcode-day",
+                WEEK: "healcode-week",
+                MONTH: "healcode-month"
+              };
+
+              const widgetAnchor = document.querySelector(
+                `healcode-widget .${classMap[selectedTier]}`
+              ) as HTMLElement | null;
+
+              if (widgetAnchor) {
+                widgetAnchor.click();
+              } else {
+                console.warn("No widget found for selected tier:", selectedTier);
+              }
+            }}
+          />
         </div>
-        <Pass variant='custom' options={customOption}/>
+        <Pass variant='custom' options={customOption} />
+               <div
+          style={{ display: "none" }}
+          dangerouslySetInnerHTML={{
+            __html: `
+              <healcode-widget
+                data-version="0.2"
+                data-link-class="healcode-day"
+                data-site-id="105872"
+                data-service-id="100007"
+                data-type="pricing-link"
+                data-inner-html=""
+              ></healcode-widget>
+              <healcode-widget
+                data-version="0.2"
+                data-link-class="healcode-week"
+                data-site-id="105872"
+                data-service-id="100008"
+                data-type="pricing-link"
+                data-inner-html=""
+              ></healcode-widget>
+              <healcode-widget
+                data-version="0.2"
+                data-link-class="healcode-month"
+                data-site-id="105872"
+                data-service-id="100009"
+                data-type="pricing-link"
+                data-inner-html=""
+              ></healcode-widget>
+            `,
+          }}
+        />
         <div></div>
 
 

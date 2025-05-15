@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 interface PricingOption {
   label: 'DAY' | 'WEEK' | 'MONTH' | 'Custom' | string;
@@ -10,18 +10,36 @@ interface PricingOption {
 interface PassProps {
   options: PricingOption[];
   variant?: 'default' | 'custom';
+  onSelect?: (label: string) => void;
+
 }
 
 const Pass: React.FC<PassProps> = ({
   options,
   variant = 'default',
+    onSelect, // destructure onSelect
+
 }) => {
   const [selected, setSelected] = useState<string>(
     variant === 'custom' ? '' : options[0]?.label || ''
   );
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Clean up on unmount
+    };
+  }, []);
+
   const handleClick = (label: string) => {
     setSelected(prev => (prev === label ? '' : label));
+      onSelect?.(label); // trigger callback to parent
+
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -172,7 +190,7 @@ const Pass: React.FC<PassProps> = ({
             Contact Us
           </button>
         </form>
-     )} 
+      )}
     </div>
   );
 };
