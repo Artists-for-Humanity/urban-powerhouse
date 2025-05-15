@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
           { label: 'New Member Registration', href: '/Registration/Registration' },
           { label: 'Passes', href: '/Registration/Pass' },
           ]}/>
-          <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+          <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
           <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
         </div>
@@ -99,7 +99,7 @@ const Navigation: React.FC = () => {
                   { label: 'New Member Registration', href: '/Registration/Registration' },
                   { label: 'Passes', href: '/Registration/Pass' },
                   ]}/>
-                <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+                <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ const Navigation: React.FC = () => {
         { label: 'New Member Registration', href: '/Registration/Registration' },
         { label: 'Passes', href: '/Registration/Pass' },
         ]}/>
-        <Button label="Session Scheduler" href="/" variant="nav" isActive={false} />
+        <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
         <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
       </div>

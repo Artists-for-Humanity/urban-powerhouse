@@ -19,11 +19,12 @@ export default function Registration() {
     if (widgetRef.current) {
       widgetRef.current.insertAdjacentHTML(
         'beforeend',
-        `<healcode-widget data-type="schedules" data-widget-partner="object" data-widget-id="841729471f60" data-widget-version="1" ></healcode-widget>`
+        `<healcode-widget data-type="schedules" data-widget-partner="object" data-widget-id="842201501f60" data-widget-version="1" ></healcode-widget>`
       );
     }
   }, []);
 
+ 
   return (
     <Grid>
       <Navigation />
