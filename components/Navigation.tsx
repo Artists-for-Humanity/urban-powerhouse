@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import Button from './Button';
 import Logo from './Logo';
 import { usePathname } from 'next/navigation';
@@ -14,6 +14,21 @@ const Navigation: React.FC = () => {
 
   const toggleTabletMenu = () => {
     setIsTabletMenuOpen(!isTabletMenuOpen);
+  };
+
+   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
+
+   const handleAccountLink = () => {
+    const widget = document.querySelector(
+      'healcode-widget .healcode-login-register-text-link'
+    ) as HTMLElement | null;
+    widget?.click();
   };
 
   return (
@@ -57,7 +72,8 @@ const Navigation: React.FC = () => {
           ]}/>
           <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
-          <Button label="Sign Up" className='text-[var(--urban-blue)]' href="/" variant="nav" isActive={false} />
+           <Button label="Sign In" className='text-[var(--urban-orange)]' variant="nav"  onClick={handleAccountLink} isActive={false} />
+          {/* <Button label="Sign In" className='text-[var(--urban-blue)]'  variant="nav"    isActive={false} /> */}
         </div>
       </div>
 
@@ -66,7 +82,7 @@ const Navigation: React.FC = () => {
         <Logo size="small" />
         <div className="flex gap-4 items-center">
           <Button label="Donation" onClick={() => console.log('Donation clicked')} href='/Donation' variant="default" />
-          <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
+          <Button label="Sign In"  onClick={handleAccountLink} variant="default" />
              <div className="relative">
             <Button className="text-3xl" label="☰" onClick={toggleTabletMenu} variant="default" />
             <div
@@ -132,8 +148,22 @@ const Navigation: React.FC = () => {
         ]}/>
         <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
-        <Button label="Sign In" onClick={() => console.log('Sign In clicked')} variant="default" />
+        <Button label="Sign In"  onClick={handleAccountLink} variant="default" />
       </div>
+        <div
+    style={{ display: "none" }}
+    dangerouslySetInnerHTML={{
+      __html: `<healcode-widget
+        data-version="0.2"
+        data-link-class="healcode-login-register-text-link"
+        data-site-id="105872"
+        data-mb-site-id="5724678"
+        data-bw-identity-site="true"
+        data-type="account-link"
+        data-inner-html="Login | Register"
+      ></healcode-widget>`
+    }}
+  />
     </nav>
   );
 };
