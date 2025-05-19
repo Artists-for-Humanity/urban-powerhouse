@@ -42,10 +42,28 @@ export default function Passes() {
         "Week Pass: If you're going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35.",
     },
     {
-      label: 'MONTH',
+      label: '10 Day Visit Punch Card',
+      price: '$100',
+      description:
+        '10-Visit Punch Card: Good for ten drop-in classes over 30 days.',
+    },
+     {
+      label: '30 Minutes Semi-Private Session',
+      price: '$100',
+      description:
+        '30-Minute Semi-Private Session: Get one-on-one or buddy training for a focused half-hour workout.',
+    },
+     {
+      label: 'Coaching Membership',
+      price: '$200',
+      description:
+        'Coaching Membership: Unlimited access to weekly small-group coaching sessions and skill clinics.',
+    },
+      {
+      label: 'Facility Membership',
       price: '$50',
       description:
-        'Monthly Facility Membership: Join our community and access our facility 7 days/week for $50/month.',
+        'Facility Membership: Unlimited gym access during staffed hours for one calendar month.',
     },
   ];
   const customOption = [
@@ -53,7 +71,7 @@ export default function Passes() {
       label: 'Custom',
       price: '$15',
       description:
-        'YAHTA YAHTA YAHTA MINECRAFT IS DOPPEEEE YAHTA YAHTA DOCUEMTNS Yeda once she give us that it will give us the neccesary direct to do the necxt thing. Th ephase that we',
+        'Work with us to design a personalized package that fits your unique training goals and schedule. Contact Urban PowerHouse for details and pricing',
     },
 
   ];
@@ -84,7 +102,10 @@ export default function Passes() {
               const classMap: Record<string, string> = {
                 DAY: "healcode-day",
                 WEEK: "healcode-week",
-                MONTH: "healcode-month"
+                "10 Day Visit Punch Card": "healcode-10daypass",
+                "30 Minutes Semi-Private Session": "healcode-30min",
+                "Coaching Membership": "healcode-coaching",
+                "Facility Membership": "healcode-facility",
               };
 
               const widgetAnchor = document.querySelector(
@@ -120,14 +141,40 @@ export default function Passes() {
                 data-type="pricing-link"
                 data-inner-html=""
               ></healcode-widget>
-              <healcode-widget
+                <healcode-widget
                 data-version="0.2"
-                data-link-class="healcode-month"
+                data-link-class="healcode-10daypass"
                 data-site-id="105872"
                 data-service-id="100009"
                 data-type="pricing-link"
                 data-inner-html=""
               ></healcode-widget>
+               <healcode-widget
+                data-version="0.2"
+                data-link-class="healcode-30min"
+                data-site-id="105872"
+                data-service-id="66"
+                data-type="pricing-link"
+                data-inner-html=""
+              ></healcode-widget>
+              <healcode-widget
+      data-version="0.2"
+      data-link-class="healcode-coaching"
+      data-site-id="105872"
+      data-mb-site-id="5724678"
+      data-service-id="101"
+      data-type="contract-link"
+      data-inner-html=""
+    ></healcode-widget>
+              <healcode-widget
+                data-version="0.2"
+                data-link-class="healcode-facility"
+                data-site-id="105872"
+                data-service-id="102"
+                data-type="contract-link"
+                data-inner-html=""
+              ></healcode-widget>
+              
             `,
           }}
         />
