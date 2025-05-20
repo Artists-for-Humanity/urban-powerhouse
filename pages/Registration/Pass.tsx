@@ -41,6 +41,12 @@ export default function Passes() {
       description:
         "Week Pass: If you're going to be in the Boston area for more than just a day trip, we offer a week pass. Unlimited access for seven days for $35.",
     },
+          {
+      label: 'Facility Membership',
+      price: '$50',
+      description:
+        'Facility Membership: Unlimited gym access during staffed hours for one calendar month.',
+    },
     {
       label: '10 Day Visit Punch Card',
       price: '$100',
@@ -59,17 +65,12 @@ export default function Passes() {
       description:
         'Coaching Membership: Unlimited access to weekly small-group coaching sessions and skill clinics.',
     },
-      {
-      label: 'Facility Membership',
-      price: '$50',
-      description:
-        'Facility Membership: Unlimited gym access during staffed hours for one calendar month.',
-    },
+
   ];
   const customOption = [
     {
       label: 'Custom',
-      price: '$15',
+      price: '$$$',
       description:
         'Work with us to design a personalized package that fits your unique training goals and schedule. Contact Urban PowerHouse for details and pricing',
     },
