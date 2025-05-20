@@ -12,23 +12,26 @@ import '../app/globals.css';
 
 function MembershipOptions({bgColor, dColor, type, price, description, onButtonClick}) {
     return (
-        <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8"  onClick = {onButtonClick}
+        <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8
+          sm:col-start-2 sm:col-end-8
+          lg:col-start-3 lg:col-end-11 lg:rounded-[0px]"  onClick = {onButtonClick}
         style={{ backgroundColor: `var(${bgColor})`, border: `2px solid var(${bgColor})` }}>
-            <div className="memTotCon h-full w-full">
+            <div className="memTotCon h-full w-full
+            lg:flex lg:flex-row lg:justify-around">
               <div className="MemTextCon flex flex-row pb-3">
               <div className="memSelCon justify-center items-center">
                 <div className="memSel size-px border-10 rounded-xl mr-4 "
                 style={{ backgroundColor: `var(${dColor})`, border: `10px solid var(${dColor})` }}
                 ></div>
               </div>
-              <div className="type pr-4 text-xl">
+              <div className="type pr-4 text-xl sm:text-2xl lg:text-3xl">
                 {type}
               </div>
-              <div className="price text-xl">
+              <div className="price text-xl sm:text-2xl lg:text-3xl">
                 {price}
                 </div>
             </div>
-            <div className="description text-sm text-left">
+            <div className="description text-sm text-left sm:text-base lg:text-lg">
               {description}
             </div>
             </div>
@@ -38,8 +41,8 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
 
 function MemInput({ Info }) {
   return (
-    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-6 pb-4">
-      <div className="Input text-lg">
+    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 pb-4">
+      <div className="Input text-lg sm:text-2xl">
         {Info} <span className="text-(--urban-orange)">*</span>
       </div>
       <input type="text" className="border-b-2 text-right" />
@@ -48,11 +51,11 @@ function MemInput({ Info }) {
 }
 
 
-
+ 
 
 export default function Membership() {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [showPopup, setShowPopup] = useState(false); // Add this line
+  const [showPopup, setShowPopup] = useState(false); 
 
   function handleClick(option) {
     console.log("Selected option:", option);
@@ -61,7 +64,12 @@ export default function Membership() {
 
   function checkout(option) {
     console.log("Checkout for option:", option);
-    setShowPopup(true); // Show popup when Buy Pass is clicked
+    if(option !== null) {
+      setShowPopup(true); 
+    }
+    if (option === "Custom") {
+    
+    }
   }
 
 
@@ -69,10 +77,13 @@ export default function Membership() {
     <Grid className="gap-y-4">
       <Navigation />
       <Container>
-        <div className="membershipTitle col-start-2 col-end-6 text-2xl pb-8">
+        <div className="membershipTitle col-start-2 col-end-8 text-2xl pb-8 
+        sm:text-4xl
+        lg:col-start-3 lg:col-end-11">
           Membership Pricing Options
         </div>
-        <div className="membershipThanks col-start-2 col-end-6 text-lg pb-8">
+        <div className="membershipThanks col-start-2 col-end-8 text-lg pb-8 
+        sm:text-2xl lg:col-start-3 lg:col-end-11">
           <span className="text-(--urban-orange)">Thank you </span>for
           registering with Urban PowerHouse! We have a variety of membership
           options available
@@ -107,22 +118,28 @@ export default function Membership() {
             }
             onButtonClick={() => handleClick("MONTH")}
           />
-          <div className="buttonLoco w-full h-full flex flex-row justify-center items-center col-start-2 col-end-6 pb-8">
+          <div className="buttonLoco w-full h-full flex flex-row justify-center items-center col-start-3 col-end-5 sm:col-start-2 sm:col-end-8 lg:col-start-5 lg:col-end-9 pb-8">
               <Button
-                className="text-xl w-50"
+                className="text-xl w-50 sm:text-2xl"
                 label=" Buy Pass"
                 onClick={() => checkout(selectedOption)}
                 variant="default"
               />
             </div>
             <div
-              className="popupLoco w-full h-full absolute pt-200 pl-30 mx-[-20px]"
+              className="popupLoco w-full h-full fixed top-[50%] left-[25%] mx-[-20px]"
               style={{ display: showPopup ? "block" : "none" }} 
             >
               <div className="popup bg-[#F47321] w-60 h-40 flex flex-col justify-center items-center border-5 border-black-100 rounded-3xl">
                 <div className="popupText decoration-black rounded-xl">
                   Membership Selected: {selectedOption}
                 </div>
+                <input
+                  type="text"
+                  className="customInput bg-[--urban-white] border-2 border-[--urban-white]"
+                  style={{ display: selectedOption === "Custom" ? "block" : "none" }}
+                  placeholder="$$$"
+                />
               </div>
             </div>
           <br />
@@ -139,22 +156,22 @@ export default function Membership() {
                     selectedOption === "Custom" ? "border-[#F47321]" : "bg-[#ffffff]"
                   }`}
                 ></div>
-                <div className="type pb-4">Custom</div>
+                <div className="type pb-4 sm:text-2xl lg:text-3xl">Custom</div>
               </div>
 
-              <div className="description text-base text-sm">
+              <div className="description text-base text-sm sm:text-base lg:text-lg">
                 Coaching & Individualized Programming: Inquire for pricing. Financial Assistance available. Leave your information and we will get back to you ASAP!
               </div>
             </div>
           </button>
 
-    <div className="memInputSec flex flex-col col-start-1 col-end-7 pt-8">
-        <div className="memInputText text-lg pb-4">Personal Information</div>
+    <div className="memInputSec flex flex-col col-start-1 col-end-9 pt-8 ">
+        <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
             <MemInput Info = {" First Name"}/>
             <MemInput Info = {" Last Name"}/>
             <MemInput Info = {" Mobile Phone"}/>
             <MemInput Info = {" Email"}/>
-        <div className="Message text-lg">Message</div>
+        <div className="Message text-l sm:placeholder:text-2xl">Message</div>
           <textarea
             placeholder="Optional"
             className="border-2 border-gray-400 border-opacity-25 h-50 w-full p-2 text-left align-top"
