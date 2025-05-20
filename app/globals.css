@@ -3,6 +3,7 @@
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
+  --color-gray-500: rgba(64, 64, 64, 1);
 }
 body {
   overflow-x: hidden;
