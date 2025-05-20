@@ -8,27 +8,48 @@ import '../app/globals.css';
 
 
 export default function FAQ() {
+function Question({ text }) {
+  return <div className="col-start-1 col-span-6 FAQ">{text}</div>
+}
 
+function MoreInfoButton({image}) {
+  return <button className="col-start-6 col-span-1 sm:col-start-8 lg:col-start-12 Click"></button>
+}
 
     return (                     
           <Grid className="gap-y-4 overflow-hidden break-all">
             <Navigation/>
               <Container className="min-h-[60vh] ">
-                <h1 style={{fontSize: 30, gridColumn: "span 11"}} className="title">FAQ</h1>
-                <div style={{gridRow: "2", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 1</div>
-                <button style={{gridRow: "2", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "3", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 2</div>
-                <button style={{gridRow: "3", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "4", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 3</div>
-                <button style={{gridRow: "4", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "5", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 4</div>
-                <button style={{gridRow: "5", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "6", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 5</div>
-                <button style={{gridRow: "6", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "7", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 6</div>
-                <button style={{gridRow: "7", gridColumn: "foo-end"}} className="Click">\/</button>
-                <div style={{gridRow: "8", gridColumn: "span 11"}} className="FAQ">Lorem Ipsum 7</div>
-                <button style={{gridRow: "8", gridColumn: "foo-end"}} className="Click">\/</button>
+                <h1 className="text-[32px] col-span-11 title">FAQ</h1>
+                <div className="FAQ-Block-1">
+                  <Question text = "Lorem Ipsum 1"/>
+                  <MoreInfoButton image = "3"/>
+                </div>
+                <div className="FAQ-Block-2">
+                  <Question text = "Lorem Ipsum 2"/>
+                  <MoreInfoButton image = "2"/>
+                </div>
+                <div className="FAQ-Block-3">
+                <Question text = "Lorem Ipsum 3"/>
+                <MoreInfoButton image = "2"/>
+                </div>
+                <div className="FAQ-Block-4">
+                <Question text = "Lorem Ipsum 4"/>
+                <MoreInfoButton image = "2"/>
+                </div>
+                <div className="FAQ-Block-5">
+                <Question text = "Lorem Ipsum 5"/>
+                <MoreInfoButton image = "2"/>
+                </div>
+                <div className="FAQ-Block-6">
+                <Question text = "Lorem Ipsum 6"/>
+                <MoreInfoButton image = "2"/>
+                </div>
+                <div className="FAQ-Block-7">
+                <Question text = "Lorem Ipsum 7"/>
+                <MoreInfoButton image = "2"/>
+                </div>
+              
 
                   
               </Container>
