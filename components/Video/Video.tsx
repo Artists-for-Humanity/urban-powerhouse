@@ -7,7 +7,23 @@ interface VideoProps {
     loop?: boolean;
     isBackground?: boolean; 
     className?: string; 
+    controls?: boolean
+    ref?:React.RefObject<HTMLVideoElement>
 }
+
+interface AsianProps {
+    country: string;
+    sex: string;
+    language: string;
+}
+
+const Person: React.FC<AsianProps> = ({country, sex, language}) => {
+    return (<>{country}{sex}{language}</>)
+}
+
+
+
+
 
 const Video: React.FC<VideoProps> = ({
     src,
@@ -16,7 +32,13 @@ const Video: React.FC<VideoProps> = ({
     loop = true,
     isBackground = false,
     className = "",
+    controls = false,
+    ref
 }) => {
+
+    const result = <Person country="Japan" sex="Female" language="Japanese" />
+
+
     return (
         <div
             className={`${
@@ -25,8 +47,10 @@ const Video: React.FC<VideoProps> = ({
                     : "relative w-full h-auto]"
             } ${className}`}
         >
+        {result}
             <video
                 src={src}
+                ref={ref}
                 autoPlay={autoPlay}
                 muted={muted}
                 loop={loop}
