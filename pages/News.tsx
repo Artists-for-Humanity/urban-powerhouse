@@ -17,9 +17,8 @@ export default function News() {
 pb-10
 ;">News & Events</div>
 
-    <div className="pl-10px col-start-2 col-span-4 bg-black border-l-4 border-blue-500 text-white p-0 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]
-">
-        2024 City of Boston SuccessLink Program
+    <div className=" col-start-2 col-span-4 bg-black border-l-5 border-blue-500 text-white p-0 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]
+ pl-[10px]"> 2024 City of Boston SuccessLink Program
       </div>
       <p className="col-start-2 col-span-4 text-sm mb-3"> 
       Urban Powerhouse is proud to be a Summer 2024 SuccessLink Employment partner with the City of Boston.
