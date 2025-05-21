@@ -12,12 +12,12 @@ export default function News() {
     <Grid>
    <Navigation />
 
-   <Container className=" bg-black px-6 py-10">
+   <Container className=" bg-black px-2 py-10">
    <div className="col-start-1 col-span-4 font-style: Poppinsl text-[32px]
 pb-10
-;">News and Events</div>
+;">News & Events</div>
 
-    <div className="col-start-2 col-span-4 bg-black border-l-4 border-blue-500 text-white p-4 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]
+    <div className="pl-10px col-start-2 col-span-4 bg-black border-l-4 border-blue-500 text-white p-0 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]
 ">
         2024 City of Boston SuccessLink Program
       </div>
@@ -30,12 +30,12 @@ pb-10
       <p className="col-start-2 col-span-4 text-sm mb-3"> 
         We are looking forward to employing 11 youth workers and 1 young adult  worker this summer. Interested applicants should complete this google form. Urban PowerHouse will reach out to candidates of interest to schedule an in-person or virtual interview.
       </p>
-      <Button label="Read More"className="col-start-5 col-span-2 mb-6"></Button>
+      <Button label="Read More"className="col-start-5 col-span-7 mb-6 pl-[8px]"></Button>
 
 
       
       
-     <div className="col-start-2 col-span-4 bg-black border-l-4 border-blue-500 text-white p-4 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]">   
+     <div className="col-start-2 col-span-5 bg-black border-l-4 border-blue-500 text-white p-2 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]">   
      2024 Lorem ipsum dolor sit amet consectetur. Gravida.
       </div>
       <p className="col-start-2 col-span-4 text-sm mb-3 text-[16px]"> 
@@ -46,7 +46,7 @@ pb-10
       </p>
 
 
-      <div className="col-start-2 col-span-4 bg-black border-l-4 border-blue-500 text-white p-4 mb-10 max-w-md text-sm font-bold mb-3 text-[20px] mt-7">
+      <div className="col-start-2 col-span-6 bg-black border-l-4 border-blue-500 text-white p-4 mb-10 max-w-md text-sm font-bold mb-3 text-[20px] mt-7">
         2023 Lmet consectetur. Gravida.   
       </div>
       <p className="col-start-2 col-span-4 text-sm mb-3 text-[16px]">
@@ -55,7 +55,7 @@ pb-10
       <p className="col-start-2 col-span-4 text-sm mb-3 text-[16px]" >
         In neque mauris nunc eros mauris in congue sit.. Mauris id cras nunc adipiscing mauris ut eu dignissim elementum.. Scelerisque donec turpis ut arcu egestas ac rhoncus sed sit.. Posuere enim eget mauris et eu dui magna.. Quam consectetur sem eget ultrices donec risus velit sodales.. Cras integer iaculis gravida morbi aliquam eget senectus viverra..  
       </p>
-     <Button label="Read More"className="col-start-5 col-span-2 mb-6"></Button>
+      <Button label="Read More"className="col-start-5 col-span-7 mb-6 pl-[8px]"></Button>
 
 
 
