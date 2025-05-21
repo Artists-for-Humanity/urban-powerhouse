@@ -3,12 +3,13 @@ import Image from 'next/image';
 import Button from '../Button';
 
 interface ArticleBlockProps {
-  variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'bullet-points' | 'go-back';
+  variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'side-by-side-images' | 'bullet-points' | 'go-back';
   title?: string;
   paragraphs?: string[];
   quote?: string;
   cite?: string;
   imageSrc?: string;
+  imageSrcs?: string[];
   description?: string;
   onBackClick?: () => void;
   href?: string;
@@ -20,6 +21,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   quote,
   cite,
   imageSrc,
+  imageSrcs,
   description,
 
 }) => {
@@ -92,6 +94,34 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
         )}
         </div>
       );
+    case 'side-by-side-images':
+      return (
+        <div className="col-span-full grid grid-cols-subgrid gap-6 items-center sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-10 mb-10">
+          {imageSrcs && imageSrcs.length === 2 && (
+            <>
+              <div className="col-span-full sm:col-span-3 lg:col-span-5 flex justify-center">
+                <Image
+                  src={imageSrcs[0]}
+                  alt="Left Image"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+              <div className="col-span-full sm:col-span-3 lg:col-span-5 flex justify-center">
+                <Image
+                  src={imageSrcs[1]}
+                  alt="Right Image"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+            </>
+          )}
+        </div>
+      );
+
       case 'bullet-points':
       return (
         <div className="col-span-full grid grid-cols-subgrid">

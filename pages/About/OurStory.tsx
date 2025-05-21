@@ -42,6 +42,8 @@ export default function AboutArticle() {
           ]}
         />
 
+   
+
         <ArticleBlock
           variant="paragraph"
           paragraphs={[
@@ -54,10 +56,25 @@ export default function AboutArticle() {
           title="Our History"
         />
 
+ 
+                 <ArticleBlock
+          variant="center-image"
+          imageSrc="/humbleBeginnings/VeryFirstPod.jpg"
+        />
+
         <ArticleBlock
           variant="paragraph"
           paragraphs={[
             "In March 2020, when COVID shut down the commercial gym we trained in, we moved into a 250 sq. ft. storage space with our 7 athletes.",
+          ]}
+        />
+                         <ArticleBlock
+            variant="side-by-side-images"
+            imageSrcs={['/humbleBeginnings/MoveintoCurrentSpace.jpg', '/humbleBeginnings/MoveintoCurrentSpace2.jpg']}
+            />
+                    <ArticleBlock
+          variant="paragraph"
+          paragraphs={[
             "The demand for our programming grew, and by May 2021, we relocated to a 3,000 sq. ft. facility in Hyde Park. We've been focused on strategic impact ever since."
           ]}
         />
@@ -73,6 +90,11 @@ export default function AboutArticle() {
             "We are focused on the physical, mental, and social wellness of low-to-moderate income individuals of color in Boston. Our goal is to provide a supportive outlet for these individuals to work toward their goals.",
             "Through competing and traveling for strength sports, we’ve seen firsthand that diversity is lacking in the field. Urban PowerHouse exists to expand access to strength sports for people of color and those with limited financial means."
           ]}
+        />
+
+        <ArticleBlock
+          variant="center-image"
+          imageSrc="/humbleBeginnings/MockMeetFundraiserPodDays.jpg"
         />
 
       </Container>
