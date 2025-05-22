@@ -13,9 +13,7 @@ export default function News() {
    <Navigation />
 
    <Container className=" bg-black px-2 py-10">
-   <div className="col-start-1 col-span-4 font-style: Poppinsl text-[32px]
-pb-10
-;">News & Events</div>
+   <div className="pb-[35] text-leftcol-start-2 col-span-5 font-style: Poppinsl text-[32px] pb-10;">News & Events</div>
 
     <div className=" col-start-2 col-span-4 bg-black border-l-5 border-blue-500 text-white p-0 mb-10 max-w-md text-sm font-bold mb-3 text-[20px]
  pl-[10px]"> 2024 City of Boston SuccessLink Program
