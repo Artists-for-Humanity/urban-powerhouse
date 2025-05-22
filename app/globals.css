@@ -5,6 +5,7 @@
   --color-mint-500: oklch(0.72 0.11 178);
   --color-gray-500: rgba(64, 64, 64, 1);
   --color-blue-500: rgba(6, 51, 247, 1);
+  --text-shadow-button: 0 4px 4px rgba(6, 51, 247, 1); 
 }
 
 body {

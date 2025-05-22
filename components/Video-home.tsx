@@ -32,8 +32,10 @@ function IntroduceVideo() {
             <div id="grandparent" className=" px-2 w-full h-auto">
                 <div id="parent" className="w-full grid">
                     <div id="children" className="w-full h-full flex justify-center items-center">
-                        <button onClick={togglePlay} className=" Play_button absolute z-20 w-[100px] h-[100px] flex items-center justify-center rounded-full bg-black/60 text-white text-4xl cursor-pointer">
-                            {playing ? "": "▶"}
+                        <button onClick={togglePlay} 
+                        className= {`Play_button absolute z-20 w-[100px] h-[100px] flex items-center text-shadow-button justify-center rounded-full text-white text-4xl cursor-pointer ${
+                            playing ? 'opacity-0':'bg-black/40'}`}>
+                            {playing ? "" : "▶"}
                         </button>
                         {/* <video onPlay={handleVideoPlay} width="700px" height="700px" controls autoPlay className=" flex flex-rows w-[100vw[]] items-center justify-center">
                         <source src="/file.mp4"/> Your browser does not support this video
