@@ -15,23 +15,24 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
         <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8
           sm:col-start-2 sm:col-end-8
           lg:col-start-3 lg:col-end-11 lg:rounded-[0px]"  onClick = {onButtonClick}
-        style={{ backgroundColor: `var(${bgColor})`, border: `2px solid var(${bgColor})` }}>
-            <div className="memTotCon h-full w-full
-            lg:flex lg:flex-row lg:justify-around">
-              <div className="MemTextCon flex flex-row pb-3">
-              <div className="memSelCon justify-center items-center">
-                <div className="memSel size-px border-10 rounded-xl mr-4 "
+        style={{ backgroundColor: `var(${bgColor})`, border: `3px solid var(${bgColor})` }}>
+            <div className="memTotCon h-full w-full 
+            lg:flex lg:justify-between lg:items-center">
+              <div className="MemTextCon flex flex-row pb-3 lg:pb-0">
+              <div className="memSelCon flex justify-center items-center">
+                <div className="memSel size-px border-10 rounded-xl mr-4 h-auto w-auto"
                 style={{ backgroundColor: `var(${dColor})`, border: `10px solid var(${dColor})` }}
                 ></div>
               </div>
-              <div className="type pr-4 text-xl sm:text-2xl lg:text-3xl">
+              <div className="type pr-3 text-xl sm:text-2xl lg:text-3xl">
                 {type}
               </div>
               <div className="price text-xl sm:text-2xl lg:text-3xl">
                 {price}
                 </div>
             </div>
-            <div className="description text-sm text-left sm:text-base lg:text-lg">
+            <div className="description text-sm text-left sm:text-base lg:text-lg
+            w-90">
               {description}
             </div>
             </div>
@@ -144,26 +145,29 @@ export default function Membership() {
             </div>
           <br />
           <button
-            className={`CUSTOM py-8 col-span-full mx-[-20px] ${
+            className={`CUSTOM py-8 col-span-full mx-[-20px] lg:col-start-3 lg:col-end-11 lg:mx-0 ${
               selectedOption === "Custom" ? "bg-[#1D42E1]" : "bg-[#404040]"
             }`}
             onClick={() => handleClick("Custom")}
           >
-            <div className="CustomTextCon mx-15 text-xl">
-              <div className="memSelCon flex flex-row">
+
+            <div className="cusTotCon h-full w-full lg:flex lg:justify-between lg:items-center">
+            <div className="CustomTextCon text-xl lg:flex lg: items-center lg:justify-between col-start-2 col-end-8">
+              <div className="memSelCon flex flex-row lg:items-center">
                 <div
                   className={`memSel size-px border-10 rounded-xl mr-4 ${
                     selectedOption === "Custom" ? "border-[#F47321]" : "bg-[#ffffff]"
                   }`}
                 ></div>
-                <div className="type pb-4 sm:text-2xl lg:text-3xl">Custom</div>
+                <div className="type pb-4 sm:text-2xl lg:text-3xl lg:pb-0">Custom</div>
               </div>
-
-              <div className="description text-base text-sm sm:text-base lg:text-lg">
+              <div className="description text-base text-sm sm:text-base lg:text-lg lg:text-left lg:w-90">
                 Coaching & Individualized Programming: Inquire for pricing. Financial Assistance available. Leave your information and we will get back to you ASAP!
               </div>
             </div>
+            </div>
           </button>
+
 
     <div className="memInputSec flex flex-col col-start-1 col-end-9 pt-8 ">
         <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
