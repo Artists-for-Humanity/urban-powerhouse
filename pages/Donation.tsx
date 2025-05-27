@@ -24,7 +24,9 @@ export default function Donation() {
             <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Become a Friend of UPH </div>
             <div className="p-11 rounded-full bg-gray-600 col-start-3 col-span-2 text-center text-[20px]">$65</div>
             <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Supports a 12 month federation membership for one athlete</div>
-            <div className="p-11 rounded-full bg-gray-600 col-start-3 col-span-2 text-[20px]">$100</div>
+            <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">
+                $2500
+              </div>
             <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Covers one competition entry fee for one athlete </div>
             <div className="p-11 rounded-full bg-gray-600 col-start-3 col-span-2 text-[20px]">$250</div>
             <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Covers approved competition gear for one athlete</div>
