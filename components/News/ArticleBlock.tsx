@@ -13,6 +13,7 @@ interface ArticleBlockProps {
   description?: string;
   onBackClick?: () => void;
   href?: string;
+  className?: string;
 }
 const ArticleBlock: React.FC<ArticleBlockProps> = ({
   variant,
@@ -23,6 +24,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   imageSrc,
   imageSrcs,
   description,
+  className ='',
 
 }) => {
   switch (variant) {

@@ -24,6 +24,8 @@ const Navigation: React.FC = () => {
     return () => { document.body.removeChild(script); };
   }, []);
 
+
+  
    const handleAccountLink = () => {
     const widget = document.querySelector(
       'healcode-widget .healcode-login-register-text-link'
@@ -35,7 +37,7 @@ const Navigation: React.FC = () => {
     <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center py-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4 max-h-[150px]">
       {/* Mobile Logo and Hamburger Menu */}
       <Logo className="block sm:hidden" size="small" />
-      <Button className="text-3xl sm:hidden" label="☰" onClick={toggleMenu} variant="default" />
+      <Button className="text-3xl sm:hidden !py-3" label="☰" onClick={toggleMenu} variant="default" />
 
       {/* MOBILE MENU */}
       <div
@@ -84,7 +86,7 @@ const Navigation: React.FC = () => {
           <Button label="Donation" onClick={() => console.log('Donation clicked')} href='/Donation' variant="default" />
           <Button label="Sign In"  onClick={handleAccountLink} variant="default" />
              <div className="relative">
-            <Button className="text-3xl" label="☰" onClick={toggleTabletMenu} variant="default" />
+            <Button className="text-3xl !py-2" label="☰" onClick={toggleTabletMenu} variant="default" />
             <div
               className={`fixed top-0 right-0 h-full bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
                 isTabletMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -92,7 +94,7 @@ const Navigation: React.FC = () => {
             >
               <div className="flex justify-between items-start p-4">
                 <Logo size="small" />
-                <Button className="text-3xl" label="x" onClick={toggleTabletMenu} variant="default" />
+                <Button className="text-3xl !py-2" label="x" onClick={toggleTabletMenu} variant="default" />
               </div>
               <div className="flex flex-col items-start p-4 space-y-4 ">
                 <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />

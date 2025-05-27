@@ -26,13 +26,13 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
   return (
     <div className={`grid grid-cols-subgrid col-span-full mb-10 ${className}`}>
       {header && (
-        <h2 className="text-[28px] font-semibold col-span-full mb-[10px]">
+        <h2 className="text-[28px] mx-[32px] lg:mx-0 font-semibold col-start-1 col-span-6 lg:col-start-1 mb-[10px]">
           {header}
         </h2>
       )}
 
       {/* Mobile Swiper */}
-      <div className="col-span-full lg:hidden">
+      <div className=" col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
@@ -80,10 +80,10 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
 
       {/* Button for simple variant */}
       {variant === 'simple' && buttonText && (
-        <div className="col-start-4 col-span-2 sm:col-start-7 sm:col-span-2 sm:mt-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+        <div className="col-start-4 col-span-2 sm:col-start-6 sm:col-span-2 sm:mt-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
           <Button
             label={buttonText}
-            className="text-urban-blue"
+            className="text-urban-blue mt-10 sm:mt-0"
             href="/FAQ"
             variant="default"
             isActive={false}
