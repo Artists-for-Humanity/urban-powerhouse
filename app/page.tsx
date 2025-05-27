@@ -75,7 +75,7 @@ export default function Home() {
           
               ]}
                variant="simple"
-               buttonText="See All  →"
+               buttonText="See All"
               className="bg-urban-grey mt-10"
             />
                 <PartnerBlock

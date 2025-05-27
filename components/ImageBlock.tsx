@@ -26,7 +26,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
   return (
     <div className={`grid grid-cols-subgrid col-span-full mb-10 ${className}`}>
       {header && (
-        <h2 className="text-[28px] mx-[32px] lg:mx-0 font-semibold col-start-1 col-span-6 lg:col-start-1 mb-[10px]">
+        <h2 className="text-[28px] lg:mx-0 font-semibold col-start-1 col-span-6 lg:col-start-1 mb-[10px]">
           {header}
         </h2>
       )}
@@ -46,7 +46,8 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
                 alt={`Image ${index + 1}`}
                 width={376}
                 height={282}
-                className="w-[376px] sm:w-[793px] sm:h-[596px] h-[282px] object-cover mx-auto"
+                className='w-full max-h-[300px] object-cover mx-auto'
+                // className="w-[376px] sm:w-[793px] sm:h-[596px] h-[282px] object-cover mx-auto"
               />
             </SwiperSlide>
           ))}
@@ -80,7 +81,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
 
       {/* Button for simple variant */}
       {variant === 'simple' && buttonText && (
-        <div className="col-start-4 col-span-2 sm:col-start-6 sm:col-span-2 sm:mt-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+        <div className="col-start-5 col-span-2 sm:col-start-6 sm:col-span-2 sm:mt-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
           <Button
             label={buttonText}
             className="text-urban-blue mt-10 sm:mt-0"

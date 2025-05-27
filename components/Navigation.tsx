@@ -7,6 +7,8 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,6 +18,7 @@ const Navigation: React.FC = () => {
     setIsTabletMenuOpen(!isTabletMenuOpen);
   };
 
+
    useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js";
@@ -23,6 +26,23 @@ const Navigation: React.FC = () => {
     document.body.appendChild(script);
     return () => { document.body.removeChild(script); };
   }, []);
+
+    useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (isMenuOpen || isTabletMenuOpen) {
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+    } else {
+      html.style.overflow = '';
+      body.style.overflow = '';
+    }
+    return () => {
+      html.style.overflow = '';
+      body.style.overflow = '';
+    };
+  }, [isMenuOpen, isTabletMenuOpen]);
 
 
   
@@ -37,17 +57,17 @@ const Navigation: React.FC = () => {
     <nav className="flex justify-between items-start z-[1] sm:items-center sm:justify-center py-4 col-span-6 sm:col-span-8 lg:col-span-12 w-full mt-4 max-h-[150px]">
       {/* Mobile Logo and Hamburger Menu */}
       <Logo className="block sm:hidden" size="small" />
-      <Button className="text-3xl sm:hidden !py-3" label="☰" onClick={toggleMenu} variant="default" />
+      <Button className="text-3xl sm:hidden !pb-2 !pt-1 !pl-3 !pr-3" label="☰" onClick={toggleMenu} variant="default" />
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed top-0 right-0 h-full bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-[120vh] bg-(--urban-black) shadow-lg transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } w-full z-2 sm:hidden`}
       >
         <div className="flex justify-between items-start p-4">
           <Logo size="small" />
-          <Button className="text-3xl" label="x" onClick={toggleMenu} variant="default" />
+          <Button className="text-3xl !pb-2 !pt-1" label="x" onClick={toggleMenu} variant="default" />
         </div>
         <div className="flex flex-col items-start p-4 space-y-4">
           <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
@@ -61,7 +81,9 @@ const Navigation: React.FC = () => {
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
                   { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
-                  ]}/>
+                  ]}
+                 
+                  />
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
           {/* <Button label="Registration & Membership" href="/" variant="nav" isActive={false} /> */}
           <Button
@@ -74,7 +96,7 @@ const Navigation: React.FC = () => {
           ]}/>
           <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
-           <Button label="Sign In" className='text-[var(--urban-orange)]' variant="nav"  onClick={handleAccountLink} isActive={false} />
+           <Button label="Sign In" className='text-[var(--urban-white)]' variant="nav"  onClick={handleAccountLink} isActive={false} />
           {/* <Button label="Sign In" className='text-[var(--urban-blue)]'  variant="nav"    isActive={false} /> */}
         </div>
       </div>
