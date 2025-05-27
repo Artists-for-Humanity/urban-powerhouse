@@ -42,7 +42,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
 
 function MemInput({ Info }) {
   return (
-    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 pb-4">
+    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 lg:col-start-1 lg:col-end-6 pb-4">
       <div className="Input text-lg sm:text-2xl">
         {Info} <span className="text-(--urban-orange)">*</span>
       </div>
@@ -150,26 +150,24 @@ export default function Membership() {
             }`}
             onClick={() => handleClick("Custom")}
           >
-
-            <div className="cusTotCon h-full w-full lg:flex lg:justify-between lg:items-center">
-            <div className="CustomTextCon text-xl lg:flex lg: items-center lg:justify-between col-start-2 col-end-8">
-              <div className="memSelCon flex flex-row lg:items-center">
-                <div
-                  className={`memSel size-px border-10 rounded-xl mr-4 ${
-                    selectedOption === "Custom" ? "border-[#F47321]" : "bg-[#ffffff]"
-                  }`}
-                ></div>
-                <div className="type pb-4 sm:text-2xl lg:text-3xl lg:pb-0">Custom</div>
+            <div className="cusTotCon h-full w-full px-10 lg:flex lg:justify-between lg:items-center">
+              <div className="CustomTextCon text-xl flex items-center">
+                <div className="memSelCon flex flex-row lg:items-center">
+                  <div
+                    className={`memSel size-px border-10 rounded-xl mr-4 ${
+                      selectedOption === "Custom" ? "border-[#F47321]" : "bg-[#ffffff]"
+                    }`}
+                  ></div>
+                  <div className="type pb-4 sm:text-2xl lg:text-3xl lg:pb-0">Custom</div>
+                </div>
               </div>
-              <div className="description text-base text-sm sm:text-base lg:text-lg lg:text-left lg:w-90">
+              <div className="description text-left text-base text-sm sm:text-base lg:justify-end lg:text-lg lg:text-left lg:w-90">
                 Coaching & Individualized Programming: Inquire for pricing. Financial Assistance available. Leave your information and we will get back to you ASAP!
               </div>
             </div>
-            </div>
           </button>
 
-
-    <div className="memInputSec flex flex-col col-start-1 col-end-9 pt-8 ">
+    <div className="memInputSec flex flex-col col-start-1 col-end-9 lg:col-span-full pt-8 ">
         <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
             <MemInput Info = {" First Name"}/>
             <MemInput Info = {" Last Name"}/>
