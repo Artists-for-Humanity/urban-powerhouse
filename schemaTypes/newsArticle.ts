@@ -15,10 +15,12 @@ export default {
       type: 'array',
       of: [{type: 'text'}],
     },
-    {
+     {
       name: 'link',
-      title: 'Link',
-      type: 'string',
+      title: 'Link to Article',
+      type: 'reference',
+      to: [{ type: 'article' }],
+      description: 'Select the article this news item links to. If it does not exist, create a new Article first.',
     },
     {
       name: 'pinned',
