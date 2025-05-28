@@ -21,16 +21,16 @@ export default function Home() {
         <div className="justify-center relative items-center font-[Poppins] text-left mb-4 col-span-full font-semibold grid grid-cols-subgrid">
           <IntroduceVideo></IntroduceVideo>
           
-          <div id="section-1" className=" grid sm:grid-cols-subgrid px-4 col-start-1 col-span-5 mb-10 sm:col-start-2 sm:col-span-5 lg:col-span-7 ">
-              <div className="UrbanPowerHouse sm:col-start-1 sm:col-span-7">
+          <div id="section-1" className=" grid sm:px-0 sm:grid-cols-subgrid px-4 col-start-1 col-span-5 mb-10 sm:col-start-2 sm:col-span-7 lg:col-span-7 ">
+              <div className="UrbanPowerHouse sm:col-start-1 sm:col-span-6">
               <div className="text-[32px] grid leading-[36px]">About Urban Powerhouse</div>
-            <h3 className="text-[16px] sm:col-start-2 sm:col-span-8 grid mb-[40px] mt-5"> We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!</h3>
+            <h3 className="text-[16px] sm:col-start-2 sm:col-span-5 grid mb-[40px] mt-5"> We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!</h3>
             </div>
-            <div className="Read-more w-full justify-end flex">
+            <div className="grid sm:col-start-6 sm:col-span-1 Read-more w-full justify-end flex">
               <Button className=" w-[100] h-[40] absolute flex justify-center items-center" label="Read more" onClick={() => console.log('Sign In clicked')} variant="default" />
             </div>
           </div>
-          <div id="section-2" className="px-4 section-2 col-start-1 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11">
+          <div id="section-2" className="px-4 sm:px-0 section-2 col-start-1 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11">
             <img src="quote.svg" alt="Your devide does not support this picture" className="mb-[40] relative w-[140.33] h-[111]" />
             <h3 className="text-[20px] w-full grid">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis  </h3>
             <br />
@@ -66,19 +66,19 @@ export default function Home() {
           </div>
           </div>
           <div id="section-5" className="col-start-2 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11">
-            <div className="title w-full md:px-15 grid relative">
+            <div className="title w-full  grid relative">
               <div className="grid text-[32px] mb-6 ">Our Stats</div>
             </div>
 
-            <div id="Stats" className=" md:px-15 grid md:grid-rows-2 md:grid-cols-2 relative">
-              <p className="text-[32px] md:grid-cols-1 md:text-[88px]">500</p> <br />
-              <p className="text-[20px] md:grid-cols-1">Member</p> <br />
-              <p className="text-[32px]">5</p> <br /> 
-              <p className="text-[20px]">Championships</p> <br />
-              <p className="text-[32px]">200</p> <br />
-              <p className="text-[20px]">Equipments</p> <br />
-              <p className="text-[32px]">20000$</p> <br />
-              <p className="text-[20px]">Donated</p> 
+            <div id="Stats" className=" grid flex flex-col md:flex-row sm:grid-cols-subgrid relative">
+              <p className="text-[32px]  sm:col-start-1 sm:col-span-2 ">500</p> <br />
+              <p className="text-[20px]  sm:col-start-1 sm:col-span-2">Member</p> <br />
+              <p className="text-[32px] sm:col-start-1 sm:col-span-2">5</p> <br /> 
+              <p className="text-[20px]  sm:col-start-1 sm:col-span-2">Championships</p> <br />
+              <p className="text-[32px] sm:col-start-5 sm:col-span-5">200</p> <br />
+              <p className="text-[20px] sm:col-start-5 sm:col-span-5">Equipments</p> <br />
+              <p className="text-[32px] sm:col-start-5 sm:col-span-5">20000$</p> <br />
+              <p className="text-[20px] sm:col-start-5 sm:col-span-5">Donated</p> 
             </div>
           </div>
           <div id="section-6" className="col-start-2 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11 ">
