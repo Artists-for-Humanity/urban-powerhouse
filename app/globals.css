@@ -21,8 +21,6 @@ body {
   --color-background: var(--urban-white);
   --color-foreground:  var(--urban-black);
   --font-sans: 'Poppins', sans-serif;
-  --breakpoint-sm: 300px;
-  --breakpoint-lg: 1024px;
 }
 
 @media (prefers-color-scheme: dark) {

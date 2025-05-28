@@ -31,17 +31,20 @@ export default function News() {
                     </p>
                     <br />
                 </div>
-                <div className=" col-start-2 col-span-4 gap-y-8 sm:col-span-6 sm:col-start-2">
+                <div className=" col-start-2 col-span-4 gap-y-8 sm:col-span-6 sm:col-start-2 lg:col-start-2 lg:col-span-9">
                     <img  className='' src="/Group-55.png" alt="Quote Icon" />
-                    <div className="text-[24px] font-bold ">Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.</div>
+                    <div className="text-[24px] lg:text-[32px] font-bold ">Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.</div>
                     <br />
                 </div>
-                <div className=" col-start-2 col-span-4 sm:col-span-6 sm:col-start-2">
-                    <p>
+                <div className=" col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 lg: mt-15">
+                    <p className=" lg:col-start-2 lg:col-span-6 lg: ">
                         Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.. Lorem elementum eget nunc risus sed at mauris sit.. Integer in tortor volutpat dui. Id eget cras euismod sit nulla morbi etiam.. Ut pellentesque nibh quam vitae ut mi sed sem.. Placerat tincidunt varius at felis congue imperdiet.. Enim a elit risus amet tortor facilisi.. Faucibus eget quis pharetra quis metus enim imperdiet scelerisque sagittis..
                     </p>
                     <br />
-                    <div className=" "><img src="/gymshots/Championship2025.jpg" alt="" /></div>
+                </div>
+                <div className=" col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 lg:col-start-8 lg:col-span-3 "><img src="/gymshots/Championship2025.jpg" alt="" /></div>
+                <div className="col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 lg:col-start-2 lg:col-span-9">
+
                     <p>
                         Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.. Lorem elementum eget nunc risus sed at mauris sit.. Integer in tortor volutpat dui. Id eget cras euismod sit nulla morbi etiam.. Ut pellentesque nibh quam vitae ut mi sed sem.. Placerat tincidunt varius at felis congue imperdiet.. Enim a elit risus amet tortor facilisi.. Faucibus eget quis pharetra quis metus enim imperdiet scelerisque sagittis..
                     </p>
@@ -51,11 +54,13 @@ export default function News() {
                     </p>
                     <br />
                 </div>
-                <div className="col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 text-center">
+
+
+                <div className="col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 text-center lg:col-start-4">
                     <img className="mx-auto" src="/Youth Fest 2024.png" alt="Youth Fest 2024" />
                     <p>look at this fun image</p>
                 </div>
-                <div className=" col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 ">
+                <div className=" col-start-2 col-span-4 sm:col-span-6 sm:col-start-2 lg:col-start-2 lg:col-span-9">
                     <br />
                     <p> 
                         Lorem ipsum dolor sit amet consectetur. Vel posuere tristique sed diam. Cursus urna in in odio vulputate.. Lorem elementum eget nunc risus sed at mauris sit.. Integer in tortor volutpat dui. Id eget cras euismod sit nulla morbi etiam.. Ut pellentesque nibh quam vitae ut mi sed sem.. Placerat tincidunt varius at felis congue imperdiet.. Enim a elit risus amet tortor facilisi.. 
@@ -65,7 +70,7 @@ export default function News() {
                         In neque mauris nunc eros mauris in congue sit.. Mauris id cras nunc adipiscing mauris ut eu dignissim elementum.. Scelerisque donec turpis ut arcu egestas ac rhoncus sed sit.. Posuere enim eget mauris et eu dui magna.. Quam consectetur sem eget ultrices donec risus velit sodales.. Cras integer iaculis gravida morbi aliquam eget senectus viverra.. 
                     </p>
                 </div>
-                <Button label="Go Back"className="mt-4 col-start-3 col-span-2 ">Click Me</Button>            
+                <Button label="Go Back"className="mt-4 col-start-3 col-span-2 sm:col-start-4 lg:col-start-6 ">Click Me</Button>            
             </Container>
             <Footer />
         </Grid>
