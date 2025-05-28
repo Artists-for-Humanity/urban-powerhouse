@@ -24,7 +24,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({
   imageSrc,
   imageSrcs,
   description,
-  className ='',
+  // className ='',
 
 }) => {
   switch (variant) {
