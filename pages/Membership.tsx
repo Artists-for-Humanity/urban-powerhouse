@@ -14,7 +14,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
     return (
         <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8
           sm:col-start-2 sm:col-end-8
-          lg:col-start-3 lg:col-end-11 lg:rounded-[0px]"  onClick = {onButtonClick}
+          lg:col-start-1 lg:col-end-13 lg:rounded-[0px]"  onClick = {onButtonClick}
         style={{ backgroundColor: `var(${bgColor})`, border: `3px solid var(${bgColor})` }}>
             <div className="memTotCon h-full w-full 
             lg:flex lg:justify-between lg:items-center">
@@ -31,8 +31,8 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
                 {price}
                 </div>
             </div>
-            <div className="description text-sm text-left sm:text-base lg:text-lg
-            w-90">
+            <div className="description text-sm text-left sm:text-base lg:text-lg lg: w-[40vw]
+            ">
               {description}
             </div>
             </div>
@@ -42,7 +42,8 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
 
 function MemInput({ Info }) {
   return (
-    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 lg:col-start-1 lg:col-end-6 pb-4">
+    <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 pb-4
+      lg:col-start-1 lg:col-end-7 w-[40vw]">
       <div className="Input text-lg sm:text-2xl">
         {Info} <span className="text-(--urban-orange)">*</span>
       </div>
@@ -145,12 +146,12 @@ export default function Membership() {
             </div>
           <br />
           <button
-            className={`CUSTOM py-8 col-span-full mx-[-20px] lg:col-start-3 lg:col-end-11 lg:mx-0 ${
+            className={`CUSTOM py-8 col-span-full mx-[-20px] lg:col-start-1 lg:col-end-13 lg:mx-0 ${
               selectedOption === "Custom" ? "bg-[#1D42E1]" : "bg-[#404040]"
             }`}
             onClick={() => handleClick("Custom")}
           >
-            <div className="cusTotCon h-full w-full px-10 lg:flex lg:justify-between lg:items-center">
+            <div className="cusTotCon h-full w-full px-10 lg:flex lg:justify-between lg:items-center ">
               <div className="CustomTextCon text-xl flex items-center">
                 <div className="memSelCon flex flex-row lg:items-center">
                   <div
@@ -161,23 +162,27 @@ export default function Membership() {
                   <div className="type pb-4 sm:text-2xl lg:text-3xl lg:pb-0">Custom</div>
                 </div>
               </div>
-              <div className="description text-left text-base text-sm sm:text-base lg:justify-end lg:text-lg lg:text-left lg:w-90">
+              <div className="description text-left text-base text-sm sm:text-base lg:justify-end lg:text-lg lg:text-left lg:w-[40vw]">
                 Coaching & Individualized Programming: Inquire for pricing. Financial Assistance available. Leave your information and we will get back to you ASAP!
               </div>
             </div>
           </button>
 
-    <div className="memInputSec flex flex-col col-start-1 col-end-9 lg:col-span-full pt-8 ">
-        <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
-            <MemInput Info = {" First Name"}/>
-            <MemInput Info = {" Last Name"}/>
-            <MemInput Info = {" Mobile Phone"}/>
-            <MemInput Info = {" Email"}/>
-        <div className="Message text-l sm:placeholder:text-2xl">Message</div>
+    <div className="memInputSec flex flex-col lg:flex-row lg:justify-between col-start-1 col-end-9 lg:col-span-full pt-8">
+        <div className="memInCon lg:flex lg:flex-col">
+          <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
+          <MemInput Info = {" First Name"}/>
+          <MemInput Info = {" Last Name"}/>
+          <MemInput Info = {" Mobile Phone"}/>
+          <MemInput Info = {" Email"}/>
+        </div>
+        <div className="messageCon">
+          <div className="Message text-l sm:placeholder:text-2xl">Message</div>
           <textarea
             placeholder="Optional"
-            className="border-2 border-gray-400 border-opacity-25 h-50 w-full p-2 text-left align-top"
+            className="border-2 border-gray-400 border-opacity-25 h-50 w-full lg:w-[40vw] p-2 text-left align-top"
             />
+        </div>
             </div>
       </Container>
       <Footer />
