@@ -10,6 +10,7 @@ import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
 import StatBlock from "../components/Stat/StatBlock";
 import InfoBlock from "../components/InfoBlock";
+import '../app/globals.css';
 
 export default function Home() {
   const partners = {
@@ -20,10 +21,6 @@ export default function Home() {
       { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
       { src: '/logos/FutureBos.png', link: 'https://www.boston.gov/departments/youth-employment-and-opportunity/youth-jobs' },
       { src: '/logos/BOS.png', link: 'https://bellsofsteel.us/' },
-      // { src: '/logos/p.png', link: 'https://example.com/' },
-      // { src: '/logos/placeholder.png', link: 'https://example.com/' },
-      // { src: '/logos/placeholder.png', link: 'https://example.com/' },
-      // { src: '/logos/placeholder.png', link: 'https://example.com/' },
     ],
   };
 
@@ -39,8 +36,8 @@ export default function Home() {
                 title="About Urban Powerhouse"
                 description="Urban PowerHouse is a nonprofit organization bringing empowerment and self-growth to those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve.
 "
-                buttonText="Learn More →"
-                onButtonClick={() => console.log("Button clicked!")}
+                buttonText="Learn More"
+                href="/About/OurStory"
                 />
                  <QuoteBlock
                   quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis  "
@@ -75,17 +72,11 @@ export default function Home() {
                 '/gymshots/DSC01572.jpg',
                 '/gymshots/IMG_8611.jpg',
                 '/gymshots/IMG_8613.jpg',
-                // '/gymshots/DejenaeMachinePress.jpg',
-                // '/gymshots/DSC01572.jpg',
-                // '/gymshots/RenaudBench.jpg',
-                // '/gymshots/SofiaLegExtension.jpg',
-                // '/gymshots/Championship2025.jpg',
-                // '/gymshots/P1040529.jpg',
           
               ]}
                variant="simple"
-               buttonText="See All  →"
-              className="bg-urban-grey"
+               buttonText="See All"
+              className="bg-urban-grey mt-10"
             />
                 <PartnerBlock
                   header={partners.header}

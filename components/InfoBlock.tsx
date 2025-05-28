@@ -15,7 +15,7 @@ interface InfoBlockProps {
 
 const InfoBlock: React.FC<InfoBlockProps> = ({ variant, fields = [], businessHours = [], title = 'Information', className = '' }) => {
   return (
-    <div className={`flex flex-col col-start-2 col-span-4 lg:col-start-1 lg:col-span-3 w-full ${className}`}>
+    <div className={`flex flex-col col-start-1 col-span-5 sm:col-start-2 sm:col-span-6 mx-[32px] sm:mx-0 sm:mt-10 lg:col-start-1 lg:col-span-3 w-full ${className}`}>
       {variant === 'contact' && (
         <div className="space-y-4 ">
           <h2 className="text-[32px] font-bold text-(--urban-white) mb-6">{title}</h2>
@@ -31,7 +31,7 @@ const InfoBlock: React.FC<InfoBlockProps> = ({ variant, fields = [], businessHou
       )}
 
       {variant === 'hours' && businessHours.length > 0 && (
-        <div className="space-y-4 mb-10">
+        <div className="space-y-4 mb-10 sm:mx-0">
           <h2 className="text-[32px] font-bold text-(--urban-white) mb-6">{title}</h2>
           <div className="space-y-2 lg:ml-10">
             {businessHours.map((hour, index) => (

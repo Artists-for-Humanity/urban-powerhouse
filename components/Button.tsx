@@ -80,9 +80,8 @@ const Button: React.FC<ButtonProps> = ({
             alt="Chevron"
             width={25}
             height={25}
-            className={`transition-transform duration-300 ${
-              isDropdownOpen ? '-rotate-90' : ''
-            }`}
+            className={`transition-transform duration-300 ${isDropdownOpen ? '-rotate-90' : ''
+              }`}
             onMouseEnter={() => setHoveredIndex(0)} // Adjust if you have multiple items
             onMouseLeave={() => setHoveredIndex(null)}
           />
@@ -118,12 +117,12 @@ const Button: React.FC<ButtonProps> = ({
             ${className}
           `}
         >
-                    <div className="flex items-center justify-center gap-2">
-        {iconSrc && (
-          <Image src={iconSrc} alt="icon" width={20} height={20} />
-        )}
-        <span>{label}</span>
-      </div>
+          <div className="flex items-center justify-center gap-2">
+            {iconSrc && (
+              <Image src={iconSrc} alt="icon" width={20} height={20} />
+            )}
+            <span>{label}</span>
+          </div>
           {/* {label} */}
         </div>
       </Link>
@@ -146,7 +145,12 @@ const Button: React.FC<ButtonProps> = ({
         ${className}
       `}
     >
-      {label}
+      <div className="flex items-center justify-center gap-2">
+        {iconSrc && (
+          <Image src={iconSrc} alt="icon" width={20} height={20} />
+        )}
+        <span>{label}</span>
+      </div>
     </button>
   );
 };

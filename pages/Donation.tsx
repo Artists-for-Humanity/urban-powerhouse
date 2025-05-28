@@ -36,6 +36,9 @@ export default function Donation() {
                     { amount: "$__", description: "Make a gift. Every donation, no matter the size, will help us make Boston strong  together." },
                     
                     ]}
+                    businessId="ASDZCSFGY9L7Q"
+                    currencyCode="USD"
+                    itemName="UPH Donation"
                 />
 
               </Container>

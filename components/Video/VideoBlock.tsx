@@ -8,7 +8,8 @@ interface VideoBlockProps {
   title: string;
   description: string;
   buttonText: string;
-  onButtonClick: () => void;
+  href?: string; // Optional href for the button
+ 
 }
 
 const VideoBlock: React.FC<VideoBlockProps> = ({
@@ -17,7 +18,8 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
   title,
   description,
   buttonText,
-  onButtonClick,
+  href
+
 }) => {
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className}`}>
@@ -42,14 +44,13 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
         </p>
       </div>
 
-      <div className="col-start-4 col-span-2 sm:col-start-7 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+      <div className="col-start-5 col-span-2 sm:col-start-6 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
         <Button
           label={buttonText}
           className="text-urban-blue"
-          href="#"
+          href={href} 
           variant="default"
           isActive={false}
-          onClick={onButtonClick}
         />
       </div>
     </div>

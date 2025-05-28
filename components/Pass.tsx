@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 interface PricingOption {
   label: 'DAY' | 'WEEK' | 'MONTH' | 'Custom' | string;
@@ -10,25 +10,62 @@ interface PricingOption {
 interface PassProps {
   options: PricingOption[];
   variant?: 'default' | 'custom';
+  onSelect?: (label: string) => void;
+
 }
 
 const Pass: React.FC<PassProps> = ({
   options,
   variant = 'default',
+    onSelect, // destructure onSelect
+
 }) => {
   const [selected, setSelected] = useState<string>(
     variant === 'custom' ? '' : options[0]?.label || ''
   );
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.mindbodyonline.com/javascripts/healcode.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Clean up on unmount
+    };
+  }, []);
+
   const handleClick = (label: string) => {
     setSelected(prev => (prev === label ? '' : label));
+      onSelect?.(label); // trigger callback to parent
+
   };
 
+  // const handleSubmit = (e: FormEvent) => {
+  //   e.preventDefault();
+  //   // TODO: wire up your submit logic
+  //   alert('Form submitted!');
+  // };
+
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // TODO: wire up your submit logic
-    alert('Form submitted!');
-  };
+  e.preventDefault();
+
+  const form = e.target as HTMLFormElement;
+  const firstName = (form.elements.namedItem('firstName') as HTMLInputElement).value;
+  const lastName = (form.elements.namedItem('lastName') as HTMLInputElement).value;
+  const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+  const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+  const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
+  const subject = encodeURIComponent(`Custom Pass Inquiry from ${firstName} ${lastName}`);
+  const body = encodeURIComponent(
+    `Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
+  );
+
+  window.location.href = `mailto:Contact@UrbanPowerHouse.com?subject=${subject}&body=${body}`;
+};
+
 
   const renderOption = (option: PricingOption) => {
     const isSelected = selected === option.label;
@@ -172,7 +209,7 @@ const Pass: React.FC<PassProps> = ({
             Contact Us
           </button>
         </form>
-     )} 
+      )}
     </div>
   );
 };
