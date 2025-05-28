@@ -29,7 +29,7 @@ function IntroduceVideo() {
 
     return (
         <>
-            <div id="grandparent" className="px-2 w-full h-auto col-start-1 col-span-6 sm:col-span-8 lg:col-span-12">
+            <div id="grandparent" className="mb-8 w-full h-auto col-start-1 col-span-6 sm:col-span-8 lg:col-span-12">
                 <div id="parent" className="w-full grid cols-">
                     <div id="children" className="w-full h-full flex justify-center items-center">
                         <button onClick={togglePlay} 
