@@ -33,9 +33,16 @@ interface Partner {
 interface HomepageImageBlock {
   key: string;
   title: string;
-  blockType: 'images' | 'partners';
+  blockType: 'images' | 'partners' | 'quote';
   images?: SanityImage[];
   partners?: Partner[];
+  quote?: string;
+  author?: string;
+  authorImage?: {
+    asset: {
+      url: string;
+    };
+  };
 }
 
 export default function Home() {
@@ -51,7 +58,10 @@ useEffect(() => {
         title,
         blockType,
         images[]{asset->{url}, alt},
-        partners[]{image{asset->{url}}, link}
+        partners[]{image{asset->{url}}, link},
+        quote,
+        author,
+        authorImage{asset->{url}}
       }`
     )
     .then((data: HomepageImageBlock[]) => {
@@ -63,17 +73,18 @@ useEffect(() => {
 const gymBlock = imageBlocks.find(block => block.key === "our-gym");
 const equipmentBlock = imageBlocks.find(block => block.key === "equipment");
 const partnerBlock = imageBlocks.find(block => block.key === "partners");
+const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
 
-  const partners = {
-    header: 'Our Partners',
-    images: [
-      { src: '/logos/A7.png', link: 'https://a7.co/' },
-      { src: '/logos/Eleiko.png', link: 'https://eleiko.com/en-us' },
-      { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
-      { src: '/logos/FutureBos.png', link: 'https://www.boston.gov/departments/youth-employment-and-opportunity/youth-jobs' },
-      { src: '/logos/BOS.png', link: 'https://bellsofsteel.us/' },
-    ],
-  };
+  // const partners = {
+  //   header: 'Our Partners',
+  //   images: [
+  //     { src: '/logos/A7.png', link: 'https://a7.co/' },
+  //     { src: '/logos/Eleiko.png', link: 'https://eleiko.com/en-us' },
+  //     { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
+  //     { src: '/logos/FutureBos.png', link: 'https://www.boston.gov/departments/youth-employment-and-opportunity/youth-jobs' },
+  //     { src: '/logos/BOS.png', link: 'https://bellsofsteel.us/' },
+  //   ],
+  // };
 
   return (
         <Grid>
@@ -90,11 +101,18 @@ const partnerBlock = imageBlocks.find(block => block.key === "partners");
                 buttonText="Learn More"
                 href="/About/OurStory"
                 />
-                 <QuoteBlock
+                 {/* <QuoteBlock
                   quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis  "
                   author="FIRST LASTNAME, TITLE HERE"
                   authorImageSrc="/authorImg.png"
+                /> */}
+              {quoteBlock && (
+                <QuoteBlock
+                  quote={quoteBlock.quote || ""}
+                  author={quoteBlock.author || ""}
+                  authorImageSrc={quoteBlock.authorImage?.asset.url || ""}
                 />
+              )}
               <ImageBlock
                 header={gymBlock?.title || ""}
                 images={gymBlock?.images?.map(img => img.asset.url) || []}
@@ -108,15 +126,15 @@ const partnerBlock = imageBlocks.find(block => block.key === "partners");
                 className="bg-urban-grey mt-10"
               />
           {partnerBlock && partnerBlock.blockType === "partners" && (
-  <PartnerBlock
-    header={partnerBlock.title}
-    images={partnerBlock.partners?.map(p => ({
-      src: p.image.asset.url,
-      link: p.link,
-    })) || []}
-    className=""
-  />
-)}
+          <PartnerBlock
+            header={partnerBlock.title}
+            images={partnerBlock.partners?.map(p => ({
+              src: p.image.asset.url,
+              link: p.link,
+            })) || []}
+            className=""
+          />
+        )}
 
               <StatBlock
                 header="Our Stats"
