@@ -1,7 +1,6 @@
 
 'use client';
 import React from 'react';
-import
 
 
 
@@ -22,7 +21,8 @@ const Questions: React.FC<QuestionsProps> = ({
     
 
     <details className="col-span-full">
-      <summary className="cursor-pointer font-bold"> {question} <img src={"orange-Chevron.png"}></summary>
+      <summary className="cursor-pointer font-bold flex items-center justify-between gap-2" > 
+      {question} <img src={"/icons/orange-Chevron.png"}/></summary>
         <ul className="list-disc"> 
         <li className="w-[300px]">{answer}</li>
         </ul>

@@ -39,14 +39,6 @@ export default function FAQ() {
 
 
 
-
-
-
-
-
-
-
-
               </Container>
             <Footer />
           </Grid>
