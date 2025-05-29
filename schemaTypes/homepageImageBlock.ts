@@ -1,6 +1,6 @@
 export default {
   name: 'homepageImageBlock',
-  title: 'Homepage Image Block',
+  title: 'Homepage',
   type: 'document',
   fields: [
     {

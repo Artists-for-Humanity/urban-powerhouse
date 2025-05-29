@@ -29,11 +29,12 @@ interface HomepageImageBlock {
 export default function Home() {
 
 const [gymImages, setGymImages] = useState<SanityImage[]>([]);
+const [equipmentImages, setEquipmentImages] = useState<SanityImage[]>([]);
 
 useEffect(() => {
   client
     .fetch(
-      `*[_type == "homepageImageBlock" && title == "Our GYM"][0]{
+      `*[_type == "homepageImageBlock" && title == "Our Gym"][0]{
         images[]{asset->{url}, alt}
       }`
     )
@@ -42,7 +43,18 @@ useEffect(() => {
     });
 }, []);
 
-console.log("Our GYM image URLs:", gymImages.map(img => img.asset.url));
+useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "homepageImageBlock" && title == "Our Equipment"][0]{
+          images[]{asset->{url}, alt}
+        }`
+      )
+      .then((data: HomepageImageBlock) => {
+        setEquipmentImages(data?.images || []);
+      });
+  }, []);
+
 
   const partners = {
     header: 'Our Partners',
@@ -76,25 +88,18 @@ console.log("Our GYM image URLs:", gymImages.map(img => img.asset.url));
                   authorImageSrc="/authorImg.png"
                 />
               <ImageBlock
-                  header="Our GYM"
+                  header="Our Gym"
                   images={gymImages.map(img => img.asset.url)}
                   className="bg-urban-grey"
               />
+
               <ImageBlock
-              header="Our Equitment"
-              images={[
-                '/gymshots/Championship2025.jpg',
-                '/gymshots/DejenaeMachinePress.jpg',
-                '/gymshots/DSC01530.jpg',
-                '/gymshots/DSC01572.jpg',
-                '/gymshots/IMG_8611.jpg',
-                '/gymshots/IMG_8613.jpg',
-          
-              ]}
-               variant="simple"
-               buttonText="See All"
-              className="bg-urban-grey mt-10"
-            />
+                header="Our Equipment"
+                images={equipmentImages.map(img => img.asset.url)}
+                variant="simple"
+                buttonText="See All"
+                className="bg-urban-grey mt-10"
+              />
                 <PartnerBlock
                   header={partners.header}
                   images={partners.images}

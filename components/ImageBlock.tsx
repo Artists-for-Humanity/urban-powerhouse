@@ -10,16 +10,16 @@ interface ImageBlockProps {
   images: string[];
   className?: string;
   header?: string;
-  variant?: 'default' | 'simple'; // NEWa
-  buttonText?: string; // New
-  onButtonClick?: () => void; // New
+  variant?: 'default' | 'simple'; 
+  buttonText?: string;
+  onButtonClick?: () => void; 
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = ({
   images,
   header,
   className = '',
-  variant = 'default', // NEW
+  variant = 'default', 
   buttonText,
   onButtonClick,
 }) => {
@@ -31,28 +31,6 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
         </h2>
       )}
 
-      {/* Mobile Swiper */}
-      {/* <div className=" col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          spaceBetween={10}
-          slidesPerView={1}
-        >
-          {images.slice(0, 10).map((src, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={src}
-                alt={`Image ${index + 1}`}
-                width={376}
-                height={282}
-                className='w-full max-h-[300px] object-cover mx-auto'
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div> */}
-{/* Mobile Swiper */}
 <div className="col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
   <Swiper
     modules={[Pagination]}
