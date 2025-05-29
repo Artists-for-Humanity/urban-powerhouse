@@ -16,7 +16,7 @@ import '../app/globals.css';
 interface SanityImage {
   asset: {
     url: string;
-    metadata?: any;
+    metadata?: unknown;
   };
   alt?: string;
 }
@@ -28,7 +28,7 @@ interface HomepageImageBlock {
 
 export default function Home() {
 
-  const [gymImages, setGymImages] = useState<SanityImage[]>([]);
+const [gymImages, setGymImages] = useState<SanityImage[]>([]);
 
 useEffect(() => {
   client
@@ -75,25 +75,6 @@ console.log("Our GYM image URLs:", gymImages.map(img => img.asset.url));
                   author="FIRST LASTNAME, TITLE HERE"
                   authorImageSrc="/authorImg.png"
                 />
-              {/* <ImageBlock
-              header="Our GYM"
-              images={[
-                '/gymshots/Championship2025.jpg',
-                '/gymshots/DejenaeMachinePress.jpg',
-                '/gymshots/DSC01530.jpg',
-                '/gymshots/DSC01572.jpg',
-                '/gymshots/IMG_8611.jpg',
-                '/gymshots/IMG_8613.jpg',
-                '/gymshots/DejenaeMachinePress.jpg',
-                '/gymshots/DSC01572.jpg',
-                '/gymshots/RenaudBench.jpg',
-                '/gymshots/SofiaLegExtension.jpg',
-                '/gymshots/Championship2025.jpg',
-                '/gymshots/P1040529.jpg',
-          
-              ]}
-              className="bg-urban-grey"
-            /> */}
               <ImageBlock
                   header="Our GYM"
                   images={gymImages.map(img => img.asset.url)}

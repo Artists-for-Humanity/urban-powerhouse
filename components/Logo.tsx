@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface LogoProps {
     size: 'small' | 'large';
@@ -11,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ size, className }) => {
 
     return (
         <Link href="/" className="flex items-center justify-center">
-            <img
+            <Image
                 src={logoSrc}
                 className={`z-[1] ${className}`}
                 alt="Logo"

@@ -93,8 +93,8 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
             <Image
               src={src}
               alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
           </div>
