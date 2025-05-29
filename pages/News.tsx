@@ -37,13 +37,17 @@ export default function News() {
         link->{slug}
       }`
     ).then((data) => {
+      console.log("Sanity newsArticle fetch result:", data);
       setArticles(
-        data.map((item) => ({
-          title: item.title,
-          paragraphs: item.paragraphs || [],
-          link: item.link?.slug?.current ? `/Articles/${item.link.slug.current}` : "#",
-          variant: item.pinned ? "pinned" : "title-only",
-        }))
+        data.map((item) => {
+          console.log("item.link?.slug?.current:", item.link?.slug?.current);
+          return {
+            title: item.title,
+            paragraphs: item.paragraphs || [],
+            link: item.link?.slug?.current ? `/Articles/${item.link.slug.current}` : "#",
+            variant: item.pinned ? "pinned" : "title-only",
+          };
+        })
       );
     });
   }, []);
