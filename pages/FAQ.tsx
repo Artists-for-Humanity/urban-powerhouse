@@ -10,20 +10,6 @@ import '../app/globals.css';
 
 export default function FAQ() {
 
-
-// function Question({ text }) {
-//   return <div className="FAQ">{text}</div>
-// }
-
-// function MoreInfoButton({ image }) {
-//   return <button src="{image}"className="Click">\/</button>
-// }
-
-// function MoreInformation({ text }) {
-//   return <div className="flex col-start-1 col-span-12 Info">{text}</div>
-// }
-
-
     return (                     
           <Grid className="gap-y-4 overflow-hidden break-all">
             <Navigation/>
