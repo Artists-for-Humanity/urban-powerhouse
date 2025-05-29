@@ -29,22 +29,10 @@ export default function FAQ() {
             <Navigation/>
             <Container className="min-h-[60vh] ">
               <h1 className="text-[32px] col-start-1 col-span-11 title">FAQ</h1>
-              <Question title="Lorem Ipsum 1"/>
-              <Question title="Lorem Ipsum 2"/>
-              <Question title="Lorem Ipsum 3"/>
-              <Question title="Lorem Ipsum 4"/>
-
-                
-                {/* <h1 className="text-[32px] col-span-11 title">FAQ</h1>
-                <div className="flex place-content-between col-start-1 col-span-12 FAQ-Block-1">
-                  <Question text = "Lorem Ipsum 1"/>
-                  <MoreInfoButton image = "arrowButton.png"/>
-                </div>
-                <MoreInformation text = "geuigsoohs"/> */}
-                
-          
-
-                  
+              <Question faq="Lorem Ipsum 1" answer="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+              <Question faq="Lorem Ipsum 2" answer="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
+              <Question faq="Lorem Ipsum 3" answer="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+              <Question faq="Lorem Ipsum 4" answer="Curabitur pretium tincidunt lacus. Nulla gravida orci a odio."/>
               </Container>
             <Footer />
           </Grid>
