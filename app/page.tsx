@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Grid from "../components/GridContainer";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
@@ -10,9 +10,40 @@ import ImageBlock from "../components/ImageBlock";
 import PartnerBlock from "../components/PartnerBlock";
 import StatBlock from "../components/Stat/StatBlock";
 import InfoBlock from "../components/InfoBlock";
+import { client } from "../lib/sanity";
 import '../app/globals.css';
 
+interface SanityImage {
+  asset: {
+    url: string;
+    metadata?: any;
+  };
+  alt?: string;
+}
+
+interface HomepageImageBlock {
+  title: string;
+  images: SanityImage[];
+}
+
 export default function Home() {
+
+  const [gymImages, setGymImages] = useState<SanityImage[]>([]);
+
+useEffect(() => {
+  client
+    .fetch(
+      `*[_type == "homepageImageBlock" && title == "Our GYM"][0]{
+        images[]{asset->{url}, alt}
+      }`
+    )
+    .then((data: HomepageImageBlock) => {
+      setGymImages(data?.images || []);
+    });
+}, []);
+
+console.log("Our GYM image URLs:", gymImages.map(img => img.asset.url));
+
   const partners = {
     header: 'Our Partners',
     images: [
@@ -44,7 +75,7 @@ export default function Home() {
                   author="FIRST LASTNAME, TITLE HERE"
                   authorImageSrc="/authorImg.png"
                 />
-              <ImageBlock
+              {/* <ImageBlock
               header="Our GYM"
               images={[
                 '/gymshots/Championship2025.jpg',
@@ -62,7 +93,12 @@ export default function Home() {
           
               ]}
               className="bg-urban-grey"
-            />
+            /> */}
+              <ImageBlock
+                  header="Our GYM"
+                  images={gymImages.map(img => img.asset.url)}
+                  className="bg-urban-grey"
+              />
               <ImageBlock
               header="Our Equitment"
               images={[

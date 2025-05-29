@@ -32,7 +32,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
       )}
 
       {/* Mobile Swiper */}
-      <div className=" col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
+      {/* <div className=" col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
@@ -47,12 +47,34 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
                 width={376}
                 height={282}
                 className='w-full max-h-[300px] object-cover mx-auto'
-                // className="w-[376px] sm:w-[793px] sm:h-[596px] h-[282px] object-cover mx-auto"
               />
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
+{/* Mobile Swiper */}
+<div className="col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
+  <Swiper
+    modules={[Pagination]}
+    pagination={{ clickable: true }}
+    spaceBetween={10}
+    slidesPerView={1}
+  >
+    {images.slice(0, 10).map((src, index) => (
+      <SwiperSlide key={index}>
+        <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
+          <Image
+            src={src}
+            alt={`Image ${index + 1}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 376px"
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
 
       {/* Desktop Grid */}
       <div

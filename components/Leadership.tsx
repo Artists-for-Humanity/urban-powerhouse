@@ -13,7 +13,7 @@ const Leadership: React.FC<LeadershipProps> = ({ imageSrc, name, description }) 
       <Image
         src={imageSrc}
         alt={`${name}'s headshot`}
-        className="rounded-full object-cover mb-4 col-span-full mx-auto"
+        className="rounded-full object-cover mb-4 col-span-full mx-auto filter grayscale"
         width={380} 
         height={360} 
         sizes="(max-width: 640px) 247px, 360px" 
