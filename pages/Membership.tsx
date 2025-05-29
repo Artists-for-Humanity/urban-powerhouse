@@ -31,7 +31,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
                 {price}
                 </div>
             </div>
-            <div className="description text-sm text-left sm:text-base lg:text-lg lg: w-[40vw]
+            <div className="description text-sm text-left sm:text-base lg:text-lg lg:w-[40vw]
             ">
               {description}
             </div>
@@ -43,7 +43,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
 function MemInput({ Info }) {
   return (
     <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 pb-4
-      lg:col-start-1 lg:col-end-7 w-[40vw]">
+      lg:col-start-1 lg:col-end-7 lg:w-[40vw]">
       <div className="Input text-lg sm:text-2xl">
         {Info} <span className="text-(--urban-orange)">*</span>
       </div>
