@@ -17,7 +17,7 @@ export default function FAQ() {
             <Navigation/>
               <Container className="min-h-[60vh]">
 
-
+<h1 className=" text-[30px] font-bold sm:col-start-2 sm:col-end-8 lg:col-start-1" >FAQ</h1>
 
 <Questions question = "Lorem Ipsum 1" answer = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
 
