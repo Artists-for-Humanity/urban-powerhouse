@@ -21,40 +21,48 @@ interface SanityImage {
   alt?: string;
 }
 
+interface Partner {
+  image: {
+    asset: {
+      url: string;
+    };
+  };
+  link: string;
+}
+
 interface HomepageImageBlock {
+  key: string;
   title: string;
-  images: SanityImage[];
+  blockType: 'images' | 'partners';
+  images?: SanityImage[];
+  partners?: Partner[];
 }
 
 export default function Home() {
 
-const [gymImages, setGymImages] = useState<SanityImage[]>([]);
-const [equipmentImages, setEquipmentImages] = useState<SanityImage[]>([]);
+const [imageBlocks, setImageBlocks] = useState<HomepageImageBlock[]>([]);
+
 
 useEffect(() => {
   client
     .fetch(
-      `*[_type == "homepageImageBlock" && title == "Our Gym"][0]{
-        images[]{asset->{url}, alt}
+      `*[_type == "homepageImageBlock"]{
+        key,
+        title,
+        blockType,
+        images[]{asset->{url}, alt},
+        partners[]{image{asset->{url}}, link}
       }`
     )
-    .then((data: HomepageImageBlock) => {
-      setGymImages(data?.images || []);
+    .then((data: HomepageImageBlock[]) => {
+      setImageBlocks(data || []);
     });
 }, []);
 
-useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "homepageImageBlock" && title == "Our Equipment"][0]{
-          images[]{asset->{url}, alt}
-        }`
-      )
-      .then((data: HomepageImageBlock) => {
-        setEquipmentImages(data?.images || []);
-      });
-  }, []);
 
+const gymBlock = imageBlocks.find(block => block.key === "our-gym");
+const equipmentBlock = imageBlocks.find(block => block.key === "equipment");
+const partnerBlock = imageBlocks.find(block => block.key === "partners");
 
   const partners = {
     header: 'Our Partners',
@@ -88,23 +96,27 @@ useEffect(() => {
                   authorImageSrc="/authorImg.png"
                 />
               <ImageBlock
-                  header="Our Gym"
-                  images={gymImages.map(img => img.asset.url)}
-                  className="bg-urban-grey"
+                header={gymBlock?.title || ""}
+                images={gymBlock?.images?.map(img => img.asset.url) || []}
               />
 
               <ImageBlock
-                header="Our Equipment"
-                images={equipmentImages.map(img => img.asset.url)}
+                header={equipmentBlock?.title || ""}
+                images={equipmentBlock?.images?.map(img => img.asset.url) || []}
                 variant="simple"
                 buttonText="See All"
                 className="bg-urban-grey mt-10"
               />
-                <PartnerBlock
-                  header={partners.header}
-                  images={partners.images}
-                  className=""
-                />
+          {partnerBlock && partnerBlock.blockType === "partners" && (
+  <PartnerBlock
+    header={partnerBlock.title}
+    images={partnerBlock.partners?.map(p => ({
+      src: p.image.asset.url,
+      link: p.link,
+    })) || []}
+    className=""
+  />
+)}
 
               <StatBlock
                 header="Our Stats"

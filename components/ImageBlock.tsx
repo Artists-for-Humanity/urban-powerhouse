@@ -31,7 +31,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
         </h2>
       )}
 
-<div className="col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
+<div className="col-span-full sm:mx-[32px] lg:hidden">
   <Swiper
     modules={[Pagination]}
     pagination={{ clickable: true }}
