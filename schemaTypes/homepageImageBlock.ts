@@ -27,8 +27,10 @@ export default defineType({
           { title: 'Image Gallery', value: 'images' },
           { title: 'Partners', value: 'partners' },
           { title: 'Quote', value: 'quote' },
+          { title: 'Contact', value: 'contact' },
+          { title: 'Hours', value: 'hours' },
         ],
-        layout: 'radio',
+        layout: 'dropdown',
       },
       validation: (Rule: Rule) => Rule.required(),
     },
@@ -91,6 +93,34 @@ export default defineType({
       type: 'image',
       hidden: ({ parent }) => parent?.blockType !== 'quote',
       description: 'Image of the author.',
+    },
+     {
+      name: 'contact',
+      title: 'Contact',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          { name: 'label', title: 'Label', type: 'string', validation: (Rule: Rule) => Rule.required() },
+          { name: 'value', title: 'Value', type: 'string', validation: (Rule: Rule) => Rule.required() },
+        ]
+      }],
+      hidden: ({ parent }) => parent?.blockType !== 'contact',
+      description: 'Contact form fields'
+    },
+     {
+      name: 'hours',
+      title: 'Hours',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          { name: 'day', title: 'Day', type: 'string', validation: (Rule: Rule) => Rule.required() },
+          { name: 'hours', title: 'Hours', type: 'string', validation: (Rule: Rule) => Rule.required() },
+        ]
+      }],
+      hidden: ({ parent }) => parent?.blockType !== 'hours',
+      description: 'Operating hours'
     },
   ],
 })

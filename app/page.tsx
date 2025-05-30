@@ -33,16 +33,14 @@ interface Partner {
 interface HomepageImageBlock {
   key: string;
   title: string;
-  blockType: 'images' | 'partners' | 'quote';
+  blockType: 'images' | 'partners' | 'quote' | 'contact' | 'hours';
   images?: SanityImage[];
   partners?: Partner[];
   quote?: string;
   author?: string;
-  authorImage?: {
-    asset: {
-      url: string;
-    };
-  };
+  authorImage?: { asset: { url: string; } };
+  contact?: { label: string; value: string }[];
+  hours?: { day: string; hours: string }[];
 }
 
 export default function Home() {
@@ -61,7 +59,9 @@ useEffect(() => {
         partners[]{image{asset->{url}}, link},
         quote,
         author,
-        authorImage{asset->{url}}
+        authorImage{asset->{url}},
+        contact[]{label, value},
+        hours[]{day, hours},
       }`
     )
     .then((data: HomepageImageBlock[]) => {
@@ -74,6 +74,8 @@ const gymBlock = imageBlocks.find(block => block.key === "our-gym");
 const equipmentBlock = imageBlocks.find(block => block.key === "equipment");
 const partnerBlock = imageBlocks.find(block => block.key === "partners");
 const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
+const contactBlock = imageBlocks.find(b => b.blockType === "contact");
+const hoursBlock = imageBlocks.find(b => b.blockType === "hours");
 
   // const partners = {
   //   header: 'Our Partners',
@@ -149,16 +151,16 @@ const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
                 ]}
                 className="bg-urban-grey rounded-lg"
               />
-              <InfoBlock 
+              {/* <InfoBlock 
                 variant="contact"
                 title="Reach Us"
                 fields={[
                   // { label: "Phone", value: "123-888-3434" },
                   { label: "Email:", value: "teamurbanpowerhouse@gmail.com" },
                 ]}
-              />
+              /> */}
 
-              <InfoBlock 
+              {/* <InfoBlock 
                 variant="hours"
                 title="Operating Hours"
                 businessHours={[
@@ -167,7 +169,23 @@ const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
                   { day: "Sunday", hours: "8am - 6pm" },
                   // { day: "Holidays", hours: "Closed" }
                 ]}
-              />
+              /> */}
+   {contactBlock && (
+          <InfoBlock
+            variant="contact"
+            title={contactBlock.title}
+            fields={contactBlock.contact || []}
+          />
+        )}
+
+        {hoursBlock && (
+          <InfoBlock
+            variant="hours"
+            title={hoursBlock.title}
+            businessHours={hoursBlock.hours || []}
+          />
+        )}
+
             </Container>
 
           <Footer />
