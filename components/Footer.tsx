@@ -1,16 +1,32 @@
-//// filepath: /Users/jamiedelossantos/Documents/GitHub/urban-powerhouse/components/Footer.tsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { client } from '../lib/sanity';
+
+interface ContactItem {
+  label: string;
+  value: string;
+}
 
 const Footer: React.FC = () => {
-  // duplicate of Navigation’s account‐link handler
+  const [contactInfo, setContactInfo] = useState<ContactItem[]>([]);
+
+  // duplicate of Navigation’s account-link handler
   const handleAccountLink = () => {
     const widget = document.querySelector(
       'healcode-widget .healcode-login-register-text-link'
     ) as HTMLElement | null;
     widget?.click();
   };
+
+  useEffect(() => {
+    client
+      .fetch<ContactItem[]>(`
+        *[_type == "homepageImageBlock" && blockType == "contact"][0].contact
+      `)
+      .then((data) => setContactInfo(data || []))
+      .catch((err) => console.error('Sanity fetch error:', err));
+  }, []);
 
   return (
     <footer className=" bottom-0 w-full bg-(--urban-blue) text-(--urban-white) py-8 col-span-6 sm:col-span-8 lg:col-span-12 sm:max-h-[400px] min-w-[100vw] overflow-hidden">
@@ -50,16 +66,33 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="flex flex-col mb-10 sm:mb-0">
+         <div className="flex flex-col mb-10 sm:mb-0">
           <h2 className="font-bold mb-4">Contact Us</h2>
           <ul className="space-y-2">
-            <li>teamurbanpowerhouse@gmail.com</li>
-            <li>Phone: 123-888-3434</li>
-            <li>Address: 688 Awesome Road Boston, MA 02140</li>
+            {contactInfo.map((item, idx) => (
+              <li key={idx}>
+                {item.label.toLowerCase().includes('email') ? (
+                  <a
+                    href={`mailto:${item.value}`}
+                    className="hover:underline"
+                  >
+                    {item.value}
+                  </a>
+                ) : item.label.toLowerCase().includes('phone') ? (
+                  <a
+                    href={`tel:${item.value.replace(/\D/g, '')}`}
+                    className="hover:underline"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  item.value
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Subscribe Section */}
 
         {/* Social Media Section */}
         <div className="flex flex-col mb-10 sm:mb-0">
