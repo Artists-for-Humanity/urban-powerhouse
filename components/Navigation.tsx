@@ -70,7 +70,6 @@ const Navigation: React.FC = () => {
           <Button className="text-3xl !pb-2 !pt-1" label="x" onClick={toggleMenu} variant="default" />
         </div>
         <div className="flex flex-col items-start p-4 space-y-4">
-          <Button label="Home" href="/" variant="nav"  isActive={pathname === '/'} />
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
           {/* <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} /> */}
           <Button
@@ -119,7 +118,6 @@ const Navigation: React.FC = () => {
                 <Button className="text-3xl !py-2" label="x" onClick={toggleTabletMenu} variant="default" />
               </div>
               <div className="flex flex-col items-start p-4 space-y-4 ">
-                <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
                 <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
                 <Button
                   label="About"
@@ -149,7 +147,6 @@ const Navigation: React.FC = () => {
       {/* DESKTOP MENU */}
       <div className="hidden lg:flex justify-between items-center py-4 w-full max-w-[1200px]">
         <Logo size="small" />
-        <Button label="Home" href="/" variant="nav" isActive={pathname === '/'} />
         <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
         {/* <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} /> */}
         <Button
