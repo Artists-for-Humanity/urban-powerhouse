@@ -21,12 +21,12 @@ export default function Home() {
         <div className="justify-center relative items-center font-[Poppins] text-left mb-4 col-span-full font-semibold grid grid-cols-subgrid">
           <IntroduceVideo></IntroduceVideo>
 
-          <div id="section-1" className=" grid sm:px-0 sm:grid-cols-subgrid px-4 col-start-1 lg:grid-cols-subgrid col-span-5 mb-10 sm:col-start-2 sm:col-span-7 lg:col-span-7 ">
-            <div className="UrbanPowerHouse sm:col-start-1 sm:col-span-6">
+          <div id="section-1" className=" grid sm:px-0 sm:grid-cols-subgrid px-4 col-start-1 lg:grid-cols-subgrid col-span-5 mb-10 sm:col-start-2 sm:col-span-7 lg:col-span-12 ">
+            <div className="UrbanPowerHouse col-start-1 sm:col-span-6 lg:col-span-10">
               <div className="text-[32px] grid leading-[36px]">About Urban Powerhouse</div>
               <h3 className="text-[16px] sm:col-start-2 sm:col-span-5 grid mb-[40px] mt-5"> We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!</h3>
             </div>
-            <div className="grid sm:col-start-6 sm:col-span-1 lg:col-start-8 lg:py-10 lg:col-span-12 Read-more w-full justify-end flex">
+            <div className="grid sm:col-start-6 sm:col-span-1 lg:col-start-11 lg:py-10 lg:col-span-12 Read-more w-full justify-center flex lg:flex lg:flex-col">
               <Button className=" w-[100] h-[40] absolute flex justify-center lg:justify-end items-center" label="Read more" onClick={() => console.log('Sign In clicked')} variant="default" />
             </div>
           </div>
@@ -44,16 +44,26 @@ export default function Home() {
               <div className="relative md:hidden none text-[32px] ">Our GYM</div>
             </div>
           </div>
-          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:grid lg:grid-cols-subgrid">
-            <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] lg:min-w-auto lg:grid lg:col-span-8 my-20 object-cover" />
-            <img src="/gymshots/DejenaeMachinePress.jpg" alt="" className="hidden lg:grid lg: min-w-auto lg:col-start-10 lg:col-span-12"/>
-          </div>
-          <div id="section-4" className="col-start-1 col-span-7 sm:grid sm:grid-cols-subgrid sm:col-span-7 lg:col-span-11 ">
-            <div className="title sm:col-start-2 sm:col-span-7 w-full md:justify-start justify-center flex relative">
-              <div className="grid text-[32px] ">Our Partners</div>
+          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:grid lg:col-span-12 lg:grid-cols-subgrid">
+            <div className="min-w-[100vw] lg:min-w-auto lg:grid lg:col-span-8 lg:my-0 my-20 object-cover">
+            <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] lg:min-w-auto lg:grid lg:col-span-8 lg:my-0 my-20 object-cover" />
+            <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] lg:min-w-auto lg:grid lg:col-span-8 lg:my-0 my-20 object-cover" />
+            </div>
+            <div className="hidden lg:grid lg:min-w-auto lg:col-start-9 lg:col-span-12">
+              <img src="/gymshots/DejenaeMachinePress.jpg" alt="" className="" />
+              <img src="/gymshots/DSC01530.jpg" alt="" className="" />
+              <img src="/gymshots/IMG_8611.jpg" alt="" className="" />
+              <img src="/gymshots/RenaudBench.jpg" alt="" className="" />
+              <img src="/gymshots/P1040529.jpg" alt="" className="" />
+            </div>
+            
+            <div id="section-4" className="col-start-1 col-span-7 sm:grid sm:grid-cols-subgrid sm:col-span-7 lg:col-span-11 ">
+              <div className="title sm:col-start-2 sm:col-span-7 w-full md:justify-start justify-center flex relative">
+                <div className="grid text-[32px] ">Our Partners</div>
+              </div>
             </div>
 
-            <div id="box-container" className="my-18 sm:mt-10 w-full justify-center grid  sm:col-start-2 sm:col-span-7 sm:grid-cols-2 relative">
+            <div id="box-container" className="my-18 sm:mt-10 w-full justify-center grid  sm:col-start-2 sm:col-span-7 sm:grid-cols-2 lg:flex lg:col-start-1 lg: relative">
 
               <Partner></Partner>
               <Partner></Partner>
@@ -85,36 +95,36 @@ export default function Home() {
                 <p className="text-[32px] sm:text-[88px]">2000$</p>
                 <p className="font-light text-[20px] sm:text-[28px]">donated</p>
               </div>
-         </div>
-      </div>
-      <div id="section-6" className="col-start-2 mt-18 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11 ">
-        <div className="title w-full grid relative">
-          <div className="grid text-[32px] mb-3 sm:mb-6 ">Contact Us
-            <br />
-            <div className="text-[16px] font-normal mt-6">Phone 123-888-3434</div>
-            <div className="text-[16px] font-normal mt-2">Email</div>
-            <div className="text-[16px] font-normal mt-2">Contact@UrbanPowerhouse.com</div>
+            </div>
+          </div>
+          <div id="section-6" className="col-start-2 mt-18 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11 ">
+            <div className="title w-full grid relative">
+              <div className="grid text-[32px] mb-3 sm:mb-6 ">Contact Us
+                <br />
+                <div className="text-[16px] font-normal mt-6">Phone 123-888-3434</div>
+                <div className="text-[16px] font-normal mt-2">Email</div>
+                <div className="text-[16px] font-normal mt-2">Contact@UrbanPowerhouse.com</div>
+              </div>
+            </div>
+          </div>
+          <div id="section-7" className="col-start-2 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11 ">
+            <div className="title w-full flex relative">
+              <div className="grid text-[32px] mb-6 ">Our Hours</div>
+            </div>
+            <div id="hour_info" className="flex">
+              <div className="text-[16px] flex font-normal mt-0">Business hrs</div>
+              <div className="text-[16px] flex font-normal ml-6">Mon-Fri 5am-10pm<br />Sat- 8am-5pm <br /> Sun 8am-3pm</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="section-7" className="col-start-2 col-span-7 sm:col-start-2 sm:col-span-7 lg:col-span-11 ">
-        <div className="title w-full flex relative">
-          <div className="grid text-[32px] mb-6 ">Our Hours</div>
-        </div>
-        <div id="hour_info" className="flex">
-          <div className="text-[16px] flex font-normal mt-0">Business hrs</div>
-          <div className="text-[16px] flex font-normal ml-6">Mon-Fri 5am-10pm<br />Sat- 8am-5pm <br /> Sun 8am-3pm</div>
-        </div>
-      </div>
-    </div>
 
-      
-           
-            </Container >
 
-    <Footer />
-       
-        </Grid >
+
+      </Container >
+
+      <Footer />
+
+    </Grid >
 
   );
 }
