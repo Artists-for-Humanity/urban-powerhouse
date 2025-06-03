@@ -13,8 +13,8 @@ import '../app/globals.css';
 function MembershipOptions({bgColor, dColor, type, price, description, onButtonClick}) {
     return (
         <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8
-          sm:col-start-2 sm:col-end-8
-          lg:col-start-1 lg:col-end-13 lg:rounded-[0px]"  onClick = {onButtonClick}
+          sm:col-start-2 sm:col-end-8 sm:rounded-[0px]
+          lg:col-start-3 lg:col-end-11 lg:rounded-[0px]"  onClick = {onButtonClick}
         style={{ backgroundColor: `var(${bgColor})`, border: `3px solid var(${bgColor})` }}>
             <div className="memTotCon h-full w-full 
             lg:flex lg:justify-between lg:items-center">
@@ -43,7 +43,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
 function MemInput({ Info }) {
   return (
     <div className="memInputWrapper flex flex-row justify-between items-center col-start-2 col-end-8 pb-4
-      lg:col-start-1 lg:col-end-7 lg:w-[40vw]">
+      lg:col-start-1 lg:col-end-7 lg:w-[30vw]">
       <div className="Input text-lg sm:text-2xl">
         {Info} <span className="text-(--urban-orange)">*</span>
       </div>
@@ -81,11 +81,11 @@ export default function Membership() {
       <Container>
         <div className="membershipTitle col-start-2 col-end-8 text-2xl pb-8 
         sm:text-4xl
-        lg:col-start-3 lg:col-end-11">
+        lg:col-start-4 lg:col-end-11">
           Membership Pricing Options
         </div>
         <div className="membershipThanks col-start-2 col-end-8 text-lg pb-8 
-        sm:text-2xl lg:col-start-3 lg:col-end-11">
+        sm:text-2xl lg:col-start-4 lg:col-end-11">
           <span className="text-(--urban-orange)">Thank you </span>for
           registering with Urban PowerHouse! We have a variety of membership
           options available
@@ -146,7 +146,9 @@ export default function Membership() {
             </div>
           <br />
           <button
-            className={`CUSTOM py-8 col-span-full mx-[-20px] lg:col-start-1 lg:col-end-13 lg:mx-0 ${
+            className={`CUSTOM py-8 col-span-full mx-[-20px]
+              sm:col-start-2 sm:col-end-8
+              lg:col-start-3 lg:col-end-11 lg:rounded-[0px] ${
               selectedOption === "Custom" ? "bg-[#1D42E1]" : "bg-[#404040]"
             }`}
             onClick={() => handleClick("Custom")}
@@ -168,7 +170,8 @@ export default function Membership() {
             </div>
           </button>
 
-    <div className="memInputSec flex flex-col lg:flex-row lg:justify-between col-start-1 col-end-9 lg:col-span-full pt-8">
+    <div className="memInputSec flex flex-col lg:flex-row lg:justify-between col-start-1 col-end-9 lg:col-span-full pt-8
+        lg:col-start-3 lg:col-end-11">
         <div className="memInCon lg:flex lg:flex-col">
           <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
           <MemInput Info = {" First Name"}/>
@@ -180,7 +183,7 @@ export default function Membership() {
           <div className="Message text-l sm:placeholder:text-2xl">Message</div>
           <textarea
             placeholder="Optional"
-            className="border-2 border-gray-400 border-opacity-25 h-50 w-full lg:w-[40vw] p-2 text-left align-top"
+            className="border-2 border-gray-400 border-opacity-25 h-50 w-full lg:w-[30vw] p-2 text-left align-top"
             />
         </div>
             </div>
