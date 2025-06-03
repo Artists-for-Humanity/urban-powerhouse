@@ -26,8 +26,8 @@ export default function Home() {
               <div className="text-[32px] grid leading-[36px]">About Urban Powerhouse</div>
               <h3 className="text-[16px] sm:col-start-2 sm:col-span-5 grid mb-[40px] mt-5"> We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!</h3>
             </div>
-            <div className="grid sm:col-start-6 sm:col-span-1 lg:col-start-9 lg:py-10 lg:col-span-6 Read-more w-full justify-end flex">
-              <Button className=" w-[100] h-[40] absolute flex justify-center items-center" label="Read more" onClick={() => console.log('Sign In clicked')} variant="default" />
+            <div className="grid sm:col-start-6 sm:col-span-1 lg:col-start-8 lg:py-10 lg:col-span-12 Read-more w-full justify-end flex">
+              <Button className=" w-[100] h-[40] absolute flex justify-center lg:justify-end items-center" label="Read more" onClick={() => console.log('Sign In clicked')} variant="default" />
             </div>
           </div>
           <div id="section-2" className="px-4 sm:px-0 section-2 col-start-1 col-span-7 sm:col-start-2 sm:col-span-6 lg:col-span-11">
@@ -44,8 +44,9 @@ export default function Home() {
               <div className="relative md:hidden none text-[32px] ">Our GYM</div>
             </div>
           </div>
-          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:col-span-11">
-            <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] my-20 object-cover" />
+          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:grid lg:grid-cols-subgrid">
+            <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] lg:min-w-auto lg:grid lg:col-span-8 my-20 object-cover" />
+            <img src="/gymshots/DejenaeMachinePress.jpg" alt="" className="hidden lg:grid lg: min-w-auto lg:col-start-10 lg:col-span-12"/>
           </div>
           <div id="section-4" className="col-start-1 col-span-7 sm:grid sm:grid-cols-subgrid sm:col-span-7 lg:col-span-11 ">
             <div className="title sm:col-start-2 sm:col-span-7 w-full md:justify-start justify-center flex relative">
