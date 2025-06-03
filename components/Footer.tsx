@@ -33,20 +33,14 @@ const Footer: React.FC = () => {
       <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row justify-between px-4">
         {/* About Section */}
         <div className="flex flex-col mb-10 sm:mb-0">
-          <h2 className="font-bold mb-4">About</h2>
+          <h2 className="font-bold mb-4">Navigation</h2>
           <ul className="space-y-2">
-            <li>
-              <Link href="/About/OurStory">Our Mission</Link>
-            </li>
-            <li>
-              <Link href="/About/Founders">Leadership</Link>
-            </li>
-            <li>
-              <Link href="/News">News</Link>
-            </li>
-            <li>
-              <Link href="/About/TeenStories">Teen Stories</Link>
-            </li>
+            <li><Link href="/News">News</Link></li>
+          <li><Link href="/About/Founders">Meet the Founders</Link></li>
+          <li><Link href="/About/TeenStories">Teen Story</Link></li>
+          <li><Link href="/About/OurStory">Our Story</Link></li>
+          <li><Link href="/FAQ">FAQ</Link></li>
+          <li><Link href="/Donation">Donation</Link></li>
           </ul>
         </div>
 
