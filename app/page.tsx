@@ -7,6 +7,25 @@ import Hero from "../components/Hero/Hero";
 import Button from "../components/Button";
 import Partner from "../components/Partner";
 import IntroduceVideo from "../components/Video-home";
+import ImageBlock from '../components/ImageBlock'
+
+
+const images = [
+  '/gymshots/Championship2025.jpg',
+  '/gymshots/DejenaeMachinePress.jpg',
+  '/gymshots/DSC01530.jpg',
+  '/gymshots/DSC01572.jpg',
+  '/gymshots/IMG_8611.jpg',
+  '/gymshots/IMG_8613.jpg',
+  '/gymshots/P1040542.jpg',
+  '/gymshots/P1040569.jpg',
+  '/gymshots/RenaudBench.jpg',
+  '/gymshots/SofiaLegExtension.jpg',
+  '/gymshots/Championship2025.jpg',
+  '/gymshots/p1040529.jpg',
+] 
+
+
 
 export default function Home() {
 
@@ -21,8 +40,8 @@ export default function Home() {
         <div className="justify-center relative items-center font-[Poppins] text-left mb-4 col-span-full font-semibold grid grid-cols-subgrid">
           <IntroduceVideo></IntroduceVideo>
 
-          <div id="section-1" className=" grid sm:px-0 sm:grid-cols-subgrid px-4 col-start-1 lg:grid-cols-subgrid col-span-5 mb-10 sm:col-start-2 sm:col-span-7 lg:col-span-7 ">
-            <div className="UrbanPowerHouse sm:col-start-1 sm:col-span-6">
+          <div id="section-1" className=" grid sm:px-0 sm:grid-cols-subgrid px-4 col-start-1 lg:grid-cols-subgrid col-span-5 mb-10 sm:col-start-2 sm:col-span-7 lg:col-span-12 ">
+            <div className="UrbanPowerHouse col-start-1 sm:col-span-6 lg:col-span-10">
               <div className="text-[32px] grid leading-[36px]">About Urban Powerhouse</div>
               <h3 className="text-[16px] sm:col-start-2 sm:col-span-5 grid mb-[40px] mt-5"> We are an non-profit organization in Boston working to increase the  exposure and participation of underserved youth and adults in strength  sports through training, information access, and financial support. We  want to make powerlifting and weightlifting attainable for everyone,  thereby keeping the sports diverse and inclusive for years to come. Want to help? Curious? Join our movement below!</h3>
             </div>
@@ -43,8 +62,10 @@ export default function Home() {
             <div className="title w-full justify-center flex relative">
               <div className="relative md:hidden none text-[32px] ">Our GYM</div>
             </div>
+            {/* <ImageBlock header="hellooo"/> */}
+            <ImageBlock header="heloooo" images={images}/>
           </div>
-          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:col-span-11">
+          <div className="col-start-1 col-span-5 sm:col-start-1 sm:col-span-7 lg:hidden">
             <img src="/gymshots/Championship2025.jpg" alt="" className="min-w-[100vw] my-20 object-cover" />
           </div>
           <div id="section-4" className="col-start-1 col-span-7 sm:grid sm:grid-cols-subgrid sm:col-span-7 lg:col-span-11 ">
@@ -106,13 +127,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-
-      
-           
-            </Container >
-
-    <Footer />
-       
+     </Container >
+    <Footer />       
         </Grid >
 
   );
