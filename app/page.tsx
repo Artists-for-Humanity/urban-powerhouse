@@ -33,7 +33,7 @@ interface Partner {
 interface HomepageImageBlock {
   key: string;
   title: string;
-  blockType: 'images' | 'partners' | 'quote' | 'contact' | 'hours';
+  blockType: 'images' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video';
   images?: SanityImage[];
   partners?: Partner[];
   quote?: string;
@@ -41,6 +41,7 @@ interface HomepageImageBlock {
   authorImage?: { asset: { url: string; } };
   contact?: { label: string; value: string }[];
   hours?: { day: string; hours: string }[];
+  video?: { asset: { url: string } };
 }
 
 export default function Home() {
@@ -62,6 +63,7 @@ useEffect(() => {
         authorImage{asset->{url}},
         contact[]{label, value},
         hours[]{day, hours},
+        video{asset->{url}},
       }`
     )
     .then((data: HomepageImageBlock[]) => {
@@ -76,23 +78,17 @@ const partnerBlock = imageBlocks.find(block => block.key === "partners");
 const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
 const contactBlock = imageBlocks.find(b => b.blockType === "contact");
 const hoursBlock = imageBlocks.find(b => b.blockType === "hours");
+const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
 
-  // const partners = {
-  //   header: 'Our Partners',
-  //   images: [
-  //     { src: '/logos/A7.png', link: 'https://a7.co/' },
-  //     { src: '/logos/Eleiko.png', link: 'https://eleiko.com/en-us' },
-  //     { src: '/logos/AFH.png', link: 'https://www.afhboston.org/' },
-  //     { src: '/logos/FutureBos.png', link: 'https://www.boston.gov/departments/youth-employment-and-opportunity/youth-jobs' },
-  //     { src: '/logos/BOS.png', link: 'https://bellsofsteel.us/' },
-  //   ],
-  // };
+
 
   return (
         <Grid>
           <Hero 
            title= "Making Strength" 
            subtitle= "Accessible for All"
+          videoSrc={videoBlock?.video?.asset.url || "/file.mp4"} // <-- Pass videoSrc prop
+
           />
           <Container className=" mt-[20vh] min-h-[100vh]">
               <VideoBlock

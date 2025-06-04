@@ -29,6 +29,7 @@ export default defineType({
           { title: 'Quote', value: 'quote' },
           { title: 'Contact', value: 'contact' },
           { title: 'Hours', value: 'hours' },
+          { title: 'Hero Video', value: 'hero-video' },
         ],
         layout: 'dropdown',
       },
@@ -122,5 +123,13 @@ export default defineType({
       hidden: ({ parent }) => parent?.blockType !== 'hours',
       description: 'Operating hours'
     },
+    {
+    name: 'video',
+    title: 'Video File',
+    type: 'file',
+    options: { accept: 'video/*' },
+    hidden: ({ parent }) => parent?.blockType !== 'hero-video',
+    description: 'Upload a video file for the hero section.',
+  },
   ],
 })
