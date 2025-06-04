@@ -9,7 +9,7 @@ import '../../app/globals.css';
 
 
 
-export default function News() {
+export default function Powerlifting() {
 
     return (
           <Grid>
@@ -32,7 +32,7 @@ export default function News() {
       />
             <ArticleBlock
             variant="side-by-side-images"
-            imageSrcs={['/gymshots/USAPLHighSchoolNationals.jpg', '/gymshots/USAPLHighSchoolNationals2.jpg']}
+            imageSrcs={['/powerlifting/USAPLHighSchoolNationals.jpg', '/powerlifting/USAPLHighSchoolNationals2.jpg']}
             />
 
                    <ArticleBlock
@@ -43,7 +43,7 @@ export default function News() {
         ]}
       />
 
-            <ArticleBlock variant="center-image" imageSrc="/gymshots/IMG_4282.png"></ArticleBlock>
+            <ArticleBlock variant="center-image" imageSrc="/powerlifting/IMG_4282.png"></ArticleBlock>
             <ArticleBlock variant="go-back" />
               </Container>
             <Footer />

@@ -9,7 +9,7 @@ import '../../app/globals.css';
 
 
 
-export default function News() {
+export default function LetsPlay() {
 
     return (
           <Grid>
