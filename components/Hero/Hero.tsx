@@ -11,9 +11,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, videoSrc }) => {       return (
       <div className='col-span-full w-full'>
-             <Video src={videoSrc || "/file.mp4"} isBackground={true}/>
-      {/* <Navigation/> */}
-
+        <Video src={videoSrc || "/file.mp4"} isBackground={true}/>
         <Navigation/>
         <HeroText 
           title=   {title} 

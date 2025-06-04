@@ -6,13 +6,13 @@ export default defineType({
   title: 'Home Page',
   type: 'document',
   fields: [
-    {
-      name: 'key',
-      title: 'Block Key',
-      type: 'string',
-      description: 'A unique key for this block (e.g. "our-gym", "equipment"). Use this to reference the block in code.',
-      validation: (Rule: Rule) => Rule.required(),
-    },
+    // {
+    //   name: 'key',
+    //   title: 'Block Key',
+    //   type: 'string',
+    //   description: 'A unique key for this block (e.g. "our-gym", "equipment"). Use this to reference the block in code.',
+    //   validation: (Rule: Rule) => Rule.required(),
+    // },
     {
       name: 'title',
       title: 'Block Title',
@@ -25,6 +25,7 @@ export default defineType({
       options: {
         list: [
           { title: 'Image Gallery', value: 'images' },
+           { title: 'Equipment', value: 'equipment' },
           { title: 'Partners', value: 'partners' },
           { title: 'Quote', value: 'quote' },
           { title: 'Contact', value: 'contact' },
@@ -41,7 +42,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'image', options: { hotspot: true } }],
       options: { sortable: true },
-      hidden: ({ parent }: { parent?: any }) => parent?.blockType !== 'images',
+      hidden: ({ parent }: { parent?: any }) => parent?.blockType !== 'images'&& parent?.blockType !== 'equipment', 
 
       description: 'Select and reorder images for the homepage block.',
     },

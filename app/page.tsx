@@ -31,9 +31,9 @@ interface Partner {
 }
 
 interface HomepageImageBlock {
-  key: string;
+  // key: string;
   title: string;
-  blockType: 'images' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video';
+  blockType: 'images' | 'equipment' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video';
   images?: SanityImage[];
   partners?: Partner[];
   quote?: string;
@@ -53,7 +53,6 @@ useEffect(() => {
   client
     .fetch(
       `*[_type == "homepageImageBlock"]{
-        key,
         title,
         blockType,
         images[]{asset->{url}, alt},
@@ -72,9 +71,9 @@ useEffect(() => {
 }, []);
 
 
-const gymBlock = imageBlocks.find(block => block.key === "our-gym");
-const equipmentBlock = imageBlocks.find(block => block.key === "equipment");
-const partnerBlock = imageBlocks.find(block => block.key === "partners");
+const gymBlock = imageBlocks.find(block => block.blockType === "images");
+const equipmentBlock = imageBlocks.find(block => block.blockType === "equipment");
+const partnerBlock = imageBlocks.find(block => block.blockType === "partners");
 const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
 const contactBlock = imageBlocks.find(b => b.blockType === "contact");
 const hoursBlock = imageBlocks.find(b => b.blockType === "hours");
@@ -94,16 +93,10 @@ const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
               <VideoBlock
                 videoFilePath="file.mp4"
                 title="About Urban Powerhouse"
-                description="Urban PowerHouse is a nonprofit organization bringing empowerment and self-growth to those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve.
-"
+                description="Urban PowerHouse is a nonprofit organization bringing empowerment and self-growth to those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve."
                 buttonText="Learn More"
                 href="/About/OurStory"
                 />
-                 {/* <QuoteBlock
-                  quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis  "
-                  author="FIRST LASTNAME, TITLE HERE"
-                  authorImageSrc="/authorImg.png"
-                /> */}
               {quoteBlock && (
                 <QuoteBlock
                   quote={quoteBlock.quote || ""}
@@ -123,17 +116,16 @@ const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
                 buttonText="See All"
                 className="bg-urban-grey mt-10"
               />
-          {partnerBlock && partnerBlock.blockType === "partners" && (
-          <PartnerBlock
-            header={partnerBlock.title}
-            images={partnerBlock.partners?.map(p => ({
-              src: p.image.asset.url,
-              link: p.link,
-            })) || []}
-            className=""
-          />
-        )}
-
+                {partnerBlock && partnerBlock.blockType === "partners" && (
+                <PartnerBlock
+                  header={partnerBlock.title}
+                  images={partnerBlock.partners?.map(p => ({
+                    src: p.image.asset.url,
+                    link: p.link,
+                  })) || []}
+                  className=""
+                />
+              )}
               <StatBlock
                 header="Our Stats"
                 stats={[
@@ -147,40 +139,21 @@ const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
                 ]}
                 className="bg-urban-grey rounded-lg"
               />
-              {/* <InfoBlock 
-                variant="contact"
-                title="Reach Us"
-                fields={[
-                  // { label: "Phone", value: "123-888-3434" },
-                  { label: "Email:", value: "teamurbanpowerhouse@gmail.com" },
-                ]}
-              /> */}
+              {contactBlock && (
+                <InfoBlock
+                  variant="contact"
+                  title={contactBlock.title}
+                  fields={contactBlock.contact || []}
+                />
+              )}
 
-              {/* <InfoBlock 
-                variant="hours"
-                title="Operating Hours"
-                businessHours={[
-                  { day: "Monday - Friday", hours: "5am - 11pm" },
-                  { day: "Saturday", hours: "8am -8pm" },
-                  { day: "Sunday", hours: "8am - 6pm" },
-                  // { day: "Holidays", hours: "Closed" }
-                ]}
-              /> */}
-   {contactBlock && (
-          <InfoBlock
-            variant="contact"
-            title={contactBlock.title}
-            fields={contactBlock.contact || []}
-          />
-        )}
-
-        {hoursBlock && (
-          <InfoBlock
-            variant="hours"
-            title={hoursBlock.title}
-            businessHours={hoursBlock.hours || []}
-          />
-        )}
+              {hoursBlock && (
+                <InfoBlock
+                  variant="hours"
+                  title={hoursBlock.title}
+                  businessHours={hoursBlock.hours || []}
+                />
+              )}
 
             </Container>
 
