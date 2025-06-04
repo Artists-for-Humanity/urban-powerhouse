@@ -33,7 +33,7 @@ interface Partner {
 interface HomepageImageBlock {
   // key: string;
   title: string;
-  blockType: 'images' | 'equipment' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video';
+  blockType: 'images' | 'equipment' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video' | 'video-block';
   images?: SanityImage[];
   partners?: Partner[];
   quote?: string;
@@ -42,6 +42,8 @@ interface HomepageImageBlock {
   contact?: { label: string; value: string }[];
   hours?: { day: string; hours: string }[];
   video?: { asset: { url: string } };
+  subheader?: string;
+  paragraph?: string;
 }
 
 export default function Home() {
@@ -63,6 +65,8 @@ useEffect(() => {
         contact[]{label, value},
         hours[]{day, hours},
         video{asset->{url}},
+        subheader,
+        paragraph
       }`
     )
     .then((data: HomepageImageBlock[]) => {
@@ -78,6 +82,7 @@ const quoteBlock = imageBlocks.find(block => block.blockType === "quote");
 const contactBlock = imageBlocks.find(b => b.blockType === "contact");
 const hoursBlock = imageBlocks.find(b => b.blockType === "hours");
 const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
+const videoContentBlock = imageBlocks.find(block => block.blockType === "video-block");
 
 
 
@@ -86,17 +91,20 @@ const videoBlock = imageBlocks.find(block => block.blockType === "hero-video");
           <Hero 
            title= "Making Strength" 
            subtitle= "Accessible for All"
-          videoSrc={videoBlock?.video?.asset.url || "/file.mp4"} // <-- Pass videoSrc prop
+          videoSrc={videoBlock?.video?.asset.url || "/file.mp4"}
 
           />
           <Container className=" mt-[20vh] min-h-[100vh]">
-              <VideoBlock
-                videoFilePath="file.mp4"
-                title="About Urban Powerhouse"
-                description="Urban PowerHouse is a nonprofit organization bringing empowerment and self-growth to those in Boston’s urban centers through strength & power sports. Our mission is to get a barbell into the hands of individuals of color living in and around Boston, reduce risk factors for chronic metabolic diseases through data-driven movement, and create an inclusive community representative of those we seek to serve."
-                buttonText="Learn More"
-                href="/About/OurStory"
-                />
+          
+                {videoContentBlock && (
+                  <VideoBlock
+                    videoFilePath={videoContentBlock.video?.asset.url || ""}
+                    title={videoContentBlock.subheader || ""}
+                    description={videoContentBlock.paragraph || ""}
+                    buttonText="Learn More"
+                    href="/About/OurStory"
+                  />
+                )}
               {quoteBlock && (
                 <QuoteBlock
                   quote={quoteBlock.quote || ""}

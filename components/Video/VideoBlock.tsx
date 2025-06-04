@@ -23,17 +23,14 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
 }) => {
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className}`}>
-      {/* Video Wrapper with 16:9 Aspect Ratio */}
-      {/* <div className="col-span-full mb-[42px] aspect-w-16 aspect-h-9 max-h-[700px] ">
-        <Video className="w-full h-full overflow-hidden object-cover object-center bg-black" src={videoFilePath} isBackground={false} />
-      </div> */}
-        <div className="col-span-full mb-[42px] aspect-w-16 aspect-h-9 max-h-[700px]">
-          <Video
-            className="w-full h-full overflow-hidden object-scale-down object-center bg-black"
-            src={videoFilePath}
-            isBackground={false}
-          />
-        </div>
+
+<div className="col-span-full mb-[42px] aspect-w-16 aspect-h-9 max-h-[700px] overflow-hidden flex items-center justify-center">
+  <Video
+    className="w-full h-full object-cover object-center bg-black"
+    src={videoFilePath}
+    isBackground={false}
+  />
+</div>
 
       <div className="col-span-full g:col-span-10 mx-[32px] sm:mx-[83px] lg:mx-0 lg:col-span-10">
         <h2 className="text-(--urban-white) text-[32px] font-semibold leading-[1.125] m-0 mb-[13px]">

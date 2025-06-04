@@ -5,19 +5,15 @@ export default defineType({
   name: 'homepageImageBlock',
   title: 'Home Page',
   type: 'document',
+  
   fields: [
-    // {
-    //   name: 'key',
-    //   title: 'Block Key',
-    //   type: 'string',
-    //   description: 'A unique key for this block (e.g. "our-gym", "equipment"). Use this to reference the block in code.',
-    //   validation: (Rule: Rule) => Rule.required(),
-    // },
     {
       name: 'title',
       title: 'Block Title',
       type: 'string',
-    },
+        hidden: ({ parent }) =>
+         parent?.blockType === 'hero-video' || parent?.blockType === 'video-block'
+      },
     {
       name: 'blockType',
       title: 'Block Type',
@@ -25,12 +21,13 @@ export default defineType({
       options: {
         list: [
           { title: 'Image Gallery', value: 'images' },
-           { title: 'Equipment', value: 'equipment' },
+          { title: 'Equipment', value: 'equipment' },
           { title: 'Partners', value: 'partners' },
           { title: 'Quote', value: 'quote' },
           { title: 'Contact', value: 'contact' },
           { title: 'Hours', value: 'hours' },
           { title: 'Hero Video', value: 'hero-video' },
+          { title: 'Video Block', value: 'video-block' }
         ],
         layout: 'dropdown',
       },
@@ -129,8 +126,22 @@ export default defineType({
     title: 'Video File',
     type: 'file',
     options: { accept: 'video/*' },
-    hidden: ({ parent }) => parent?.blockType !== 'hero-video',
+    hidden: ({ parent }) => parent?.blockType !== 'hero-video' && parent?.blockType !== 'video-block',
     description: 'Upload a video file for the hero section.',
-  },
+    },
+    {
+    name: 'subheader',
+    title: 'Subheader',
+    type: 'string',
+    hidden: ({ parent }) => parent?.blockType !== 'video-block', 
+    description: 'Subheader for the video block.',
+    },
+    {
+    name: 'paragraph',
+    title: 'Paragraph',
+    type: 'text',
+    hidden: ({ parent }) => parent?.blockType !== 'video-block',
+    description: 'Paragraph for the video block.',
+    },
   ],
 })
