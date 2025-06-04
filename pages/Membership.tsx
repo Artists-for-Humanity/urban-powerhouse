@@ -129,26 +129,20 @@ export default function Membership() {
               />
             </div>
             <div
-              className="popupLoco w-full h-full fixed top-[50%] left-[25%] mx-[-20px]"
-              style={{ display: showPopup ? "block" : "none" }} 
+              className="popupLoco fixed top-0 left-0 w-full h-full flex justify-center items-center z-50"
+              style={{ display: selectedOption != "Custom" && showPopup ?  "flex" : "none" }}
             >
               <div className="popup bg-[#F47321] w-60 h-40 flex flex-col justify-center items-center border-5 border-black-100 rounded-3xl">
                 <div className="popupText decoration-black rounded-xl">
                   Membership Selected: {selectedOption}
                 </div>
-                <input
-                  type="text"
-                  className="customInput bg-[--urban-white] border-2 border-[--urban-white]"
-                  style={{ display: selectedOption === "Custom" ? "block" : "none" }}
-                  placeholder="$$$"
-                />
               </div>
             </div>
           <br />
           <button
             className={`CUSTOM py-8 col-span-full mx-[-20px]
-              sm:col-start-2 sm:col-end-8
-              lg:col-start-3 lg:col-end-11 lg:rounded-[0px] ${
+              sm:col-start-2 sm:col-end-8 sm:mx-[0px]
+              lg:col-start-3 lg:col-end-11 lg:rounded-[0px] lg:mx-[0px] ${
               selectedOption === "Custom" ? "bg-[#1D42E1]" : "bg-[#404040]"
             }`}
             onClick={() => handleClick("Custom")}
@@ -170,23 +164,26 @@ export default function Membership() {
             </div>
           </button>
 
-    <div className="memInputSec flex flex-col lg:flex-row lg:justify-between col-start-1 col-end-9 lg:col-span-full pt-8
-        lg:col-start-3 lg:col-end-11">
-        <div className="memInCon lg:flex lg:flex-col">
-          <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
-          <MemInput Info = {" First Name"}/>
-          <MemInput Info = {" Last Name"}/>
-          <MemInput Info = {" Mobile Phone"}/>
-          <MemInput Info = {" Email"}/>
-        </div>
-        <div className="messageCon">
-          <div className="Message text-l sm:placeholder:text-2xl">Message</div>
-          <textarea
-            placeholder="Optional"
-            className="border-2 border-gray-400 border-opacity-25 h-50 w-full lg:w-[30vw] p-2 text-left align-top"
+          {selectedOption === "Custom" && showPopup && (
+        <div className="memInputSec flex flex-col lg:flex-row lg:justify-between col-start-1 col-end-9 lg:col-span-full pt-8
+            lg:col-start-3 lg:col-end-11
+            " >
+          <div className="memInCon lg:flex lg:flex-col">
+            <div className="memInputText text-lg sm:text-2xl pb-4">Personal Information</div>
+            <MemInput Info = {" First Name"}/>
+            <MemInput Info = {" Last Name"}/>
+            <MemInput Info = {" Mobile Phone"}/>
+            <MemInput Info = {" Email"}/>
+          </div>
+          <div className="messageCon">
+            <div className="Message text-l sm:placeholder:text-2xl">Message</div>
+            <textarea
+              placeholder="Optional"
+              className="border-2 border-gray-400 border-opacity-25 h-50 w-full lg:w-[30vw] p-2 text-left align-top"
             />
+          </div>
         </div>
-            </div>
+      )}
       </Container>
       <Footer />
     </Grid>
