@@ -13,7 +13,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
     header,
 }) => {
     return(
-            <div className="hidden lg:grid col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-2 mb-[32px]" style={{gridAutoRows: '300px'}}>
+            <div className="hidden lg:grid justify-center col-span-full grid-cols-subgrid lg:grid-cols-3 lg:gap-2 mb-[32px]" style={{gridAutoRows: '300px'}}>
                 {images.map((src,index) =>(
                     <div
                     key={index}
@@ -28,7 +28,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
                         alt={'Image ${index +1 }'}
                         width={1000}
                         height={1000}
-                        className="w-full h-full pbject-cover"
+                        className="w-full h-full object-cover"
                         />
                     </div>
                 ))}
