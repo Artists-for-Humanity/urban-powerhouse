@@ -14,7 +14,7 @@ function MembershipOptions({bgColor, dColor, type, price, description, onButtonC
     return (
         <button className=" LOOKHERE col-span-6 rounded-3xl flex table-column border-25 mb-10 p-8
           sm:col-start-2 sm:col-end-8 sm:rounded-[0px]
-          lg:col-start-3 lg:col-end-11 lg:rounded-[0px]"  onClick = {onButtonClick}
+          lg:col-start-3 lg:col-end-11 lg:rounded-[0px] lg:pt-10 lg:pb-10"  onClick = {onButtonClick}
         style={{ backgroundColor: `var(${bgColor})`, border: `3px solid var(${bgColor})` }}>
             <div className="memTotCon h-full w-full 
             lg:flex lg:justify-between lg:items-center">
@@ -147,7 +147,7 @@ export default function Membership() {
             }`}
             onClick={() => handleClick("Custom")}
           >
-            <div className="cusTotCon h-full w-full px-10 lg:flex lg:justify-between lg:items-center ">
+            <div className="cusTotCon h-full w-full px-10 lg:flex lg:justify-between lg:items-center lg:pt-3 lg:pb-3">
               <div className="CustomTextCon text-xl flex items-center">
                 <div className="memSelCon flex flex-row lg:items-center">
                   <div

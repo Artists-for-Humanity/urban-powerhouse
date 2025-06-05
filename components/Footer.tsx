@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
 
-                {/* Subscribe Section */}
+                {/* Subscribe Section
                 <div className="flex flex-col mb-10 sm:mb-0">
                     <h2 className="font-bold mb-4">Subscribe</h2>
                     <div className="flex items-center space-x-2 bg-gray-200">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                             className="p-2 text-black"
                         />
                     </div>
-                </div>
+                </div> */}
 
                 {/* Social Media Section */}
                 <div className="flex flex-col mb-10 sm:mb-0">
