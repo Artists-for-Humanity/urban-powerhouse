@@ -31,7 +31,6 @@ interface Partner {
 }
 
 interface HomepageImageBlock {
-  // key: string;
   title: string;
   blockType: 'images' | 'equipment' | 'partners' | 'quote' | 'contact' | 'hours' | 'hero-video' | 'video-block';
   images?: SanityImage[];

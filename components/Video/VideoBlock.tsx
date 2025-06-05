@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../Button';
-import Video from './Video'; // Assuming this is your custom Video component
+import Video from './Video'; 
 
 interface VideoBlockProps {
   className?: string;
@@ -8,7 +8,7 @@ interface VideoBlockProps {
   title: string;
   description: string;
   buttonText: string;
-  href?: string; // Optional href for the button
+  href?: string; 
  
 }
 

@@ -1,9 +1,17 @@
-export default {
+import { defineType } from 'sanity'
+
+export default defineType({
   name: 'article',
-  title: 'Articles',
+  title: 'Article',
   type: 'document',
   fields: [
-    { name: 'title', title: 'Title', type: 'string', validation: (Rule: { required: () => any; }) => Rule.required() },
-    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title', maxLength: 96 }, validation: (Rule: { required: () => any; }) => Rule.required() },
+    { name: 'title', title: 'Title', type: 'string' },
+    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title', maxLength: 96 } },
+    {
+      name: 'blocks',
+      title: 'Blocks',
+      type: 'array',
+      of: [{ type: 'articleBlock' }],
+    },
   ],
-}
+})
