@@ -45,7 +45,7 @@ const [article, setArticle] = useState<{ title: string; blocks: ArticleBlockData
     if (!slug) return;
     client
         .fetch(
-        `*[_type == "article" && slug.current == $slug][0]{
+        `*[_type in ["article", "teenStories"] && slug.current == $slug][0]{
             title,
             blocks[]{
             blockType,
