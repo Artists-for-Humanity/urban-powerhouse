@@ -8,9 +8,10 @@ type FAQItem = {
 
 type FAQDropdownProps = {
   faqs: FAQItem[];
+  title?: string
 };
 
-const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
+const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs, title }) => {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -22,7 +23,8 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs }) => {
 
   return (
     <div className="space-y-4 col-span-full grid grid-cols-subgrid">
-      <h1 className="text-[32px] font-semibold col-span-full ">FAQ</h1>
+         <h1 className="text-[32px] font-semibold col-span-full ">{title}</h1>
+
 
       {faqs.map((faq, index) => (
         <div key={index} className=" pb-4 col-span-full lg:col-start-2 py-3">

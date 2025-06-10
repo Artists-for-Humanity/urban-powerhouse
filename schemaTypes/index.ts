@@ -5,7 +5,8 @@ import TeenStories from './TeenStories'
 import articleBlock from './articleBlock'
 import foundersPage from './founders';
 import ourStoryPage from './ourStory';
+import faq from './faq';
 
 
 
-export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage]
+export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage, faq]
