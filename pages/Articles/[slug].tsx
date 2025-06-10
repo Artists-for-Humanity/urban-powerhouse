@@ -64,7 +64,7 @@ const [article, setArticle] = useState<{ title: string; blocks: ArticleBlockData
         .then(setArticle);
     }, [slug]);
 
-  if (!article) return <div>Loading...</div>;
+  if (!article) return;
 
 return (
   <div>

@@ -34,7 +34,9 @@ export default defineType({
         Rule.custom(async (value, context) => {
           if (!value) return true
           const client = context.getClient({ apiVersion: '2023-01-01' })
-          const id = context.document._id.replace(/^drafts\./, '')
+          const id = context.document && context.document._id
+            ? context.document._id.replace(/^drafts\./, '')
+            : ''
           const count = await client.fetch(
             `count(*[_type == "teenStories" && pinned == true && _id != $id && _id != "drafts." + $id])`,
             { id }
