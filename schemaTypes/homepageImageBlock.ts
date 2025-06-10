@@ -12,7 +12,7 @@ export default defineType({
       title: 'Block Title',
       type: 'string',
         hidden: ({ parent }) =>
-         parent?.blockType === 'hero-video' || parent?.blockType === 'video-block'
+         parent?.blockType === 'hero-video'
       },
     {
       name: 'blockType',

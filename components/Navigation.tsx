@@ -152,7 +152,7 @@ const Navigation: React.FC = () => {
         <Button
                   label="About"
                   variant="nav-dropdown"
-                   className='cursor-pointer'
+                   className='cursor-pointer bg-[var(--urban-black)]'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Story', href: '/About/TeenStories' },
