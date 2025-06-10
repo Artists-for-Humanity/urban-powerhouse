@@ -1,23 +1,69 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "../../components/GridContainer";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
 import '../../app/globals.css';
 import Leadership from "../../components/Leadership";
+import { client } from "../../lib/sanity";
 
 
+interface Founder {
+  name: string;
+  bio: string;
+  image: { asset: { url: string } };
+}
+
+interface FoundersPageData {
+  title: string;
+  subtitle?: string;
+  founders: Founder[];
+}
 
 export default function Founders() {
 
+const [data, setData] = useState<FoundersPageData | null>(null);
 
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "foundersPage"][0]{
+          title,
+          subtitle,
+          founders[]{
+            image{asset->{url}},
+            name,
+            bio,
+       
+     
+          }
+        }`
+      )
+      .then((res: FoundersPageData) => setData(res));
+  }, []);
+
+  if (!data) return <div>Loading...</div>;
 
     return (
           <Grid>
             <Navigation/>
               <Container>
-              <h1 className="text-[32px] font-semibold col-span-full ">Meet the Founders</h1>
+                  <h1 className="text-[32px] font-semibold col-span-full ">
+          {data.title || "Meet the Founders"}
+        </h1>
+        {data.subtitle && (
+          <p className="mb-8 text-lg">{data.subtitle}</p>
+        )}
+        {data.founders.map((founder, idx) => (
+          <Leadership
+            key={idx}
+            imageSrc={founder.image?.asset?.url || ""}
+            name={founder.name}
+            description={founder.bio.split('\n')}
+          />
+        ))}
+              {/* <h1 className="text-[32px] font-semibold col-span-full ">Meet the Founders</h1>
               <Leadership
                 imageSrc="/headshots/founder1.png"
                 name="Joseph Stephen, Executive Director/Co-Founder"
@@ -36,7 +82,7 @@ export default function Founders() {
                         "Laurie has competed with USA Powerlifting since 2018 at both the local and national level and is committed to putting a barbell in as many people's hands as possible to give them the opportunity to experience the power of strength sports.",
                         "Laurie is currently the Director of Development for the Cardinal Cushing Centers, a $40 million non-profit organization that supports individuals with intellectual disabilities. Prior to starting her career in development in 2010, Laurie helped to found and subsequently coordinate social and recreation programming for Teens and Young Adults with Down syndrome. Laurie, who currently resides in Boston, MA, graduated from Harvard College with a BA in Sociology."
                       ]}
-                />
+                /> */}
               </Container>
             <Footer />
           </Grid>

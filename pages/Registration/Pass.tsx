@@ -47,24 +47,24 @@ export default function Passes() {
       description:
         'Facility Membership: Unlimited gym access during staffed hours for one calendar month.',
     },
-    {
-      label: '10 Day Visit Punch Card',
-      price: '$100',
-      description:
-        '10-Visit Punch Card: Good for ten drop-in classes over 30 days.',
-    },
-     {
-      label: '30 Minutes Semi-Private Session',
-      price: '$100',
-      description:
-        '30-Minute Semi-Private Session: Get one-on-one or buddy training for a focused half-hour workout.',
-    },
-     {
-      label: 'Coaching Membership',
-      price: '$200',
-      description:
-        'Coaching Membership: Unlimited access to weekly small-group coaching sessions and skill clinics.',
-    },
+    // {
+    //   label: '10 Day Visit Punch Card',
+    //   price: '$100',
+    //   description:
+    //     '10-Visit Punch Card: Good for ten drop-in classes over 30 days.',
+    // },
+    //  {
+    //   label: '30 Minutes Semi-Private Session',
+    //   price: '$100',
+    //   description:
+    //     '30-Minute Semi-Private Session: Get one-on-one or buddy training for a focused half-hour workout.',
+    // },
+    //  {
+    //   label: 'Coaching Membership',
+    //   price: '$200',
+    //   description:
+    //     'Coaching Membership: Unlimited access to weekly small-group coaching sessions and skill clinics.',
+    // },
 
   ];
   const customOption = [
