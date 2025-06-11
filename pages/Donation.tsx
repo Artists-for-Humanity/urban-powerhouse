@@ -24,24 +24,45 @@ export default function Donation() {
                 <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center">$30</div>
                 <div className="max-h-26 mt-5">Become a Friend of UPH</div>
               </div>
+
+                
               <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-4 sm:col-start-4 text-center flex flex-col items-center">
                 <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$65</div>
                 <div className="max-h-26 mt-5">Supports a 12 month federation membership for one athlete</div>
               </div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">
-                  $2500
-                </div>
+
+              <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-4 sm:col-start-6 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600"> $100 </div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Covers one competition entry fee for one athlete </div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">$250</div>
+              </div>
+                
+              <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-5 sm:col-start-2 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$250</div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Covers approved competition gear for one athlete</div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">$600</div>
+              </div>
+
+              <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-5 sm:col-start-4 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$600</div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Purchases a new barbell for athletes to use during training</div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">$1000</div>
+              </div>
+
+              
+
+                <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-5 sm:col-start-6 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$1000</div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Helps cover travel cost associated with larger scale competitions </div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">$2500</div>
+                </div>
+
+                <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-6 sm:col-start-5 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$2500</div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Helps us open the doors to our first brick and mortar facility </div>
-              <div className="p-8 py-22 bg-gray-600 col-start-2 col-span-4 text-center text-[30px] rounded-full">$__</div>
+                </div>
+
+
+                <div className="col-span-4 col-start-2 sm:col-span-2 sm:row-start-6 sm:col-start-3 text-center flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-600 text-[30px] rounded-full flex items-center justify-center bg-sky-600">$__</div>
               <div className="max-h-26 text-center col-span-4 col-start-2  mt-5 mb-10">Make a gift. Every donation, no matter the size, will help us make Boston strong  together</div>
+                </div>
               
 
               </Container>
