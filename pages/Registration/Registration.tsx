@@ -8,11 +8,11 @@ import '../../app/globals.css';
 import '../../app/mindbody.css';
 import { client } from "../../lib/sanity";
 
-interface RegistrationPage {
-  title: string;
-  intro: string;
-  cta: string;
-}
+// interface RegistrationPage {
+//   title: string;
+//   intro: string;
+//   cta: string;
+// }
 
 export default function Registration() {
   const widgetRef = useRef<HTMLDivElement>(null);

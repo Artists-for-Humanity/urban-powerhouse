@@ -27,7 +27,6 @@ export default function Passes() {
   }, []);
 
 
-  // const [selected, setSelected] = useState<'DAY' | 'WEEK' | 'MONTH'>('WEEK');
   const pricingOptions = [
     {
       label: 'DAY',
@@ -47,24 +46,7 @@ export default function Passes() {
       description:
         'Facility Membership: Unlimited gym access during staffed hours for one calendar month.',
     },
-    // {
-    //   label: '10 Day Visit Punch Card',
-    //   price: '$100',
-    //   description:
-    //     '10-Visit Punch Card: Good for ten drop-in classes over 30 days.',
-    // },
-    //  {
-    //   label: '30 Minutes Semi-Private Session',
-    //   price: '$100',
-    //   description:
-    //     '30-Minute Semi-Private Session: Get one-on-one or buddy training for a focused half-hour workout.',
-    // },
-    //  {
-    //   label: 'Coaching Membership',
-    //   price: '$200',
-    //   description:
-    //     'Coaching Membership: Unlimited access to weekly small-group coaching sessions and skill clinics.',
-    // },
+
 
   ];
   const customOption = [
@@ -85,7 +67,6 @@ export default function Passes() {
         <h3 className="font-semibold text-xl col-span-full lg:col-start-2 lg:col-span-10 sm:mt-10">
           <span className="text-[var(--urban-orange)] ">Thank you</span> for registering with Urban PowerHouse! We have a variety of membership options available
         </h3><br />
-        {/* <Pass variant='default' options={pricingOptions} /> */}
         <Pass
           variant='default'
           options={pricingOptions}
@@ -93,7 +74,6 @@ export default function Passes() {
         />
 
         <div className="col-start-3 col-span-2 mt-10 sm:col-start-4 lg:col-start-6 ">
-          {/* <Button label="Buy Pass" iconSrc="/icons/card.svg" href="/" variant="default" className="text-right" /> */}
           <Button
             label="Buy Pass"
             iconSrc="/icons/card.svg"
@@ -115,6 +95,7 @@ export default function Passes() {
 
               if (widgetAnchor) {
                 widgetAnchor.click();
+                // window.open(widgetAnchor,'_blank');
               } else {
                 console.warn("No widget found for selected tier:", selectedTier);
               }

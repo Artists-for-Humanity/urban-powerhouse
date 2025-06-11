@@ -7,7 +7,9 @@ import foundersPage from './founders';
 import ourStoryPage from './ourStory';
 import faq from './faq';
 import registrationPage from './registrationPage';
+import donationPage from './donationPage';
 
 
 
-export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage, faq, registrationPage]
+
+export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage, faq, registrationPage, donationPage];
