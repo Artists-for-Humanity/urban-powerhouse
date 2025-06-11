@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Navigation from "../components/Navigation";
 import '../app/globals.css';
-// import Leadership from "../components/Leadership";
 import FAQDropdown from "../components/FAQBlock";
 import { client } from "../lib/sanity";
 

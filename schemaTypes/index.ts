@@ -6,7 +6,8 @@ import articleBlock from './articleBlock'
 import foundersPage from './founders';
 import ourStoryPage from './ourStory';
 import faq from './faq';
+import registrationPage from './registrationPage';
 
 
 
-export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage, faq]
+export const schemaTypes = [newsArticle, article, homepageImageBlock, articleBlock, TeenStories, foundersPage, ourStoryPage, faq, registrationPage]
