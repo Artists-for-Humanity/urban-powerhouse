@@ -43,14 +43,14 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="col-span-1 max-h-[80px] overflow-hidden"
+            className="col-span-1 max-h-[80px] overflow-hidden p-10"
           >
             <Image
               src={src}
               alt={`Image ${index + 1}`}
               width={1000}
               height={1000}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain "
             />
           </a>
         ))}

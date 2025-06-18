@@ -114,6 +114,7 @@ const videoContentBlock = imageBlocks.find(block => block.blockType === "video-b
               <ImageBlock
                 header={gymBlock?.title || ""}
                 images={gymBlock?.images?.map(img => img.asset.url) || []}
+                variant="default"
               />
 
               <ImageBlock
@@ -136,8 +137,8 @@ const videoContentBlock = imageBlocks.find(block => block.blockType === "video-b
               <StatBlock
                 header="Our Stats"
                 stats={[
-                  { number: "500", description: "Number of Athletes who have received individualized coaching" },
-                  { number: "54", description: "Athletes who have received financial assistance" },
+                  { number: "50", description: "Number of Athletes who have received individualized coaching" },
+                  { number: "54", description: "Athletes who have received financial assistance",  suffix: "%"  },
                   { number: "250", description: "Unique Visitors" },
                   { number: "1000", description: "Community Event Attendees" },
                   { number: "60", description: "sanctioned competitions UPH athletes have participated in" },

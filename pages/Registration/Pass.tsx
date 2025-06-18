@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
 import Pass from "../../components/Pass";
-// import { Pass } from "../components/Pass";
 import Button from "../../components/Button";
 import '../../app/globals.css';
 import '../../app/mindbody.css';

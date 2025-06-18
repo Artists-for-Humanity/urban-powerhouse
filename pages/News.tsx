@@ -44,7 +44,7 @@ export default function News() {
           return {
             title: item.title,
             paragraphs: item.paragraphs || [],
-            link: item.link?.slug?.current ? `/Articles/${item.link.slug.current}` : "#",
+            link: item.link?.slug?.current ? `/News/${item.link.slug.current}` : "#",
             variant: item.pinned ? "pinned" : "title-only",
           };
         })

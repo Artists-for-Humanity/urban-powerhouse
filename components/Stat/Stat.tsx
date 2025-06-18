@@ -4,9 +4,10 @@ import { useInView } from 'react-intersection-observer';
 interface StatProps {
   number: number | string;
   description: string;
+  suffix?: string;
 }
 
-const Stat: React.FC<StatProps> = ({ number, description }) => {
+const Stat: React.FC<StatProps> = ({ number, description, suffix }) => {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView(); // Remove triggerOnce
 
@@ -34,8 +35,11 @@ const Stat: React.FC<StatProps> = ({ number, description }) => {
 
   return (
     <div ref={ref} className="flex flex-col items-center">
-      <span className="text-[32px] lg:text-[100px] font-bold">{count.toLocaleString()}</span>
-      <span className="text-base">{description}</span>
+      <span className="text-[32px] lg:text-[100px] font-bold">
+        {count.toLocaleString()}
+          {suffix && <span>{suffix}</span>}
+        </span>
+      <span className="text-base text-center">{description}</span>
     </div>
   );
 };

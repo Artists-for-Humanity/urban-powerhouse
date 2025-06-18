@@ -71,7 +71,6 @@ const Navigation: React.FC = () => {
         </div>
         <div className="flex flex-col items-start p-4 space-y-4">
           <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-          {/* <Button label="About Us" href="/About" variant="nav"  isActive={pathname === '/About'} /> */}
           <Button
                   label="About"
                   variant="nav-dropdown"
@@ -84,7 +83,6 @@ const Navigation: React.FC = () => {
                  
                   />
           <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
-          {/* <Button label="Registration & Membership" href="/" variant="nav" isActive={false} /> */}
           <Button
           label="Registration & Membership"
           variant="nav-dropdown"
@@ -96,7 +94,6 @@ const Navigation: React.FC = () => {
           <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
           <Button label="Donate" className='text-[var(--urban-orange)]' href="/Donation" variant="nav" isActive={false} />
            <Button label="Sign In" className='text-[var(--urban-white)]' variant="nav"  onClick={handleAccountLink} isActive={false} />
-          {/* <Button label="Sign In" className='text-[var(--urban-blue)]'  variant="nav"    isActive={false} /> */}
         </div>
       </div>
 
@@ -148,7 +145,6 @@ const Navigation: React.FC = () => {
       <div className="hidden lg:flex justify-between items-center py-4 w-full max-w-[1200px]">
         <Logo size="small" />
         <Button label="News" href="/News" variant="nav" isActive={pathname === '/News'} />
-        {/* <Button label="About Us" href="/About" variant="nav" isActive={pathname === '/About'} /> */}
         <Button
                   label="About"
                   variant="nav-dropdown"

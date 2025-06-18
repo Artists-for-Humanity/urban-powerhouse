@@ -3,7 +3,7 @@ import Stat from './Stat';
 
 interface StatBlockProps {
   header: string;
-  stats: { number: number | string; description: string }[]; 
+  stats: { number: number | string; description: string;  suffix?: string }[]; 
   className?: string;
 }
 
@@ -30,6 +30,7 @@ const StatBlock: React.FC<StatBlockProps> = ({ header, stats, className = '' }) 
             key={index}
             number={stat.number}
             description={stat.description}
+            suffix={stat.suffix} 
           />
         ))}
       </div>

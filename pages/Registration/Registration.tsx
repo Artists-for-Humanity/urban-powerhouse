@@ -8,11 +8,6 @@ import '../../app/globals.css';
 import '../../app/mindbody.css';
 import { client } from "../../lib/sanity";
 
-// interface RegistrationPage {
-//   title: string;
-//   intro: string;
-//   cta: string;
-// }
 
 export default function Registration() {
   const widgetRef = useRef<HTMLDivElement>(null);
@@ -41,6 +36,7 @@ export default function Registration() {
     }
 
     const timeout = setTimeout(() => {
+        // Remove unwanted style
       const styleTags = document.querySelectorAll('style');
       styleTags.forEach((style) => {
         if (
