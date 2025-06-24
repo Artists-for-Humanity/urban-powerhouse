@@ -21,7 +21,7 @@ interface HeroTextProps {
                 <p className="text-(--urban-white) font-normal text-center drop-shadow-[0px_3px_0px_#0633F7] text-2xl sm:text-4xl italic font-light leading-normal max-w-2xl">
                 {subtitle}
                 </p>
-                <Button label="Join Now" href="/" variant="default" />
+                <Button label="Join Now" href="/Registration/Registration" variant="default" />
             </div>
         </div>
 

@@ -7,7 +7,6 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
-  // const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
 
   const toggleMenu = () => {
