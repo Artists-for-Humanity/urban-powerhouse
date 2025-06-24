@@ -69,7 +69,8 @@ export default function Passes() {
         <Pass
           variant='default'
           options={pricingOptions}
-          onSelect={(label: string) => setSelectedTier(label)}
+          onSelect={setSelectedTier}
+          selected={selectedTier}
         />
 
         <div className="col-start-3 col-span-2 mt-10 sm:col-start-4 lg:col-start-6 ">
@@ -101,7 +102,12 @@ export default function Passes() {
             }}
           />
         </div>
-        <Pass variant='custom' options={customOption} />
+        <Pass 
+        variant='custom' 
+        options={customOption} 
+         onSelect={setSelectedTier}
+         selected={selectedTier}
+        />
                <div
           style={{ display: "none" }}
           dangerouslySetInnerHTML={{
