@@ -8,7 +8,6 @@ interface VideoProps {
     isBackground?: boolean; 
     className?: string; 
 }
-
 const Video: React.FC<VideoProps> = ({
     src,
     autoPlay = true,
@@ -22,7 +21,7 @@ const Video: React.FC<VideoProps> = ({
             className={`${
                 isBackground
                     ? "absolute inset-0 z-[0] w-full h-3/4 overflow-hidden"
-                    : "relative w-full h-auto]"
+                    : "relative w-full h-auto"
             } ${className}`}
         >
             <video
@@ -30,14 +29,13 @@ const Video: React.FC<VideoProps> = ({
                 autoPlay={autoPlay}
                 muted={muted}
                 loop={loop}
-                className={`${
-                    isBackground
-                        ? "w-full h-full object-cover brightness-35"
-                        : "w-full h-auto "
+                className={`w-full h-full object-cover object-center ${
+                    isBackground ? "brightness-35" : ""
                 }`}
             />
         </div>
     );
 };
+
 
 export default Video;

@@ -1,14 +1,25 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState} from "react";
 import Grid from "../../components/GridContainer";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
 import '../../app/globals.css';
 import '../../app/mindbody.css';
+import { client } from "../../lib/sanity";
+
 
 export default function Registration() {
   const widgetRef = useRef<HTMLDivElement>(null);
+   const [pageData, setPageData] = useState<{ title?: string; intro?: string; cta?: string }>({});
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "registrationPage"][0]{title, intro, cta}`
+      )
+      .then((data) => setPageData(data));
+  }, []);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -25,6 +36,7 @@ export default function Registration() {
     }
 
     const timeout = setTimeout(() => {
+        // Remove unwanted style
       const styleTags = document.querySelectorAll('style');
       styleTags.forEach((style) => {
         if (
@@ -45,15 +57,11 @@ export default function Registration() {
     <Grid>
       <Navigation />
       <Container>
-        <h1 className="text-[32px] font-semibold col-span-full">Registration & Membership</h1><br /><br />
+        <h1 className="text-[32px] font-semibold col-span-full">{pageData.title}</h1><br /><br />
         <h3 className="font-semibold col-span-full">
-          Welcome to Urban PowerHouse, Boston’s home for powerlifters and olympic weightlifters. 
-          We are more than just a place to train, we are a nonprofit gym on a mission. 
-          Our goal is to get a barbell into the hands of as many people as possible, 
-          from all walks of life, and to provide a supportive community environment for 
-          strength sports athletes living in and around the Greater Boston area.
+         {pageData.intro}
         </h3><br />
-        <h3 className="font-semibold col-span-full">Register today to get started.</h3><br /><br />
+        <h3 className="font-semibold col-span-full"> {pageData.cta}</h3><br /><br />
 
         {}
         <div ref={widgetRef} className="col-span-full" />

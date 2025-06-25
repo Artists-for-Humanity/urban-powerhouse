@@ -9,7 +9,7 @@ interface QuoteBlockProps {
 
 const QuoteBlock: React.FC<QuoteBlockProps> = ({  quote, author, authorImageSrc }) => {
   return (
-    <div className="grid col-span-full grid-cols-subgrid gap-y-[32px] lg:py-10 my-10 my-16 lg:my-0">
+    <div className="grid col-span-full grid-cols-subgrid gap-y-[32px] lg:py-[120px] my-10 my-16 lg:my-0">
 
       <Image src="./quote.svg" alt="Quote Symbol" width={140} height={110} className="col-span-3 lg:col-span-2 mx-[32px] lg:mx-0 lg:w-[203px] lg:h-[161px] lg:mt-6" />
 

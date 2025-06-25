@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, {  FormEvent, useEffect } from 'react';
 
 interface PricingOption {
   label: 'DAY' | 'WEEK' | 'MONTH' | 'Custom' | string;
@@ -11,6 +11,7 @@ interface PassProps {
   options: PricingOption[];
   variant?: 'default' | 'custom';
   onSelect?: (label: string) => void;
+   selected?: string;
 
 }
 
@@ -18,11 +19,13 @@ const Pass: React.FC<PassProps> = ({
   options,
   variant = 'default',
     onSelect, // destructure onSelect
+     selected = '',
+    
 
 }) => {
-  const [selected, setSelected] = useState<string>(
-    variant === 'custom' ? '' : options[0]?.label || ''
-  );
+  // const [selected, setSelected] = useState<string>(
+  //   variant === 'custom' ? '' : options[0]?.label || ''
+  // );
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -36,17 +39,11 @@ const Pass: React.FC<PassProps> = ({
     };
   }, []);
 
-  const handleClick = (label: string) => {
-    setSelected(prev => (prev === label ? '' : label));
-      onSelect?.(label); // trigger callback to parent
-
+   const handleClick = (label: string) => {
+    onSelect?.(label === selected ? '' : label);
   };
 
-  // const handleSubmit = (e: FormEvent) => {
-  //   e.preventDefault();
-  //   // TODO: wire up your submit logic
-  //   alert('Form submitted!');
-  // };
+
 
   const handleSubmit = (e: FormEvent) => {
   e.preventDefault();
@@ -68,6 +65,7 @@ const Pass: React.FC<PassProps> = ({
 
 
   const renderOption = (option: PricingOption) => {
+    // const isSelected = selected === option.label;
     const isSelected = selected === option.label;
     const bgColor = isSelected ? 'bg-[var(--urban-blue)]' : 'bg-[var(--urban-grey)]';
     const borderColor = isSelected ? 'border-[var(--urban-blue)]' : 'border-none';

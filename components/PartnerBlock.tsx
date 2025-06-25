@@ -27,8 +27,8 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
             <Image
               src={src}
               alt={`Image ${index + 1}`}
-              width={100}
-              height={1}
+              width={1000}
+              height={1000}
               className="w-auto h-[75px] object-contain"
             />
           </a>
@@ -43,14 +43,14 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="col-span-1 max-h-[80px] overflow-hidden"
+            className="col-span-1 max-h-[80px] overflow-hidden p-10"
           >
             <Image
               src={src}
               alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
-              className="w-full h-full object-contain"
+              width={1000}
+              height={1000}
+              className="w-full h-full object-contain "
             />
           </a>
         ))}
@@ -69,8 +69,8 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
             <Image
               src={src}
               alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
+              width={1000}
+              height={1000}
               className="w-full h-full object-contain"
             />
           </a>

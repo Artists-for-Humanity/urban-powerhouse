@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "../components/GridContainer";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Navigation from "../components/Navigation";
 import NewsBlock from "../components/News/NewsBlock";
 import '../app/globals.css';
+import { client } from "../lib/sanity";
 
 interface Article {
   title: string;
@@ -14,53 +14,51 @@ interface Article {
   variant: "pinned" | "title-only";
 }
 
+interface SanityNewsArticle {
+  title: string;
+  paragraphs: string[];
+  pinned?: boolean;
+  link?: {
+    slug?: {
+      current: string;
+    };
+  };
+}
+
 export default function News() {
+  const [articles, setArticles] = useState<Article[]>([]);
 
-  const articles: Article[] = [
-    {
-      title: "UPH Named 2025 Grantee Partner by The Lenny Zakim Fund",
+  useEffect(() => {
+    client.fetch<SanityNewsArticle[]>(
+      `*[_type == "newsArticle"] | order(pinned desc, _createdAt desc){
+        title,
+        paragraphs,
+        pinned,
+        link->{slug}
+      }`
+    ).then((data) => {
+      console.log("Sanity newsArticle fetch result:", data);
+      setArticles(
+        data.map((item) => {
+          console.log("item.link?.slug?.current:", item.link?.slug?.current);
+          return {
+            title: item.title,
+            paragraphs: item.paragraphs || [],
+            link: item.link?.slug?.current ? `/News/${item.link.slug.current}` : "#",
+            variant: item.pinned ? "pinned" : "title-only",
+          };
+        })
+      );
+    });
+  }, []);
 
-      paragraphs: [
-        "Urban PowerHouse is proud to have been named a 2025 Grantee Partner of The Lenny Zakim Fund. The Lenny Zakim Fund works to develop deep relationships and builds bridges among people and communities to advance social, economic, and racial justice.",
-        "“We are honored to be a part of the Zakim Fund portfolio and look forward to the unique opportunities for partnership, collaboration, and learning that are to come. The Zakim Fund supports fantastic organizations doing impactful work in our communities, and we are so grateful to work alongside these changemakers.” Joseph Stephen, Executive Director & Co-Founder",
-      ],
-      link: "/Articles/ZakimFund",
-      variant: "pinned",
-    },
-    {
-      title: "UPH Secures City of Boston Grants to Expand Youth Workforce Programs",
-      paragraphs: [],
-      link: "/Articles/LetsPlay",
-      variant: "title-only", 
-    },
-    {
-      title: "Artists for Humanity Partners with UPH for Youth-Led Website Redesign",
-      paragraphs: [],
-      link: "/Articles/AFH",
-      variant: "title-only", 
-    },
-    {
-      title: "UPH Hosts Inaugural Black Boston Lifts Community Event",
-      paragraphs: [],
-      link: "/Articles/BlackBoston",
-      variant: "title-only", 
-    },
-    {
-      title: " Athletes Shine in Spring 2025 Powerlifting Competitions",
-      paragraphs: [],
-      link: "/Articles/Powerlifting",
-      variant: "title-only", 
-    },
-  ];
-
-    return (
-          <Grid>
-            <Navigation/>
-              <Container>
-               <NewsBlock header="News & Events" articles={articles} />
-              </Container>
-            <Footer />
-          </Grid>
-
-    );
+  return (
+    <Grid>
+      <Navigation />
+      <Container>
+        <NewsBlock header="News & Events" articles={articles} />
+      </Container>
+      <Footer />
+    </Grid>
+  );
 }

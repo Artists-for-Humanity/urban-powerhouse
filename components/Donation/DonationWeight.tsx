@@ -9,9 +9,9 @@ interface DonationItem {
 interface DonationWeightProps {
   title: string;
   donations: DonationItem[];
-  businessId: string;                // <- new
-  currencyCode?: string;             // <- optional
-  itemName?: string;                 // <- optional
+  businessId: string;
+  currencyCode?: string;
+  itemName?: string;           
   className?: string;
 }
 
@@ -29,34 +29,7 @@ const DonationWeight: React.FC<DonationWeightProps> = ({
   const [errorMessage, setErrorMessage] = useState('');
 const [customError, setCustomError] = useState('');
 
-// const handleDonate = () => {
-//   const numberAmount = customAmount || localStorage.getItem('donateAmount');
 
-//   if (!numberAmount) {
-//     setErrorMessage('Please select a donation amount.');
-//     return;
-//   }
-
-//   const parsedAmount = parseFloat(numberAmount);
-//   if (isNaN(parsedAmount) || parsedAmount <= 0) {
-//     setErrorMessage('Invalid donation amount. Please enter a valid number.');
-//     return;
-//   }
-
-//     const paypalUrl =
-//     `https://www.paypal.com/donate` +
-//     `?business=${encodeURIComponent(businessId)}` +
-//     `&amount=${parsedAmount}` +
-//     `&currency_code=${encodeURIComponent(currencyCode)}` +
-//     `&item_name=${encodeURIComponent(itemName)}` +
-//     `&no_recurring=0`;
-//   window.location.href = paypalUrl;
-
-
-//   setErrorMessage('');
-//   const paypalUrl = `https://www.paypal.com/donate/?business=E3YK98SZJ565Y&amount=${parsedAmount}&no_recurring=0&item_name=gym&currency_code=USD`;
-//   window.location.href = paypalUrl;
-// };
 
 const handleDonate = () => {
   const numberAmount = customAmount || localStorage.getItem('donateAmount');
@@ -83,7 +56,7 @@ const handleDonate = () => {
     `&item_name=${encodeURIComponent(itemName)}` +
     `&no_recurring=0`;
 
-  window.location.href = paypalUrl;
+  window.open(paypalUrl, '_blank', 'noopener,noreferrer');
 }; // <-- only one closing brace here
 
 

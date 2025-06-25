@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from '../Button';
 
+
 interface ArticleBlockProps {
   variant: 'title' | 'paragraph' | 'quote' | 'image-description' | 'center-image' | 'side-by-side-images' | 'bullet-points' | 'go-back';
   title?: string;
@@ -13,6 +14,7 @@ interface ArticleBlockProps {
   description?: string;
   onBackClick?: () => void;
   href?: string;
+  videoSrc?: string;
   className?: string;
 }
 const ArticleBlock: React.FC<ArticleBlockProps> = ({

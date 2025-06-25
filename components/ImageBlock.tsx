@@ -10,16 +10,16 @@ interface ImageBlockProps {
   images: string[];
   className?: string;
   header?: string;
-  variant?: 'default' | 'simple'; // NEWa
-  buttonText?: string; // New
-  onButtonClick?: () => void; // New
+  variant?: 'default' | 'simple'; 
+  buttonText?: string;
+  onButtonClick?: () => void; 
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = ({
   images,
   header,
   className = '',
-  variant = 'default', // NEW
+  variant = 'default', 
   buttonText,
   onButtonClick,
 }) => {
@@ -31,28 +31,28 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
         </h2>
       )}
 
-      {/* Mobile Swiper */}
-      <div className=" col-span-full sm:col-start-2 sm:col-span-6 lg:hidden">
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          spaceBetween={10}
-          slidesPerView={1}
-        >
-          {images.slice(0, 10).map((src, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                src={src}
-                alt={`Image ${index + 1}`}
-                width={376}
-                height={282}
-                className='w-full max-h-[300px] object-cover mx-auto'
-                // className="w-[376px] sm:w-[793px] sm:h-[596px] h-[282px] object-cover mx-auto"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+<div className="col-span-full sm:mx-[32px] lg:hidden">
+  <Swiper
+    modules={[Pagination]}
+    pagination={{ clickable: true }}
+    spaceBetween={10}
+    slidesPerView={1}
+  >
+    {images.slice(0, 10).map((src, index) => (
+      <SwiperSlide key={index}>
+        <div className="relative w-full" style={{ aspectRatio: '1 / 1' }}>
+          <Image
+            src={src}
+            alt={`Image ${index + 1}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, 376px"
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
 
       {/* Desktop Grid */}
       <div
@@ -71,8 +71,8 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
             <Image
               src={src}
               alt={`Image ${index + 1}`}
-              width={400}
-              height={300}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
             />
           </div>
@@ -81,7 +81,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
 
       {/* Button for simple variant */}
       {variant === 'simple' && buttonText && (
-        <div className="col-start-5 col-span-2 sm:col-start-6 sm:col-span-2 sm:mt-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+        <div className="col-start-5 col-span-2 sm:col-start-6 sm:col-span-2 sm:mt-2 sm:mb-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
           <Button
             label={buttonText}
             className="text-urban-blue mt-10 sm:mt-0"

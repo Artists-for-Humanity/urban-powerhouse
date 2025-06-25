@@ -93,7 +93,7 @@ const Button: React.FC<ButtonProps> = ({
             <div className="py-1">
               {dropdownOptions.map((option, index) => (
                 <Link key={index} href={option.href} passHref>
-                  <div className="block px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 cursor-pointer">
+                  <div className="block bg-black/70 px-4 py-2 text-sm text-white hover:bg-gray-100 hover:text-gray-900 cursor-pointer">
                     {option.label}
                   </div>
                 </Link>
