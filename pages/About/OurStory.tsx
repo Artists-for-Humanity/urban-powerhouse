@@ -47,7 +47,7 @@ export default function AboutArticle() {
     <Grid>
       <Navigation />
       <Container className="">
-         <h1 className="text-[32px] font-semibold col-span-full mb-[40px]">{data.title}</h1>
+         <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10 mb-[40px]">{data.title}</h1>
         {data.blocks.map((block, idx) => {
           switch (block.blockType) {
             case "title":

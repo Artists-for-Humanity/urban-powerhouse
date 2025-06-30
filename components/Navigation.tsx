@@ -76,8 +76,8 @@ const Navigation: React.FC = () => {
                   className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
-                  { label: 'Teen Story', href: '/About/TeenStories' },
-                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  { label: 'Teen Stories', href: '/About/TeenStories' },
+                  { label: 'Our Story', href: '/About/OurStory' },
                   ]}
                  
                   />
@@ -121,8 +121,8 @@ const Navigation: React.FC = () => {
                    className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
-                  { label: 'Teen Story', href: '/About/TeenStories' },
-                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  { label: 'Teen Stories', href: '/About/TeenStories' },
+                  { label: 'Our Story', href: '/About/OurStory' },
                   ]}/>
                 <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
                   <Button
@@ -150,8 +150,8 @@ const Navigation: React.FC = () => {
                    className='cursor-pointer'
                   dropdownOptions={[
                   { label: 'Meet the Founders', href: '/About/Founders' },
-                  { label: 'Teen Story', href: '/About/TeenStories' },
-                  { label: 'From Humble Beginnings to Urban Powerhouse', href: '/About/OurStory' },
+                  { label: 'Teen Stories', href: '/About/TeenStories' },
+                  { label: 'Our Story', href: '/About/OurStory' },
                   ]}/>
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button

@@ -61,7 +61,7 @@ export default function Passes() {
     <Grid>
       <Navigation />
       <Container>
-        <h1 className="text-[32px] font-semibold col-span-full">Membership Pricing Options</h1><br /><br />
+        <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10 ">Membership Pricing Options</h1><br /><br />
         <h3 className="font-semibold text-xl col-span-full lg:col-start-2 lg:col-span-10 sm:mt-10">
           <span className="text-[var(--urban-orange)] ">Thank you</span> for registering with Urban PowerHouse! We have a variety of membership options available
         </h3><br />

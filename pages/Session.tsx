@@ -30,11 +30,9 @@ export default function Registration() {
     <Grid>
       <Navigation />
       <Container>
-        <h1 className="text-[32px] font-semibold col-span-full">Session Scheduler</h1><br /><br />
-
+        <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10 mb-6">Session Scheduler</h1><br /><br />
         {}
-        <div ref={widgetRef} className="col-span-full" />
-
+        <div ref={widgetRef} className="col-span-full lg:col-start-2 lg:col-span-10" />
       </Container>
       <Footer />
     </Grid>

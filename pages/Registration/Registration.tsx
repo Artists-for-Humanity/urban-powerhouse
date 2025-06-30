@@ -57,14 +57,14 @@ export default function Registration() {
     <Grid>
       <Navigation />
       <Container>
-        <h1 className="text-[32px] font-semibold col-span-full">{pageData.title}</h1><br /><br />
-        <h3 className="font-semibold col-span-full">
+        <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10 lg:mb-6">{pageData.title}</h1><br /><br />
+        <h3 className="font-semibold col-span-full lg:col-start-2 lg:col-span-10">
          {pageData.intro}
         </h3><br />
-        <h3 className="font-semibold col-span-full"> {pageData.cta}</h3><br /><br />
+        <h3 className="font-semibold col-span-full lg:col-start-2 lg:col-span-10"> {pageData.cta}</h3><br /><br />
 
         {}
-        <div ref={widgetRef} className="col-span-full" />
+        <div ref={widgetRef} className="col-span-full lg:col-start-2 lg:col-span-10" />
 
       </Container>
       <Footer />
