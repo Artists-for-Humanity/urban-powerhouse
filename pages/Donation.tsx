@@ -35,7 +35,7 @@ export default function Donation() {
           <Grid className="gap-y-4">
             <Navigation/>
               <Container>
-                <h1 className="text-[32px] font-semibold col-span-full ">{pageData.title}</h1>
+                <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10">{pageData.title}</h1>
                 <TextBlock text={ pageData.textBlock}/>
                 <DonationWeight
                     title={pageData.donationWeightsTitle}

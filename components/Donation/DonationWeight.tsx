@@ -63,7 +63,7 @@ const handleDonate = () => {
 
   return (
     <div className={`col-span-full ${className} grid grid-cols-subgrid`}>
-      <h1 className="hidden lg:block col-start-3 col-span-8 text-2xl text-center font-bold mb-8">
+      <h1 className=" col-span-full text-2xl text-left font-bold mb-8 lg:col-start-2 lg:col-span-10">
         {title}
       </h1>
 
@@ -135,7 +135,7 @@ const handleDonate = () => {
                   {donation.amount}
                 </span>
               </div>
-              <p className="text-base font-semibold mt-4 text-center">
+              <p className="text-base font-semibold mt-4 text-left">
                 {donation.description}
               </p>
             </div>

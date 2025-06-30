@@ -65,10 +65,7 @@ export default function AboutArticle() {
           }
         })}
 
-        <ArticleBlock
-          variant="center-image"
-          imageSrc="/humbleBeginnings/MockMeetFundraiserPodDays.jpg"
-        />
+
 
       </Container>
       <Footer />
