@@ -60,7 +60,7 @@ const Pass: React.FC<PassProps> = ({
     `Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
   );
 
-  window.location.href = `mailto:Contact@UrbanPowerHouse.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:teamurbanpowerhouse@gmail.com?subject=${subject}&body=${body}`;
 };
 
 
