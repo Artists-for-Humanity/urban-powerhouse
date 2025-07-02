@@ -11,7 +11,7 @@ export default defineConfig({
   projectId: 'kyxled15',
   dataset: 'production',
 
-  basePath: '/studio',
+  basePath: '/admin',
 
   plugins: [structureTool(), visionTool(), media()],
 
