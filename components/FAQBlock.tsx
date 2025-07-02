@@ -22,18 +22,22 @@ const FAQDropdown: React.FC<FAQDropdownProps> = ({ faqs, title }) => {
   };
 
   return (
-    <div className="space-y-4 col-span-full grid grid-cols-subgrid">
-         <h1 className="text-[32px] font-semibold col-span-full ">{title}</h1>
+    <div className="space-y-4 col-span-full grid grid-cols-subgrid ">
+         <h1 className="text-[32px] font-semibold col-span-full  lg:col-start-2 lg:col-span-10">{title}</h1>
 
 
       {faqs.map((faq, index) => (
-        <div key={index} className=" pb-4 col-span-full lg:col-start-2 py-3">
+        <div key={index} className=" pb-4 col-span-full lg:col-start-2 lg:col-span-10 py-3">
           {/* Header with Chevron */}
           <div
             className="flex justify-between items-center cursor-pointer"
             onClick={() => toggleDropdown(index)}
           >
-            <h2 className="text-lg font-semibold">{faq.question}</h2>
+            <h2 className={`text-lg font-semibold border-l-6 pl-2 ${
+              openIndices.includes(index) 
+                ? 'border-[var(--urban-orange)]' 
+                : 'border-[var(--urban-blue)]'
+            }`}>{faq.question}</h2>
             <Image
                src={
                 openIndices.includes(index) || hoveredIndex === index

@@ -48,7 +48,7 @@ const [data, setData] = useState<FoundersPageData | null>(null);
           <Grid>
             <Navigation/>
               <Container>
-                  <h1 className="text-[32px] font-semibold col-span-full ">
+                  <h1 className="text-[32px] font-semibold col-span-full lg:col-start-2 lg:col-span-10">
           {data.title || "Meet the Founders"}
         </h1>
       

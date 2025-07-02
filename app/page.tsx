@@ -121,7 +121,7 @@ const videoContentBlock = imageBlocks.find(block => block.blockType === "video-b
                 header={equipmentBlock?.title || ""}
                 images={equipmentBlock?.images?.map(img => img.asset.url) || []}
                 variant="simple"
-                buttonText="See All"
+                buttonText="See All Equipment"
                 className="bg-urban-grey mt-10"
               />
                 {partnerBlock && partnerBlock.blockType === "partners" && (

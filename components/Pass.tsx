@@ -60,7 +60,7 @@ const Pass: React.FC<PassProps> = ({
     `Name: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`
   );
 
-  window.location.href = `mailto:Contact@UrbanPowerHouse.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:teamurbanpowerhouse@gmail.com?subject=${subject}&body=${body}`;
 };
 
 
@@ -112,102 +112,76 @@ const Pass: React.FC<PassProps> = ({
       {options.map(renderOption)}
 
       {/* === CUSTOM FORM === */}
-      {variant === 'custom' && selected === 'Custom' && (
-        <form
-          onSubmit={handleSubmit}
-          className="w-full col-span-full bg-[var(--urban-black)] p-6 rounded-lg mt-6"
-        >
-          <h3 className="text-lg font-semibold text-[var(--urban-white)] mb-4">
-            Personal Information
-          </h3>
+     
+{variant === 'custom' && selected === 'Custom' && (
+  <form onSubmit={handleSubmit} className="w-full col-span-full bg-[var(--urban-black)] p-6 rounded-lg mt-6">
+    <h3 className="text-lg font-semibold text-[var(--urban-white)] mb-4">Personal Information</h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-4">
-            <div className="flex flex-row justify-between md:justify-start items-end">
-              <label
-                htmlFor="firstName"
-                className="text-m font-semibold text-[var(--urban-disabled-grey)] sm:pr-6"
-              >
-                First Name*
-              </label>
-              <input
-                id="firstName"
-                name="firstName"
-                required
-                className="mt-1 bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
-              />
-            </div>
-            <div className="flex flex-row justify-between md:justify-start items-end">
-              <label
-                htmlFor="lastName"
-                className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
-              >
-                Last Name*
-              </label>
-              <input
-                id="lastName"
-                name="lastName"
-                required
-                className="mt-1 bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
-              />
-            </div>
-          </div>
+    {/* Two-column grid for label+input alignment */}
+    <div className="grid grid-cols-[150px_minmax(0,1fr)] gap-y-4 items-center">
+      <label htmlFor="firstName" className="text-left pr-2 text-[var(--urban-disabled-grey)]">
+        First Name
+      </label>
+      <input
+        id="firstName"
+        name="firstName"
+        required
+        className="bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
+      />
 
-          <div className="flex mt-4 flex-row justify-between md:justify-start items-end">
-            <label
-              htmlFor="phone"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
-            >
-              Mobile Phone*
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              className="mt-1 bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
-            />
-          </div>
+      <label htmlFor="lastName" className="text-left pr-2 text-[var(--urban-disabled-grey)]">
+        Last Name
+      </label>
+      <input
+        id="lastName"
+        name="lastName"
+        required
+        className="bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
+      />
 
-          <div className="flex flex-row justify-between md:justify-start mt-4 items-end">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
-            >
-              Email*
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              className="mt-1 bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
-            />
-          </div>
+      <label htmlFor="phone" className="text-left pr-2 text-[var(--urban-disabled-grey)]">
+        Mobile Phone
+      </label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        required
+        className="bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
+      />
 
-          <div className="flex flex-col mt-10">
-            <label
-              htmlFor="message"
-              className="text-sm font-medium text-[var(--urban-disabled-grey)] sm:pr-6"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={8}
-              placeholder="Optional"
-              className="mt-1 bg-transparent border border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none p-2 text-[var(--urban-white)]"
-            />
-          </div>
+      <label htmlFor="email" className="text-left pr-2 text-[var(--urban-disabled-grey)]">
+        Email
+      </label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        className="bg-transparent border-b border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none py-1 text-[var(--urban-white)]"
+      />
+<div className='col-span-full'>
+      <label htmlFor="message" className="text-left pr-2 text-[var(--urban-disabled-grey)] self-start my-2">
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows={8}
+        placeholder="Optional"
+        className="bg-transparent border border-[var(--urban-grey)] focus:border-[var(--urban-blue)] outline-none p-2 text-[var(--urban-white)] w-full mt-2"
+      />
+    </div>
+    </div>
 
-          <button
-            type="submit"
-            className="mt-6 w-full py-3 bg-[var(--urban-white)] text-[var(--urban-black)] font-semibold rounded disabled:opacity-50 transition"
-          >
-            Contact Us
-          </button>
-        </form>
-      )}
+    <button
+      type="submit"
+      className="mt-6 w-full py-3 bg-[var(--urban-white)] text-[var(--urban-black)] font-semibold rounded disabled:opacity-50 transition"
+    >
+      Contact Us
+    </button>
+  </form>
+)}
     </div>
   );
 };
