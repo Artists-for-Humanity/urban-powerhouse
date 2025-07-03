@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false); 
-
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,6 +15,10 @@ const Navigation: React.FC = () => {
 
   const toggleTabletMenu = () => {
     setIsTabletMenuOpen(!isTabletMenuOpen);
+  };
+
+  const handleDropdownToggle = (dropdownName: string) => {
+    setOpenDropdown(prev => prev === dropdownName ? null : dropdownName);
   };
 
 
@@ -152,7 +156,10 @@ const Navigation: React.FC = () => {
                   { label: 'Meet the Founders', href: '/About/Founders' },
                   { label: 'Teen Stories', href: '/About/TeenStories' },
                   { label: 'Our Story', href: '/About/OurStory' },
-                  ]}/>
+                  ]}
+                  isDropdownOpen={openDropdown === 'about'}
+                  onDropdownToggle={() => handleDropdownToggle('about')}
+                  />
       <Button label="FAQ" href="/FAQ" variant="nav" isActive={pathname === '/FAQ'} />
         <Button
         label="Registration & Membership"
@@ -161,7 +168,10 @@ const Navigation: React.FC = () => {
         dropdownOptions={[
         { label: 'New Member Registration', href: '/Registration/Registration' },
         { label: 'Passes', href: '/Registration/Pass' },
-        ]}/>
+        ]}
+        isDropdownOpen={openDropdown === 'registration'}
+        onDropdownToggle={() => handleDropdownToggle('registration')}
+        />
         <Button label="Session Scheduler" href="/Session" variant="nav" isActive={false} />
         <Button label="Donation" onClick={() => console.log('Donation clicked')} variant="default" href='/Donation' />
         <Button label="Sign In"  onClick={handleAccountLink} variant="default" />
