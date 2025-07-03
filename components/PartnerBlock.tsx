@@ -11,7 +11,7 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
   return (
     <div className={`grid grid-cols-subgrid col-span-full ${className} mb-10`}>
 
-        <div className="text-left text-[32px] font-semibold mb-10 lg:mb-4 col-span-full col-start-1 mx-[32px] col-start sm:col-start-2 lg:col-span-2 lg:col-start-1 lg:col-span-4">
+        <div className="text-left text-[32px] sm:text-[28px] lg:text-[32px] font-semibold lg:font-bold lg:mb-4 col-span-full col-start-1 col-start sm:col-start-2 lg:col-span-2 lg:col-start-1 lg:col-span-4 ">
           {header}
         </div>
       {/* Mobile Layout */}
@@ -43,7 +43,7 @@ const PartnerBlock: React.FC<PartnerBlockProps> = ({ header, images, className =
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="col-span-1 max-h-[80px] overflow-hidden p-10"
+            className="col-span-1 max-h-[80px] overflow-hidden pt-4"
           >
             <Image
               src={src}
