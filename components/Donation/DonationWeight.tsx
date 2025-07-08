@@ -126,7 +126,7 @@ const handleDonate = () => {
                   />
                 </svg>
                 <span
-                  className={`relative text-xl font-bold  mt-12 cursor-pointer ${
+                  className={`relative text-2xl font-bold  mt-12 cursor-pointer ${
                     selectedIndex === index
                       ? 'translate-x-[11px] translate-y-[4px]'
                       : 'group-hover:translate-x-[11px] group-hover:translate-y-[4px]'

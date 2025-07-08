@@ -18,6 +18,8 @@ type ButtonProps = {
   className?: string;
   dropdownOptions?: DropdownOption[];
   iconSrc?: string;
+  isDropdownOpen?: boolean;
+  onDropdownToggle?: () => void;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -29,13 +31,22 @@ const Button: React.FC<ButtonProps> = ({
   isDisabled = false,
   className = '',
   dropdownOptions = [],
-  iconSrc
+  iconSrc,
+  isDropdownOpen: externalIsDropdownOpen,
+  onDropdownToggle
 }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [internalIsDropdownOpen, setInternalIsDropdownOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  // Use external dropdown state if provided, otherwise use internal state
+  const isDropdownOpen = externalIsDropdownOpen !== undefined ? externalIsDropdownOpen : internalIsDropdownOpen;
+
   const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+    if (onDropdownToggle) {
+      onDropdownToggle();
+    } else {
+      setInternalIsDropdownOpen((prev) => !prev);
+    }
   };
 
   if (variant === 'nav' && href) {
