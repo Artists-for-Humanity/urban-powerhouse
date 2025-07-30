@@ -90,7 +90,7 @@ const videoContentBlock = imageBlocks.find(block => block.blockType === "video-b
           <Hero 
            title= "Making Strength" 
            subtitle= "Accessible for All"
-          videoSrc={videoBlock?.video?.asset.url || "/file.mp4"}
+          videoSrc={videoBlock?.video?.asset.url}
 
           />
           <Container className=" mt-[20vh] min-h-[100vh]">

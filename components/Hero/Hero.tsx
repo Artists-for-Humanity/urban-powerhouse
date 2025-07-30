@@ -6,12 +6,15 @@ import Video from '../Video/Video';
 interface HeroProps {
   title: string; 
   subtitle: string; 
-  videoSrc?: string;
+  videoSrc?: unknown;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, subtitle, videoSrc }) => {       return (
+const Hero: React.FC<HeroProps> = ({ title, subtitle, videoSrc }) => {
+    const videoString = videoSrc ? String(videoSrc) : '';
+    
+    return (
       <div className='col-span-full w-full'>
-        <Video src={videoSrc || "/file.mp4"} isBackground={true}/>
+        <Video src={videoString} isBackground={true}/>
         <Navigation/>
         <HeroText 
           title=   {title} 
