@@ -41,7 +41,7 @@ const VideoBlock: React.FC<VideoBlockProps> = ({
         </p>
       </div>
 
-      <div className="col-start-5 col-span-2 sm:col-start-6 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+      <div className="col-start-4 col-span-3  sm:col-start-6 sm:col-span-2 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
         <Button
           label={buttonText}
           className="text-urban-blue"

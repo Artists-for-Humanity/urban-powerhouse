@@ -81,7 +81,7 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
 
       {/* Button for simple variant */}
       {variant === 'simple' && buttonText && (
-        <div className="col-start-5 col-span-2 sm:col-start-7 sm:col-span-2 sm:mt-2 sm:mb-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
+        <div className="col-start-3 col-span-4 sm:col-start-7 sm:col-span-2 sm:mt-2 sm:mb-10 lg:col-start-11 lg:flex lg:justify-end lg:items-end">
           <div>
           <Button
             label={buttonText}
