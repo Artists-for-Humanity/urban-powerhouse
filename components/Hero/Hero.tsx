@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, videoSrc }) => {
     
     return (
       <div className='col-span-full w-full'>
-        <Video src={videoString} isBackground={true}/>
+        {videoString && <Video src={videoString} isBackground={true}/>}
         <Navigation/>
         <HeroText 
           title=   {title} 
